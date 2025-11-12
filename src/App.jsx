@@ -17,11 +17,6 @@ const App = () => {
 
         </Routes>
         <Footer/>
-
-
-    
-    
-    
     </div>
   )
 }
