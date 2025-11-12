@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Dropdown = () => {
-  // Define the industries links
+const Dropdown = ({ setIsIndustryDropdownVisible }) => {
   const industryItems = [
     { name: 'Hospital', link: '/hospital' },
     { name: 'School', link: '/school' },
@@ -18,16 +18,20 @@ const Dropdown = () => {
 
   return (
     // Styling to position the dropdown below the "Industries" link
-    <div className="absolute left-0 right-0 mt-2 w-48 bg-slate-800 text-white shadow-xl rounded-md z-50 py-1">
+    <div 
+      className="absolute left-0 right-0 mt-2 w-48 bg-slate-800 text-white shadow-xl rounded-md z-50 py-1"
+      onMouseEnter={() => setIsIndustryDropdownVisible(true)}
+      onMouseLeave={() => setIsIndustryDropdownVisible(false)}
+    >
       {industryItems.map((item) => (
-        <a
+        <Link
           key={item.name}
-          href={item.link}
+          to={item.link}
           // The hover styling recreates the effect shown in the image (yellow highlight)
           className="block px-4 py-2 text-sm hover:bg-slate-700 hover:text-yellow-400 transition duration-150"
         >
           {item.name}
-        </a>
+        </Link>
       ))}
     </div>
   );
