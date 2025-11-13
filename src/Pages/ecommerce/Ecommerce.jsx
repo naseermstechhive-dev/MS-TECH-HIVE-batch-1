@@ -20,8 +20,8 @@ const Ecommerce = () => {
     AOS.init({
       duration: 900,
       easing: "ease-in-out",
-      once: false, // allow animations to repeat when scrolling up/down
-      mirror: true, // animate in reverse when scrolling up
+      once: false, 
+      mirror: true, 
     });
 
     const handleScroll = () => {

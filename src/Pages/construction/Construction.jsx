@@ -75,7 +75,7 @@ const Construction = () => {
               alt="Construction"
               className="rounded-2xl shadow-2xl w-full max-w-2xl object-cover"
             />
-            <div className="absolute -bottom-6 -left-6 bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl shadow-lg flex flex-col items-center justify-center space-y-1 w-28">
+            <div className="absolute -bottom-6 -left-6 bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl shadow-lg flex flex-col items-center justify-center space-y-1 w-24">
               <HardHat className="w-6 h-6 text-gray-900" />
               <div className="text-center">
                 <span className="block text-sm font-semibold leading-tight">

@@ -15,18 +15,16 @@ import {
 
 const School = () => {
   const navigate = useNavigate();
-
-  // Initialize AOS for continuous scroll animations
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false, // 👈 ensures animation repeats when scrolling up/down
-      mirror: true, // 👈 triggers animations in reverse while scrolling up
+      once: false,
+      mirror: true, 
     });
 
     const handleScroll = () => {
-      AOS.refresh(); // continuously refresh AOS
+      AOS.refresh();
     };
 
     window.addEventListener("scroll", handleScroll);

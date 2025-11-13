@@ -16,17 +16,16 @@ import {
 const Hospital = () => {
   const navigate = useNavigate();
 
-  // Initialize AOS (Continuous scroll animations)
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false, // ✅ Re-animate on scroll down/up
-      mirror: true, // ✅ Play animation again when scrolling back up
+      once: false, 
+      mirror: true, 
     });
 
     const handleScroll = () => {
-      AOS.refresh(); // Keeps AOS refreshed during continuous scroll
+      AOS.refresh(); 
     };
 
     window.addEventListener("scroll", handleScroll);

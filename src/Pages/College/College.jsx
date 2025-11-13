@@ -14,19 +14,14 @@ import {
 
 const College = () => {
   const navigate = useNavigate();
-
-
-
-  // Initialize AOS and make it refresh dynamically
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false, // 👈 triggers every time element enters viewport
-      mirror: true, // 👈 animates when scrolling back up
+      once: false, 
+      mirror: true, 
     });
 
-    // refresh AOS on scroll
     const handleScroll = () => {
       AOS.refresh();
     };

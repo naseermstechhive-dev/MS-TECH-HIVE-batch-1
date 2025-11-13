@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
@@ -17,7 +20,7 @@ import {
 
 const Home = () => {
   const navigate = useNavigate();
-
+  
   const {t} = useTranslation()
   const {line1,line2} = t("description")
   const {section1} = t("home")
@@ -25,30 +28,43 @@ const Home = () => {
   const {section3} = t("home")
   const {section4}= t("home")
 
-  // console.log(section1);
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      once: false,       
+      mirror: true,     
+      easing: "ease-out",
+    });
+  }, []);
 
   return (
     <div className="bg-gray-900 text-white">
+
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+      <section
+        className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 px-4 sm:px-6 lg:px-8"
+        data-aos="fade-up"
+      >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
           {/* Left Content */}
-          <div>
+          <div data-aos="fade-right">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                {/* Automate Work. */}
-                {section1.title1}
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight" data-aos="zoom-in">
+                Automate Work.
                 <br />
-                <span className="text-[#facc15]">{section1.title2}</span>
+                <span className="text-[#facc15]" data-aos="zoom-in" data-aos-delay="200">
+                  Accelerate Growth.
+                </span>
               </h1>
-              <p className="text-xl text-gray-300 max-w-lg">
-                {/* Transform your business operations with intelligent automation
-                solutions tailored for your industry. */}
-                {section1.line1}
+
+              <p className="text-xl text-gray-300 max-w-lg" data-aos="fade-up" data-aos-delay="300">
+                Transform your business operations with intelligent automation
+                solutions tailored for your industry.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8" data-aos="fade-up" data-aos-delay="400">
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
@@ -65,8 +81,11 @@ const Home = () => {
             </div>
           </div>
 
-         {/* Right Side Animated Card */}
-          <div className="relative w-full h-96 bg-gradient-to-br from-[#facc15] to-[#ca8a04] rounded-2xl flex items-center justify-center">
+          {/* Right Side Animated Card */}
+          <div
+            className="relative w-full h-96 bg-gradient-to-br from-[#facc15] to-[#ca8a04] rounded-2xl flex items-center justify-center"
+            data-aos="fade-left"
+          >
             <div className="text-8xl animate-turtle">🐢</div>
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-yellow-400 rounded-full opacity-30 animate-pulse delay-1000"></div>
@@ -88,16 +107,16 @@ const Home = () => {
       </style>
 
       {/* ---------------- WHY CHOOSE SECTION ---------------- */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800">
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800"
+        data-aos="fade-up"
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              {/* Why Choose MS Tech Hive? */}
-              {section2.title}
-            </h2>
+
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-4xl font-bold text-white mb-4">Why Choose MS Tech Hive?</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            {section2.line}
-              
+              We combine cutting-edge technology with industry expertise to deliver solutions that drive real results.
             </p>
           </div>
 
@@ -127,12 +146,12 @@ const Home = () => {
             ].map((item, i) => (
               <div
                 key={i}
+                data-aos="zoom-in"
+                data-aos-delay={i * 150}
                 className="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition-colors group hover:scale-110 transform duration-300"
               >
                 {item.icon}
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  {item.title}
-                </h3>
+                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
                 <p className="text-gray-300">{item.desc}</p>
               </div>
             ))}
@@ -141,12 +160,14 @@ const Home = () => {
       </section>
 
       {/* ---------------- INDUSTRIES SECTION ---------------- */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900"
+        data-aos="fade-up"
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">
-            {section3.title}
-            </h2>
+
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {section3.line}
             </p>
@@ -163,6 +184,8 @@ const Home = () => {
             ].map((item, i) => (
               <div
                 key={i}
+                data-aos="fade-up"
+                data-aos-delay={i * 120}
                 onClick={() => navigate(`/${item.label.toLowerCase()}`)}
                 className="bg-gray-800 p-6 rounded-xl text-center hover:bg-gray-700 hover:scale-105 transition-all cursor-pointer"
               >
@@ -174,7 +197,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-12" data-aos="zoom-in">
             <button
               onClick={() => navigate("/industries")}
               className="inline-flex items-center px-6 py-3 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
@@ -186,24 +209,32 @@ const Home = () => {
       </section>
 
       {/* ---------------- READY TO TRANSFORM SECTION ---------------- */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r text-gray-900 to-[#ca8a04] from-[#facc15]">
+      <section
+        className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r text-gray-900 to-[#ca8a04] from-[#facc15]"
+        data-aos="fade-up"
+      >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4">
-          {section4.title}
+          <h2 className="text-4xl font-bold mb-4" data-aos="zoom-in">
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-gray-800 mb-8">
-          {section4.line}
 
+          <p className="text-xl text-gray-800 mb-8" data-aos="fade-up" data-aos-delay="200">
+            Join hundreds of businesses that have accelerated their growth with
+            our automation solutions.
           </p>
+
           <button
             onClick={() => navigate("/contact")}
             className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+            data-aos="zoom-in"
+            data-aos-delay="300"
           >
                   {section4.button}
               <ArrowRight className="ml-2 w-5 h-5" />
           </button>
         </div>
       </section>
+
     </div>
   );
 };
