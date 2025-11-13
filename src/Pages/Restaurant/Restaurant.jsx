@@ -88,10 +88,10 @@ const Restaurant = () => {
             <img
               src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Restaurant"
-              className="rounded-2xl shadow-2xl w-full max-w-xl object-cover"
+              className="rounded-2xl shadow-2xl w-full max-w-2xl object-cover"
             />
             <div
-              className="absolute -bottom-8 -left-6 bg-yellow-500 text-gray-900 px-4 py-3 rounded-xl shadow-lg flex flex-col items-center justify-center w-20 h-30"
+              className="absolute -bottom-6 -left-6 bg-yellow-500 text-gray-900 px-4 py-3 rounded-xl shadow-lg flex flex-col items-center justify-center w-20 h-30"
               data-aos="zoom-in"
             >
               <Utensils className="w-10 h-10 mb-1 text-gray-900" />
