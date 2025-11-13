@@ -1,8 +1,11 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+  const {t} = useTranslation()
+  const {section5} = t("home")
   return (
     <footer className='bg-gray-900 border-t border-gray-800'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>
@@ -14,10 +17,10 @@ const Footer = () => {
             </div>
             <div className=''>
               <span className='text-xl font-bold text-white'>MS Tech Hive</span>
-              <div className='text-sm text-yellow-400'>Automate Work. Accelerate Growth.</div>
+              <div className='text-sm text-yellow-400'>{section5.title1}</div>
             </div>
           </div>
-          <p className='text-gray-400 mb-4 max-w-md'>We help businesses across industries automate their workflows and accelerate growth through cutting-edge technology solutions.</p>
+          <p className='text-gray-400 mb-4 max-w-md'>{section5.line}</p>
           <div className='flex space-x-4'>
           <a href="https://www.facebook.com/people/M-Techhive/pfbid02aehgvVvXUYcTmT4HUYZfLGzSNjJSTJkQ6FCG7sAuj6SRPR4u8wjif1RN24pBhof6l/" target='_blank'>
           <Facebook className='hover:text-yellow-400'/>
@@ -35,28 +38,28 @@ const Footer = () => {
         </div>
 
         <div className=''>
-          <h3 className='text-lg font-semibold text-white mb-4'>Quick Links</h3>
+          <h3 className='text-lg font-semibold text-white mb-4'>{section5.title2}</h3>
           <ul className='space-y-2 '>
             <li>
-            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/">Home</Link>
+            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/">{section5.link1}</Link>
             </li>
             <li>
-            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/About">About</Link>
+            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/About">{section5.link2}</Link>
             </li>
             <li>
-            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/Services">Services</Link>
+            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/Services">{section5.link3}</Link>
             </li>
             <li>
-            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/Industreis">Industries</Link>
+            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/Industreis">{section5.link4}</Link>
             </li>
             <li>
-            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/Contact">Contact</Link>
+            <Link className='text-gray-400 hover:text-yellow-400 transition-colors' to="/Contact">{section5.link5}</Link>
             </li>
           </ul>
         </div>
 
         <div className=''>
-          <h3 className='text-lg font-semibold text-white mb-4'>Contact Info</h3>
+          <h3 className='text-lg font-semibold text-white mb-4'>{section5.title3}</h3>
           <div className='space-y-3'>
             <div className='flex items-center space-x-3'>
               <Mail className='text-yellow-400'/>
@@ -68,13 +71,13 @@ const Footer = () => {
             </div>
             <div className='flex items-center space-x-3'>
             <MapPin className='text-yellow-400'/>
-              <a href="https://maps.app.goo.gl/xuJKp9urXsuoBeab9" target='_blank' className='text-gray-400 hover:text-yellow-400 transition-colors'>View Location</a>
+              <a href="https://maps.app.goo.gl/xuJKp9urXsuoBeab9" target='_blank' className='text-gray-400 hover:text-yellow-400 transition-colors'>{section5.loc}</a>
             </div>
           </div>
         </div>
       </div>
       <div className='border-t border-gray-800 mt-8 pt-8 text-center'>
-        <p className='text-gray-400'>© 2025 MS Tech Hive. All rights reserved.</p>
+        <p className='text-gray-400'>© 2025 MS {section5.copy}</p>
       </div>
       </div>
     </footer>
