@@ -8,12 +8,12 @@ import College from './pages/college/College'
 import Restaurant from './pages/restaurant/Restaurant';
 import Office from './pages/office/Office'
 import RetailShop from './pages/retailShop/RetailShop'
-import Construction from './pages/Construction.jsx/Construction'
+import Construction from './pages/construction/Construction'
 import Logistics from './pages/logistics/Logistics'
 import ITCompany from './pages/itCompany.jsx/ITCompany'
 import Ecommerce from './pages/ecommerce/Ecommerce'
 import ClinicLab from './Pages/clinicLab/ClinicLab'
-import Footer from './Components/Footer/Footer';
+import Footer from './components/footer/Footer';
 
 const App = () => {
   return (
