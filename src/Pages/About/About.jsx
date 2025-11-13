@@ -3,8 +3,16 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { Target, Eye, Lightbulb, Heart, Award, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function AboutPage() {
+
+  const {t} = useTranslation()
+  const {section1} = t("abt")
+  const {section2} = t("abt")
+  const {section3} = t("abt")
+  const {section4}= t("abt")
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -27,7 +35,7 @@ function AboutPage() {
             className="text-5xl md:text-6xl font-bold text-white mb-6"
             data-aos="zoom-in"
           >
-            About MS Tech Hive
+            {section1.title1}
           </h1>
 
           <p
@@ -35,7 +43,7 @@ function AboutPage() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Empowering businesses with intelligent automation solutions since 2020
+           {section1.line1}
           </p>
         </div>
       </div>
@@ -54,14 +62,11 @@ function AboutPage() {
           >
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-10 h-10 text-yellow-400" />
-              <h2 className="text-3xl font-bold text-white">Our Mission</h2>
+              <h2 className="text-3xl font-bold text-white">{section1.title2}</h2>
             </div>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              To help businesses across industries automate their workflows and
-              accelerate growth through innovative technology solutions. We believe
-              that every business deserves access to cutting-edge tools that drive
-              efficiency and success.
+            {section1.line2}
             </p>
           </div>
 
@@ -73,13 +78,11 @@ function AboutPage() {
           >
             <div className="flex items-center gap-3 mb-6">
               <Eye className="w-10 h-10 text-yellow-400" />
-              <h2 className="text-3xl font-bold text-white">Our Vision</h2>
+              <h2 className="text-3xl font-bold text-white">{section1.title3}</h2>
             </div>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              To become the leading provider of automation solutions globally,
-              transforming how businesses operate and helping them achieve
-              unprecedented levels of efficiency and productivity.
+            {section1.line3}
             </p>
           </div>
         </div>
@@ -95,10 +98,10 @@ function AboutPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
               {[
-                { value: "500+", text: "Projects Completed" },
-                { value: "12", text: "Industries Served" },
-                { value: "50+", text: "Happy Clients" },
-                { value: "5", text: "Years Experience" },
+                { value: "500+", text: section2.line1 },
+                { value: "12", text: section2.line2 },
+                { value: "50+", text: section2.line3 },
+                { value: "5", text: section2.line4 },
               ].map((item, i) => (
                 <div key={i} data-aos="zoom-in" data-aos-delay={i * 150}>
                   <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">
@@ -124,7 +127,7 @@ function AboutPage() {
               className="text-4xl md:text-5xl font-bold text-white mb-4"
               data-aos="zoom-in"
             >
-              Our Values
+              {section3.title}
             </h2>
 
             <p
@@ -132,17 +135,17 @@ function AboutPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              The principles that guide everything we do
+              {section3.line}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {[
-              { Icon: Lightbulb, title: "Innovation" },
-              { Icon: Heart, title: "Customer First" },
-              { Icon: Award, title: "Excellence" },
-              { Icon: Users, title: "Collaboration" },
+              { Icon: Lightbulb, title: section3.cards.title1 },
+              { Icon: Heart, title: section3.cards.title2 },
+              { Icon: Award, title: section3.cards.title3 },
+              { Icon: Users, title: section3.cards.title4 },
             ].map((item, i) => (
               <div
                 key={i}
@@ -159,17 +162,17 @@ function AboutPage() {
                 </h3>
 
                 <p className="text-gray-300 leading-relaxed">
-                  {item.title === "Innovation" &&
-                    "We constantly explore new technologies to deliver cutting-edge solutions."}
+                  {item.title === section3.cards.title1  &&
+                    section3.cards.line1}
 
-                  {item.title === "Customer First" &&
-                    "Your success is our priority — we build long-lasting relationships."}
+                  {item.title === section3.cards.title2  &&
+                    section3.cards.line2}
 
-                  {item.title === "Excellence" &&
-                    "We maintain the highest standards in all aspects of our work."}
+                  {item.title === section3.cards.title3  &&
+                    section3.cards.line3}
 
-                  {item.title === "Collaboration" &&
-                    "We work closely with our clients as trusted partners."}
+                  {item.title === section3.cards.title4  &&
+                    section3.cards.line4}
                 </p>
               </div>
             ))}
@@ -186,14 +189,14 @@ function AboutPage() {
             className="text-4xl md:text-5xl font-bold text-white mb-12"
             data-aos="zoom-in"
           >
-            Our Story
+            {section4.title}
           </h2>
 
           <div className="space-y-8 text-lg text-gray-300 leading-relaxed">
             {[
-              "MS Tech Hive was founded with a simple yet powerful vision: to make advanced automation technology accessible to businesses of all sizes.",
-              "We recognized that many businesses were struggling with repetitive tasks and inefficient processes. We set out to change that with intelligent automation solutions that unlock growth.",
-              "Today, we're proud to have transformed hundreds of businesses. Our commitment to innovation and customer success continues to drive us every day.",
+              section4.line1,
+              section4.line2,
+              section4.line3
             ].map((text, i) => (
               <p
                 key={i}
