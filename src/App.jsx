@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './components/navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Hospital from './pages/hospital/Hospital';
@@ -8,12 +7,14 @@ import College from './pages/college/College'
 import Restaurant from './pages/restaurant/Restaurant';
 import Office from './pages/office/Office'
 import RetailShop from './pages/retailShop/RetailShop'
-import Construction from './pages/Construction.jsx/Construction'
+// import Construction from './pages/construction/Construction'
 import Logistics from './pages/logistics/Logistics'
-import ITCompany from './pages/itCompany.jsx/ITCompany'
+import ITCompany from './pages/itCompany/ITCompany'
 import Ecommerce from './pages/ecommerce/Ecommerce'
-import ClinicLab from './Pages/clinicLab/ClinicLab'
-import Footer from './Components/Footer/Footer';
+import ClinicLab from './pages/clinicLab/ClinicLab'
+import Footer from './components/footer/Footer';
+import Navbar from './Components/Navbar/Navbar';
+import Construction from './Pages/Construction/Construction';
 
 const App = () => {
   return (

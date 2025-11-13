@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Zap,
   TrendingUp,
@@ -17,6 +18,15 @@ import {
 const Home = () => {
   const navigate = useNavigate();
 
+  const {t} = useTranslation()
+  const {line1,line2} = t("description")
+  const {section1} = t("home")
+  const {section2} = t("home")
+  const {section3} = t("home")
+  const {section4}= t("home")
+
+  // console.log(section1);
+
   return (
     <div className="bg-gray-900 text-white">
       {/* ---------------- HERO SECTION ---------------- */}
@@ -26,13 +36,15 @@ const Home = () => {
           <div>
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Automate Work.
+                {/* Automate Work. */}
+                {section1.title1}
                 <br />
-                <span className="text-[#facc15]">Accelerate Growth.</span>
+                <span className="text-[#facc15]">{section1.title2}</span>
               </h1>
               <p className="text-xl text-gray-300 max-w-lg">
-                Transform your business operations with intelligent automation
-                solutions tailored for your industry.
+                {/* Transform your business operations with intelligent automation
+                solutions tailored for your industry. */}
+                {section1.line1}
               </p>
             </div>
 
@@ -41,14 +53,14 @@ const Home = () => {
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
               >
-                Explore Services <ArrowRight className="w-5 h-5" />
+                {section1.button1}<ArrowRight className="w-5 h-5" />
               </button>
 
               <button
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[#facc15] text-[#facc15] font-semibold rounded-lg hover:bg-[#facc15] hover:text-gray-900 transition-colors"
               >
-                Get Started <ArrowRight className="w-5 h-5" />
+                {section1.button2}<ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -80,11 +92,12 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Why Choose MS Tech Hive?
+              {/* Why Choose MS Tech Hive? */}
+              {section2.title}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We combine cutting-edge technology with industry expertise to
-              deliver solutions that drive real results.
+            {section2.line}
+              
             </p>
           </div>
 
@@ -92,23 +105,24 @@ const Home = () => {
             {[
               {
                 icon: <Zap className="w-8 h-8 text-[#facc15] mb-3" />,
-                title: "Automation Excellence",
-                desc: "Streamline your workflows with cutting-edge automation solutions",
+                title:section2.cards.c1.title,
+                desc: section2.cards.c1.line,
+
               },
               {
                 icon: <TrendingUp className="w-8 h-8 text-[#facc15] mb-3" />,
-                title: "Growth Acceleration",
-                desc: "Scale your business operations with intelligent technology",
+                title:section2.cards.c2.title,
+                desc: section2.cards.c2.line,
               },
               {
                 icon: <Briefcase className="w-8 h-8 text-[#facc15] mb-3" />,
-                title: "Industry Expertise",
-                desc: "Specialized solutions for 12+ different industries",
+                title:section2.cards.c3.title,
+                desc: section2.cards.c3.line,
               },
               {
                 icon: <Award className="w-8 h-8 text-[#facc15] mb-3" />,
-                title: "Proven Results",
-                desc: "Delivering measurable outcomes for our clients",
+                title:section2.cards.c4.title,
+                desc: section2.cards.c4.line,
               },
             ].map((item, i) => (
               <div
@@ -131,10 +145,10 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Industries We Serve
+            {section3.title}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Specialized automation solutions across multiple industries
+            {section3.line}
             </p>
           </div>
 
@@ -164,8 +178,8 @@ const Home = () => {
             <button
               onClick={() => navigate("/industries")}
               className="inline-flex items-center px-6 py-3 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
-            >
-              View All Industries <ArrowRight className="ml-2 w-5 h-5" />
+            >            {section3.button}
+              <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>
         </div>
@@ -175,17 +189,18 @@ const Home = () => {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r text-gray-900 to-[#ca8a04] from-[#facc15]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">
-            Ready to Transform Your Business?
+          {section4.title}
           </h2>
           <p className="text-xl text-gray-800 mb-8">
-            Join hundreds of businesses that have accelerated their growth with
-            our automation solutions.
+          {section4.line}
+
           </p>
           <button
             onClick={() => navigate("/contact")}
             className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
           >
-            Start Your Journey <ArrowRight className="ml-2 w-5 h-5" />
+                  {section4.button}
+              <ArrowRight className="ml-2 w-5 h-5" />
           </button>
         </div>
       </section>

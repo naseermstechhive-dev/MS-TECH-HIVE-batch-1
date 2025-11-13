@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
 import { Menu, X, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isIndustryDropdownVisible, setIsIndustryDropdownVisible] =
@@ -9,7 +10,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const hideTimeoutRef = useRef(null);
-
+  const {t} = useTranslation()
+  const links = t("nav")
+// console.log(links.link1);
   const languages = [
     { region: "US", label: "English" },
     { region: "IN", label: "తెలుగు" },
@@ -18,6 +21,13 @@ const Navbar = () => {
     { region: "IN", label: "ಕನ್ನಡ" },
     { region: "IN", label: "മലയാളം" },
   ];
+
+  const {i18n} = useTranslation()
+  // Language seletor funtion 
+  const changeLanguage =(lng)=>{
+    i18n.changeLanguage(lng)
+  } 
+
 
   // Handle delayed closing of Industries dropdown
   const handleMouseEnter = () => {
@@ -58,7 +68,7 @@ const Navbar = () => {
               to="/"
               className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-yellow-400"
             >
-              Home
+              {links.link1}
             </Link>
 
             {/* Industries Dropdown */}
@@ -68,7 +78,7 @@ const Navbar = () => {
               onMouseLeave={handleMouseLeave}
             >
               <span className="cursor-pointer hover:text-yellow-400 transition duration-300">
-                Industries
+                {links.link2}
               </span>
               {isIndustryDropdownVisible && (
                 <Dropdown
@@ -81,21 +91,21 @@ const Navbar = () => {
               to="/services"
               className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-300 hover:text-yellow-400"
             >
-              Services
+              {links.link3}
             </Link>
 
             <Link
               to="/about"
               className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-300 hover:text-yellow-400"
             >
-              About
+              {links.link4}
             </Link>
 
             <Link
               to="/contact"
               className="px-3 py-2 rounded-md text-sm font-medium transition-colors text-gray-300 hover:text-yellow-400"
             >
-              Contact
+              {links.link5}
             </Link>
 
             {/* Language Dropdown */}
@@ -113,7 +123,10 @@ const Navbar = () => {
                   {languages.map((lang, index) => (
                     <div
                       key={index}
-                      onClick={() => setIsLangDropdownOpen(false)}
+                      onClick={() =>{
+                          setIsLangDropdownOpen(false)
+                          changeLanguage(lang.label)
+                         }}
                       className="px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-yellow-400 flex justify-start items-center space-x-2 cursor-pointer"
                     >
                       <span className="text-yellow-400">{lang.region}</span>
@@ -212,7 +225,9 @@ const Navbar = () => {
                 {languages.map((lang, index) => (
                   <div
                     key={index}
-                    onClick={() => setIsLangDropdownOpen(false)}
+                    onClick={() => {setIsLangDropdownOpen(false)
+                                  changeLanguage(lang.label)}
+                    }
                     className="px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-yellow-400 flex justify-start items-center space-x-2 cursor-pointer"
                   >
                     <span className="text-yellow-400">{lang.region}</span>

@@ -15,6 +15,8 @@ import {
 const College = () => {
   const navigate = useNavigate();
 
+
+
   // Initialize AOS and make it refresh dynamically
   useEffect(() => {
     AOS.init({
