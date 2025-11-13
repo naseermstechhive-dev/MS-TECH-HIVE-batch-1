@@ -74,7 +74,7 @@ const Navbar = () => {
                   : "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-yellow-400"
               }
             >
-              Home
+              {links.link1}
             </NavLink>
 
             {/* Industries (hover only) */}
@@ -102,7 +102,7 @@ const Navbar = () => {
                   : "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-yellow-400"
               }
             >
-              Services
+           {links.link3}
             </NavLink>
 
             {/* About */}
@@ -114,7 +114,8 @@ const Navbar = () => {
                   : "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-yellow-400"
               }
             >
-              About
+            {links.link4}
+
             </NavLink>
 
             {/* Contact */}
@@ -126,7 +127,7 @@ const Navbar = () => {
                   : "px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-yellow-400"
               }
             >
-              Contact
+              {links.link5}
             </NavLink>
 
             {/* Language */}
@@ -185,7 +186,7 @@ const Navbar = () => {
                 : "block text-sm font-medium text-gray-300 hover:text-yellow-400"
             }
           >
-            Home
+            {links.link1}
           </NavLink>
 
           {/* Industries Dropdown Mobile */}
@@ -196,7 +197,7 @@ const Navbar = () => {
                 setIsIndustryDropdownVisible(!isIndustryDropdownVisible)
               }
             >
-              <span>Industries</span>
+              <span>{links.link2}</span>
               <span>{isIndustryDropdownVisible ? "▲" : "▼"}</span>
             </div>
 
@@ -218,7 +219,7 @@ const Navbar = () => {
                 : "block text-sm font-medium text-gray-300 hover:text-yellow-400"
             }
           >
-            Services
+            {links.link3}
           </NavLink>
 
           <NavLink
@@ -230,7 +231,7 @@ const Navbar = () => {
                 : "block text-sm font-medium text-gray-300 hover:text-yellow-400"
             }
           >
-            About
+            {links.link4}
           </NavLink>
 
           <NavLink
@@ -242,7 +243,7 @@ const Navbar = () => {
                 : "block text-sm font-medium text-gray-300 hover:text-yellow-400"
             }
           >
-            Contact
+            {links.link5}
           </NavLink>
         </div>
       )}

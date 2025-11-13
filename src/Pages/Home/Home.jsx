@@ -51,16 +51,15 @@ const Home = () => {
           <div data-aos="fade-right">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight" data-aos="zoom-in">
-                Automate Work.
+                {section1.title1}
                 <br />
                 <span className="text-[#facc15]" data-aos="zoom-in" data-aos-delay="200">
-                  Accelerate Growth.
+                {section1.title2}
                 </span>
               </h1>
 
               <p className="text-xl text-gray-300 max-w-lg" data-aos="fade-up" data-aos-delay="300">
-                Transform your business operations with intelligent automation
-                solutions tailored for your industry.
+              {section1.line1}
               </p>
             </div>
 
@@ -114,9 +113,9 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Choose MS Tech Hive?</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">{section2.title}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We combine cutting-edge technology with industry expertise to deliver solutions that drive real results.
+            {section2.line}
             </p>
           </div>
 
@@ -167,7 +166,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
+            <h2 className="text-4xl font-bold text-white mb-4">{section3.title}</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {section3.line}
             </p>
@@ -215,12 +214,11 @@ const Home = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4" data-aos="zoom-in">
-            Ready to Transform Your Business?
+          {section4.title}
           </h2>
 
           <p className="text-xl text-gray-800 mb-8" data-aos="fade-up" data-aos-delay="200">
-            Join hundreds of businesses that have accelerated their growth with
-            our automation solutions.
+          {section4.line}
           </p>
 
           <button
