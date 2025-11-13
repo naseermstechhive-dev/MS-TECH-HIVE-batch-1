@@ -141,58 +141,77 @@ const RetailShop = () => {
         </div>
       </section>
 
-      {/* ---------------- SECTION 3: BENEFITS + CTA BOX ---------------- */}
-      <section data-aos="fade-up" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left - bullets */}
-          <div>
-            <h2 className="text-4xl font-bold text-white mb-8">Retail Excellence Made Simple</h2>
-            <div className="space-y-4">
-              {[
-                "Reduce inventory management time by 50%",
-                "Automate stock reordering and alerts",
-                "Improve customer retention with CRM",
-                "Streamline checkout and payment processes",
-                "Generate detailed sales and profit reports",
-                "Optimize staff scheduling and performance",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center space-x-3">
-                  <CircleCheckBig className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">{text}</span>
-                </div>
-              ))}
-            </div>
+     {/* ---------------- SECTION 3: BENEFITS + CTA BOX ---------------- */}
+<section data-aos="fade-up" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+    {/* Left - bullets */}
+    <div data-aos="fade-right">
+      <h2 className="text-4xl font-bold text-white mb-8">Retail Excellence Made Simple</h2>
+
+      <div className="space-y-4">
+        {[
+          "Reduce inventory management time by 50%",
+          "Automate stock reordering and alerts",
+          "Improve customer retention with CRM",
+          "Streamline checkout and payment processes",
+          "Generate detailed sales and profit reports",
+          "Optimize staff scheduling and performance",
+        ].map((text, i) => (
+          <div
+            key={i}
+            className="flex items-center space-x-3"
+            data-aos="fade-up"
+            data-aos-delay={i * 120}  // individual text animation
+          >
+            <CircleCheckBig className="w-6 h-6 text-yellow-400 flex-shrink-0" />
+            <span className="text-gray-300 text-lg">{text}</span>
           </div>
+        ))}
+      </div>
+    </div>
 
-          {/* Right - yellow callout */}
-          <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-8 rounded-2xl text-gray-900 shadow-xl">
-            <h3 className="text-2xl font-bold mb-6">Boost Your Retail Success</h3>
-            <p className="text-lg mb-6">
-              Join successful retailers who have increased efficiency and customer satisfaction with our management solutions.
-            </p>
+    {/* Right - yellow callout */}
+    <div
+      className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-8 rounded-2xl text-gray-900 shadow-xl"
+      data-aos="fade-left"
+    >
+      <h3 className="text-2xl font-bold mb-6">Boost Your Retail Success</h3>
 
-            <div className="space-y-4 mb-6">
-              {[
-                "Tailored setup for your store type",
-                "Staff training and system onboarding",
-                "Ongoing support and maintenance",
-              ].map((text, i) => (
-                <div key={i} className="flex items-center space-x-3">
-                  <CircleCheckBig className="w-5 h-5 text-gray-900 flex-shrink-0" />
-                  <span className="text-gray-900 text-lg">{text}</span>
-                </div>
-              ))}
-            </div>
+      <p className="text-lg mb-6">
+        Join successful retailers who have increased efficiency and customer satisfaction
+        with our management solutions.
+      </p>
 
-            <button
-              onClick={() => navigate("/contact")}
-              className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
-            >
-              Schedule Demo
-            </button>
+      <div className="space-y-4 mb-6">
+        {[
+          "Tailored setup for your store type",
+          "Staff training and system onboarding",
+          "Ongoing support and maintenance",
+        ].map((text, i) => (
+          <div
+            key={i}
+            className="flex items-center space-x-3"
+            data-aos="fade-left"
+            data-aos-delay={i * 120}   // staggered AOS for CTA list
+          >
+            <CircleCheckBig className="w-5 h-5 text-gray-900 flex-shrink-0" />
+            <span className="text-gray-900 text-lg">{text}</span>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      <button
+        onClick={() => navigate("/contact")}
+        className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+      >
+        Schedule Demo
+      </button>
+    </div>
+
+  </div>
+</section>
+
     </div>
   );
 };
