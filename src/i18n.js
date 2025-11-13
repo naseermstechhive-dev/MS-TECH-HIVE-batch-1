@@ -15,6 +15,20 @@ import home_ta from '../public/locales/தமிழ்/home.json'
 import home_tl from '../public/locales/తెలుగు/home.json'
 import home_ka from '../public/locales/ಕನ್ನಡ/home.json'
 import home_ml from '../public/locales/മലയാളം/home.json'
+//Contact
+import cont_en from '../public/Locales/English/contact.json'
+import cont_hi from '../public/Locales/हिन्दी/contact.json'
+import cont_ta from '../public/Locales/தமிழ்/contact.json'
+import cont_tl from '../public/Locales/తెలుగు/contact.json'
+import cont_ka from '../public/Locales/ಕನ್ನಡ/contact.json'
+import cont_ml from '../public/Locales/മലയാളം/contact.json'
+//about
+import abt_en from '../public/Locales/English/about.json'
+import abt_hi from '../public/Locales/हिन्दी/about.json'
+import abt_ta from '../public/Locales/தமிழ்/about.json'
+import abt_tl from '../public/Locales/తెలుగు/about.json'
+import abt_ka from '../public/Locales/ಕನ್ನಡ/about.json'
+import abt_ml from '../public/Locales/മലയാളം/about.json'
 
 
 
@@ -31,6 +45,12 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         //Home Page
         home:home_en,
 
+        //Contact Page
+        cont:cont_en,
+
+        //About Page
+        abt:abt_en,
+
       },
     },
     हिन्दी:{
@@ -41,6 +61,11 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         //Home page 
         home:home_hi,
 
+        //Contact Page
+        cont:cont_hi,
+
+        //About Page
+        abt:abt_hi,
       },
     },
     తెలుగు:{
@@ -50,6 +75,12 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //Home Page
         home:home_tl,
+
+        //Contact Page
+        cont:cont_tl,
+
+        //About Page
+        abt:abt_tl,
         }
       },
     ಕನ್ನಡ:{
@@ -59,6 +90,12 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //Home Page
         home:home_ka,
+
+        //Contact Page
+        cont:cont_ka,
+
+        //About Page
+        abt:abt_ka,
       },
     },
     മലയാളം:{
@@ -68,6 +105,12 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
          //Home Page
         home:home_ml,
+
+        //Contact Page
+        cont:cont_ml,
+
+        //About Page
+        abt:abt_ml,
       },
     },
     தமிழ்:{
@@ -77,6 +120,12 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
          //Home Page
         home:home_ta,
+
+        //Contact Page
+        cont:cont_ta,
+
+        //About Page
+        abt:abt_ta,
       },
     },
     

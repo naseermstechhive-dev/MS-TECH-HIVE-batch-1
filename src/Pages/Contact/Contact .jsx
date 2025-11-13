@@ -2,8 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+
+  const {t} = useTranslation()
+  const {section1} = t("cont")
+  const {section2} = t("cont")
+  const {section3} = t("cont")
+  const {section4}= t("cont")
+
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -52,7 +61,7 @@ function Contact() {
       {/* ---------------- HERO SECTION ---------------- */}
       <div className="text-center py-16 px-6" data-aos="fade-up">
         <h1 className="text-6xl font-bold text-white mb-6" data-aos="zoom-in">
-          Get In Touch
+         {section1.title}
         </h1>
 
         <p
@@ -60,7 +69,7 @@ function Contact() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Ready to automate your work and accelerate your growth? Let's discuss how we can help transform your business.
+          {section1.line}
         </p>
       </div>
 
@@ -72,7 +81,7 @@ function Contact() {
           <div className="space-y-8" data-aos="fade-right">
             <div className="bg-slate-800 rounded-3xl p-10">
               <h2 className="text-4xl font-bold text-white mb-10" data-aos="zoom-in">
-                Contact Information
+                {section2.title}
               </h2>
 
               <div className="space-y-8">
@@ -83,7 +92,7 @@ function Contact() {
                     <Mail className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Email</div>
+                    <div className="text-white font-semibold text-lg mb-1">{section2.line1}</div>
                     <div className="text-gray-400 text-base">info@mstechhive.com</div>
                   </div>
                 </div>
@@ -94,7 +103,7 @@ function Contact() {
                     <Phone className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Phone</div>
+                    <div className="text-white font-semibold text-lg mb-1">{section2.line2}</div>
                     <div className="text-gray-400 text-base">+91 9032223352</div>
                   </div>
                 </div>
@@ -105,14 +114,14 @@ function Contact() {
                     <MapPin className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Address</div>
+                    <div className="text-white font-semibold text-lg mb-1">{section2.line3}</div>
                     <a
                       href="https://maps.app.goo.gl/xuJKp9urXsuoBeab9"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-400 hover:text-yellow-500 transition-colors text-base"
                     >
-                      View Our Location
+                      {section2.line4}
                     </a>
                   </div>
                 </div>
@@ -123,7 +132,7 @@ function Contact() {
                     <Clock className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Business Hours</div>
+                    <div className="text-white font-semibold text-lg mb-1">{section2.line5}</div>
                     <div className="text-gray-400 text-base">Mon - Fri: 9:00 AM - 6:00 PM</div>
                   </div>
                 </div>
@@ -139,7 +148,7 @@ function Contact() {
             data-aos-delay="200"
           >
             <h2 className="text-4xl font-bold text-white mb-10" data-aos="zoom-in">
-              Send Us a Message
+            {section2.title}
             </h2>
 
             <div className="space-y-6">
@@ -149,7 +158,7 @@ function Contact() {
 
                 <div data-aos="fade-up">
                   <label className="block text-white text-sm font-medium mb-3">
-                    Full Name *
+                   {section3.line1}*
                   </label>
                   <input
                     type="text"
@@ -164,7 +173,7 @@ function Contact() {
 
                 <div data-aos="fade-up" data-aos-delay="150">
                   <label className="block text-white text-sm font-medium mb-3">
-                    Email Address *
+                  {section3.line2} *
                   </label>
                   <input
                     type="email"
@@ -184,7 +193,7 @@ function Contact() {
 
                 <div data-aos="fade-up">
                   <label className="block text-white text-sm font-medium mb-3">
-                    Company Name
+                  {section3.line3}
                   </label>
                   <input
                     type="text"
@@ -198,7 +207,7 @@ function Contact() {
 
                 <div data-aos="fade-up" data-aos-delay="150">
                   <label className="block text-white text-sm font-medium mb-3">
-                    Industry
+                  {section3.line4}
                   </label>
                   <select
                     name="industry"
@@ -227,7 +236,7 @@ function Contact() {
               {/* Message */}
               <div data-aos="fade-up" data-aos-delay="250">
                 <label className="block text-white text-sm font-medium mb-3">
-                  Message *
+                {section3.line5} *
                 </label>
                 <textarea
                   name="message"
@@ -246,7 +255,7 @@ function Contact() {
                 className="w-full flex items-center justify-center px-8 py-5 bg-yellow-500 text-slate-900 font-bold text-lg rounded-xl hover:bg-yellow-400 transition-colors group"
                 data-aos="zoom-in"
               >
-                <span>Send Message</span>
+                <span>{section3.button}</span>
                 <Send className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -256,15 +265,15 @@ function Contact() {
         {/* ---------------- WHY CHOOSE US ---------------- */}
         <div className="mt-16 bg-yellow-500 rounded-3xl p-12" data-aos="fade-up">
           <h3 className="text-4xl font-bold text-slate-900 mb-8" data-aos="zoom-in">
-            Why Choose Us?
+          {section4.title}
           </h3>
 
           <div className="space-y-5">
             {[
-              "Industry-specific expertise across 12+ sectors",
-              "Proven track record of successful implementations",
-              "24/7 support and maintenance",
-              "Custom solutions tailored to your needs",
+              section4.line1,
+              section4.line2,
+              section4.line3,
+              section4.line4,
             ].map((text, i) => (
               <div
                 className="flex items-center space-x-4"

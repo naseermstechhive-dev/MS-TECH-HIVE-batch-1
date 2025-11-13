@@ -1,0 +1,38 @@
+{
+  "section1":{
+    "title1":"About MS Tech Hive",
+    "title2":"Our Mission",
+    "title3":"Our Vision",
+    "line1":"Empowering businesses with intelligent automation solutions since 2020",
+    "line2":"To help businesses across industries automate their workflows and accelerate growth through innovative technology solutions. We believe that every business deserves access to cutting-edge tools that drive efficiency and success.",
+    "line3":"To become the leading provider of automation solutions globally, transforming how businesses operate and helping them achieve unprecedented levels of efficiency and productivity."
+  },
+  "section2":{
+    "line1":"Projects Completed",
+    "line2":"Industries Served",
+    "line3":"Happy Clients",
+    "line4":"Years Experience"
+    
+  },
+  "section3":{
+    "title":"Our Values",
+    "line":"The principles that guide everything we do",
+    "cards":{
+      "title1":"Innovation",
+      "title2":"Customer First",
+      "title3":"Excellence",
+      "title4":"Collaboration",
+      "line1":"We constantly explore new technologies to deliver cutting-edge solutions.",
+      "line2":"Your success is our priority — we build long-lasting relationships.",
+      "line3":"We maintain the highest standards in all aspects of our work.",
+      "line4":"We work closely with our clients as trusted partners."
+    }
+    
+  },
+  "section4":{
+      "title":"Our Story",
+      "line1":"MS Tech Hive was founded with a simple yet powerful vision: to make advanced automation technology accessible to businesses of all sizes.",
+      "line2":"We recognized that many businesses were struggling with repetitive tasks and inefficient processes. We set out to change that with intelligent automation solutions that unlock growth.",
+      "line3":"Today, we're proud to have transformed hundreds of businesses. Our commitment to innovation and customer success continues to drive us every day."
+  }
+}
