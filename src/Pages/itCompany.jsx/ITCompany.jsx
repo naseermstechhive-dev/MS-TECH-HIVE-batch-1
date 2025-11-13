@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Lucide icons
 import {
   Monitor,
   Users,
@@ -18,16 +17,15 @@ const ITCompany = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Initialize AOS for continuous repeated animations
     AOS.init({
       duration: 900,
       easing: "ease-in-out",
-      once: false, // allow animations to repeat when scrolling up/down
-      mirror: true, // animate elements in reverse when scrolling up
+      once: false, 
+      mirror: true, 
     });
 
     const onScroll = () => {
-      AOS.refresh(); // refresh AOS during scroll for continuous behavior
+      AOS.refresh(); 
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
