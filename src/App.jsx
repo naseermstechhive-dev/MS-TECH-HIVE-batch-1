@@ -1,14 +1,19 @@
 import React from 'react'
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from './components/navbar/Navbar'
 import { Route, Routes } from 'react-router-dom'
-import Home from './Pages/Home/Home'
-import Footer from './Components/Footer/Footer'
-import Hospital from './Pages/Hospital/Hospital';
-import School from './Pages/School/School'
-import College from './Pages/College/College'
-import Restaurant from './Pages/Restaurant/Restaurant';
-import Office from './Pages/Office/Office'
-import RetailShop from './Pages/RetailShop/RetailShop'
+import Home from './pages/home/Home'
+import Hospital from './pages/hospital/Hospital';
+import School from './pages/school/School'
+import College from './pages/college/College'
+import Restaurant from './pages/restaurant/Restaurant';
+import Office from './pages/office/Office'
+import RetailShop from './pages/retailShop/RetailShop'
+import Construction from './pages/Construction.jsx/Construction'
+import Logistics from './pages/logistics/Logistics'
+import ITCompany from './pages/itCompany.jsx/ITCompany'
+import Ecommerce from './pages/ecommerce/Ecommerce'
+import ClinicLab from './Pages/clinicLab/ClinicLab'
+import Footer from './Components/Footer/Footer';
 
 const App = () => {
   return (
@@ -26,7 +31,11 @@ const App = () => {
           <Route path='/restaurant' element={<Restaurant />}></Route>
           <Route path='/office' element={<Office />}></Route>
           <Route path='/retail-shop' element={<RetailShop />}></Route>
-
+          <Route path='/construction' element={<Construction />}></Route>
+          <Route path='/logistics' element={<Logistics />}></Route>
+          <Route path='/it-company' element={<ITCompany /> } ></Route>
+          <Route path='/e-commerce' element={<Ecommerce /> }></Route>
+          <Route path='/clinic-lab' element={<ClinicLab /> }></Route>
         </Routes>
         <Footer/>
     </div>
