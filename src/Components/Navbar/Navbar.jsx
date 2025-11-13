@@ -11,7 +11,8 @@ const Navbar = () => {
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const hideTimeoutRef = useRef(null);
   const {t} = useTranslation()
-  const links = t("nav")
+  // console.log(t("nav1"));
+  const links = t("nav1")
 // console.log(links.link1);
   const languages = [
     { region: "US", label: "English" },

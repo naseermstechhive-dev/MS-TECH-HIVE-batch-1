@@ -154,12 +154,12 @@ const Home = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { icon: <Building2 className="w-10 h-10 mx-auto mb-3" />, label: "Healthcare" },
-              { icon: <GraduationCap className="w-10 h-10 mx-auto mb-3" />, label: "Education" },
-              { icon: <Utensils className="w-10 h-10 mx-auto mb-3" />, label: "Restaurant" },
-              { icon: <ShoppingBag className="w-10 h-10 mx-auto mb-3" />, label: "Retail" },
-              { icon: <Construction className="w-10 h-10 mx-auto mb-3" />, label: "Construction" },
-              { icon: <Laptop className="w-10 h-10 mx-auto mb-3" />, label: "IT Company" },
+              { icon: <Building2 className="w-10 h-10 mx-auto mb-3" />, label: section3.card.one },
+              { icon: <GraduationCap className="w-10 h-10 mx-auto mb-3" />, label: section3.card.two },
+              { icon: <Utensils className="w-10 h-10 mx-auto mb-3" />, label: section3.card.three },
+              { icon: <ShoppingBag className="w-10 h-10 mx-auto mb-3" />, label: section3.card.four },
+              { icon: <Construction className="w-10 h-10 mx-auto mb-3" />, label: section3.card.five },
+              { icon: <Laptop className="w-10 h-10 mx-auto mb-3" />, label: section3.card.six },
             ].map((item, i) => (
               <div
                 key={i}
