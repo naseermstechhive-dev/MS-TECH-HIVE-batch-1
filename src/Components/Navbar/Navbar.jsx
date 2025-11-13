@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
-import { Menu, X, Globe } from "lucide-react";
 
 const Navbar = () => {
   const [isIndustryDropdownVisible, setIsIndustryDropdownVisible] =
