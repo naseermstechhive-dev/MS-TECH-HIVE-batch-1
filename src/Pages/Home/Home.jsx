@@ -1,4 +1,3 @@
-// src/components/Home.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -173,7 +172,7 @@ const Home = () => {
       </section>
 
       {/* ---------------- READY TO TRANSFORM SECTION ---------------- */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#facc15] to-[#ca8a04] text-gray-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r text-gray-900 to-[#ca8a04] from-[#facc15]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">
             Ready to Transform Your Business?
