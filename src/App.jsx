@@ -16,6 +16,7 @@ import ITCompany from './pages/itCompany.jsx/ITCompany';
 import ClinicLab from './pages/clinicLab/ClinicLab';
 import Restaurant from './pages/restaurant/Restaurant';
 import Contact from './pages/contact/Contact ';
+import Industries from './pages/industries/Industries';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
           <Route path='/' element={<Home/>}></Route>
           <Route path='/About' element={<About/>}></Route>
           <Route path='/Services' element={<Service/>}></Route>
-          <Route path='/Industreis' element=""></Route>
+          <Route path='/industries' element={<Industries />}></Route>
           <Route path='/Contact' element={<Contact />}></Route>
           <Route path='/hospital' element={<Hospital />}></Route>
           <Route path='/school' element={<School />}></Route>
