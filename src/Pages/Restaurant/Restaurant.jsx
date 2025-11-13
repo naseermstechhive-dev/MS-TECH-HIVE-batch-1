@@ -14,8 +14,6 @@ import {
 
 const Restaurant = () => {
   const navigate = useNavigate();
-
-  // Initialize AOS (continuous animations)
   useEffect(() => {
     AOS.init({
       duration: 1000,

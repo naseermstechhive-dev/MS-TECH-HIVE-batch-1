@@ -20,8 +20,8 @@ const Logistics = () => {
   useEffect(() => {
     AOS.init({
       duration: 900,
-      once: false,   // continuous scrolling animation
-      mirror: true,  // animate on scroll up
+      once: false,   
+      mirror: true,  
       offset: 120,
     });
 
