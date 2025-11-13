@@ -18,11 +18,10 @@ const RetailShop = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: false,     // allow repeated animations while scrolling
-      mirror: true,    // animate elements when scrolling past them in both directions
+      once: false,    
+      mirror: true,    
       offset: 120,
     });
-    // refresh AOS on update (useful if content sizes change)
     AOS.refresh();
   }, []);
 
