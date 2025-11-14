@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 import {
   Users,
   GraduationCap,
@@ -16,6 +17,11 @@ import { GlobalContext } from "../../context/Context";
 const College = () => {
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
+  const navigate = useNavigate();
+  const {t} = useTranslation()
+  const {section1} = t("clg")
+  const {section2} = t("clg")
+  const {section3} = t("clg")
 
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
   const heroBg = mode
@@ -72,7 +78,7 @@ const College = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  College
+                   {section1.line1}
                 </h1>
 
                 <p
@@ -90,8 +96,7 @@ const College = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Modernize college operations with smart admissions, analytics,
-              dashboards, and automated administrative workflows.
+             {section1.line2}
             </p>
 
             <div
@@ -103,14 +108,14 @@ const College = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                {section1.button2}
               </button>
             </div>
           </div>
@@ -148,7 +153,7 @@ const College = () => {
             className={`text-4xl font-bold mb-4 ${heroTitle}`}
             data-aos="fade-up"
           >
-            Comprehensive College Management Platform
+            {section2.title}
           </h2>
 
           <p
@@ -156,7 +161,7 @@ const College = () => {
             data-aos="fade-up"
             data-aos-delay="120"
           >
-            Manage admissions, courses, analytics, academic records and more.
+            {section2.line}
           </p>
         </div>
 
@@ -165,33 +170,35 @@ const College = () => {
           {[
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Admission Management",
-              desc: "Automated document verification, application processing, and workflows.",
+               title: section2.cards.title1,
+                desc: section2.cards.line1,
             },
             {
               icon: <GraduationCap className="w-8 h-8 text-yellow-400" />,
-              title: "Student Dashboards",
-              desc: "Student portals with course registration, grades, and academic progress.",
+              title: section2.cards.title2,
+                desc: section2.cards.line2,
             },
             {
-              icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />,
-              title: "Analytics & Reporting",
-              desc: "Advanced student performance analytics and institutional insights.",
+              icon: (
+                <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />
+              ),
+              title: section2.cards.title3,
+                desc:section2.cards.line3,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-400" />,
-              title: "Course Management",
-              desc: "Automated faculty assignment, scheduling, and resources.",
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-400" />,
-              title: "Academic Records",
-              desc: "Digital transcripts, degree verification, academic history tracking.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <CreditCard className="w-8 h-8 text-yellow-400" />,
-              title: "Fee Management",
-              desc: "Automated fee collection, scholarships, and financial aid processing.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -218,17 +225,17 @@ const College = () => {
               className={`text-4xl font-bold mb-8 ${heroTitle}`}
               data-aos="fade-up"
             >
-              Elevate Higher Education Standards
+              {section3.title1}
             </h2>
 
             <div className="space-y-4">
               {[
-                "Reduce admission processing time by 60%",
-                "Automate course registration & scheduling",
-                "Improve student engagement with dashboards",
-                "Streamline fee collection & financial aid",
-                "Generate academic performance reports",
-                "Enhance decision-making with analytics",
+                section3.line1,
+                   section3.line2,
+                   section3.line3,
+                   section3.line4,
+                   section3.line5,
+                   section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -250,7 +257,7 @@ const College = () => {
             data-aos-delay="200"
           >
             <h3 className="text-2xl font-bold mb-4" data-aos="fade-up">
-              Ready for Digital Transformation?
+              {section3.title2}
             </h3>
 
             <p
@@ -258,14 +265,14 @@ const College = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Join colleges that modernized admissions, academics, and operations.
+               {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Tailored solution for your institution",
-                "Faculty & staff training included",
-                "Step-by-step implementation",
+                section3.line8,
+                section3.line9,
+                section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -285,7 +292,7 @@ const College = () => {
               data-aos="zoom-in"
               data-aos-delay="250"
             >
-              Schedule Consultation
+              {section3.button}
             </button>
           </div>
 

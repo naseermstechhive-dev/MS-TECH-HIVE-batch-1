@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 import {
   Users,
   Calendar,
@@ -16,6 +17,10 @@ import { GlobalContext } from "../../context/Context";
 
 const School = () => {
   const navigate = useNavigate();
+   const {t} = useTranslation()
+  const {section1} = t("sch")
+  const {section2} = t("sch")
+  const {section3} = t("sch")
   const { mode } = useContext(GlobalContext);
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
 
@@ -70,7 +75,7 @@ const School = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  School
+                 {section1.title}
                 </h1>
 
                 <p
@@ -78,7 +83,7 @@ const School = () => {
                   data-aos="fade-up"
                   data-aos-delay="150"
                 >
-                  Education Management Solutions
+                  {section1.line1}
                 </p>
               </div>
             </div>
@@ -88,8 +93,7 @@ const School = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Revolutionize your school operations with automated attendance,
-              communication, analytics, and complete education management.
+               {section1.line2}
             </p>
 
             <div 
@@ -101,14 +105,14 @@ const School = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                {section1.button2}
               </button>
             </div>
           </div>
@@ -147,7 +151,7 @@ const School = () => {
             className={`text-4xl font-bold mb-4 ${heroTitle}`}
             data-aos="fade-up"
           >
-            Complete School Management System
+             {section2.title}
           </h2>
 
           <p
@@ -155,7 +159,7 @@ const School = () => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Manage every part of school operations with ease and automation.
+             {section2.line}
           </p>
         </div>
 
@@ -164,33 +168,35 @@ const School = () => {
           {[
             {
               icon: <Users className="w-8 h-8 text-yellow-500" />,
-              title: "Student Management",
-              desc: "Profiles, enrollment tracking, academic progress monitoring.",
+              title: section2.cards.title1,
+              desc: section2.cards.line1,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-500" />,
-              title: "Attendance Tracking",
-              desc: "Automated attendance with real-time parent notifications.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <MessageSquare className="w-8 h-8 text-yellow-500" />,
-              title: "Parent Communication",
-              desc: "Instant communication between teachers and parents.",
+              title: section2.cards.title3,
+                desc:section2.cards.line3,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-500" />,
-              title: "Grade Management",
-              desc: "Digital gradebooks, report cards, and academic tracking.",
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
-              icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-500" />,
-              title: "Academic Analytics",
-              desc: "Track performance, attendance patterns, and school analytics.",
+              icon: (
+                <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-500" />
+              ),
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Shield className="w-8 h-8 text-yellow-500" />,
-              title: "Safety & Security",
-              desc: "Check-in/out systems with emergency communication tools.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -217,17 +223,17 @@ const School = () => {
               className={`text-4xl font-bold mb-8 ${heroTitle}`}
               data-aos="fade-up"
             >
-              Enhance Educational Excellence
+                 {section3.title1}
             </h2>
 
             <div className="space-y-4">
               {[
-                "Reduce administrative tasks by 50%",
-                "Improve parent engagement by 75%",
-                "Automate attendance & grade reporting",
-                "Streamline teacher-parent communication",
-                "Real-time progress tracking",
-                "Better school safety protocols",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -249,18 +255,17 @@ const School = () => {
             data-aos-delay="250"
           >
             <h3 className="text-2xl font-bold mb-4" data-aos="fade-up">
-              Transform Your School Today
+              {section3.title2}
             </h3>
 
             <p className="text-lg mb-6" data-aos="fade-up" data-aos-delay="80">
-              Join modern schools using our automation solutions for education.
+               {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Personalized demo for your school",
-                "Full staff training included",
-                "Step-by-step implementation",
+                 section3.line9,
+                 section3.line10,
               ].map((text, i) => (
                 <div
                   className="flex items-center space-x-3"
@@ -280,7 +285,7 @@ const School = () => {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              Schedule Demo
+              {section3.button}
             </button>
           </div>
 

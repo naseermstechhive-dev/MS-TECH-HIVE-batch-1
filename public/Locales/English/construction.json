@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"Construction",
+    "line1":"Project Management Solutions",
+    "line2":"Revolutionize your construction projects with comprehensive tracking systems, worker management, progress monitoring, and resource planning automation.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Construction Management Platform",
+    "line":"Build better projects with intelligent tracking, resource management, and real-time progress monitoring",
+    "cards":{
+      "title1":"Project Tracking",
+      "title2":" Worker Management",
+      "title3":"Resource Planning",
+      "title4":"Progress Monitoring",
+      "title5":"Documentation Management",
+      "title6":"Time & Cost Tracking",
+      "line1":"Comprehensive project management with milestone tracking, progress monitoring, and deadline management.",
+      "line2":"Digital worker logs, attendance tracking, and skill-based task assignment systems.",
+      "line3":"Equipment scheduling, material tracking, and resource allocation optimization.",
+      "line4":"Real-time project dashboards with visual progress tracking and performance analytics.",
+      "line5":"Digital blueprints, permits, inspection reports, and compliance documentation.",
+      "line6":"Automated time tracking, cost management, and budget monitoring systems."
+    }
+  },
+  "section3":{
+    "title1":"Build Smarter, Not Harder",
+    "title2":"Ready to Modernize Your Projects?",
+    "line1":"Reduce project delays by 35%",
+    "line2":"Improve worker productivity tracking",
+    "line3":"Automate compliance and safety reporting",
+    "line4":"Streamline equipment and material management",
+    "line5":"Real-time project progress visibility",
+    "line6":"Optimize resource allocation and costs",
+    "line7":"Join construction companies that have improved project efficiency and reduced delays with our management solutions.",
+    "line8":"Custom solution for your project types",
+    "line9":"Team training and system implementation",
+    "line10":"Field support and mobile access",
+    "button":"Schedule Consultation"
+  }
+}

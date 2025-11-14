@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 import {
   Users,
   FileText,
@@ -16,6 +17,11 @@ import { GlobalContext } from "../../context/Context";
 const Office = () => {
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
+   const navigate = useNavigate();
+  const {t} = useTranslation()
+  const {section1} = t("ofc")
+  const {section2} = t("ofc")
+  const {section3} = t("ofc")
 
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
   const heroBg = mode
@@ -70,14 +76,14 @@ const Office = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  Office
+                  {section1.title}
                 </h1>
                 <p
                   className={`text-xl ${heroSub}`}
                   data-aos="fade-up"
                   data-aos-delay="150"
                 >
-                  Corporate Automation Solutions
+                  {section1.line1}
                 </p>
               </div>
             </div>
@@ -87,9 +93,7 @@ const Office = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Transform your office operations with comprehensive HR systems,
-              document management, task automation, and employee productivity
-              tools.
+              {section1.line2}
             </p>
 
             <div
@@ -101,13 +105,13 @@ const Office = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                   {section1.button1}
               </button>
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                 {section1.button2}
               </button>
             </div>
           </div>
@@ -147,15 +151,14 @@ const Office = () => {
             className={`text-4xl font-bold mb-4 ${mode ? "text-gray-900" : "text-white"}`}
             data-aos="fade-up"
           >
-            Modern Office Management Platform
+          {section2.title}
           </h2>
           <p
             className={`text-xl ${mode ? "text-gray-700" : "text-gray-300"} max-w-3xl mx-auto`}
             data-aos="fade-up"
             data-aos-delay="120"
           >
-            Digitize and automate your office operations for maximum efficiency
-            and productivity.
+             {section2.line}
           </p>
         </div>
 
@@ -166,33 +169,33 @@ const Office = () => {
           {[
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "HR Management System",
-              desc: "Comprehensive employee management, payroll processing, and performance tracking automation.",
+              title: section2.cards.title1,
+              desc: section2.cards.line1,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-400" />,
-              title: "Document Management",
-              desc: "Digital document storage, automated workflows, and secure file sharing systems.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-400" />,
-              title: "Task Automation",
-              desc: "Streamlined project management, automated task assignment, and progress tracking.",
+              title: section2.cards.title3,
+              desc:section2.cards.line3,
             },
             {
               icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />,
-              title: "Analytics Dashboard",
-              desc: "Real-time insights into productivity metrics, employee performance, and operational efficiency.",
+             title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: <Shield className="w-8 h-8 text-yellow-400" />,
-              title: "Employee Portals",
-              desc: "Self-service portals for leave management, expense reporting, and benefits administration.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Time Tracking",
-              desc: "Automated time and attendance tracking with integrated payroll processing.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -221,16 +224,16 @@ const Office = () => {
           {/* Left Column */}
           <div data-aos="fade-right">
             <h2 className={`text-4xl font-bold mb-8 ${mode ? "text-gray-900" : "text-white"}`} data-aos="fade-up">
-              Build a Smarter Workplace
+               {section3.title1}
             </h2>
             <div className="space-y-4">
               {[
-                "Reduce administrative overhead by 60%",
-                "Automate repetitive office tasks",
-                "Improve employee productivity tracking",
-                "Streamline HR processes and payroll",
-                "Enhance document security and access",
-                "Create better workplace collaboration",
+                 section3.line1,
+                 section3.line2,
+                 section3.line3,
+                 section3.line4,
+                 section3.line5,
+                 section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -247,17 +250,16 @@ const Office = () => {
 
           {/* Right Column */}
           <div className={`${rightBoxBg} p-8 rounded-2xl shadow-xl`} data-aos="zoom-in" data-aos-delay="200">
-            <h3 className="text-2xl font-bold mb-6">Ready to Go Digital?</h3>
+            <h3 className="text-2xl font-bold mb-6">{section3.title2}</h3>
             <p className="text-lg mb-6">
-              Join forward-thinking companies that have transformed their office
-              operations with intelligent automation.
+            {section3.line7}
             </p>
 
             <div className="space-y-4 mb-6">
               {[
-                "Customized solution for your office size",
-                "Employee training and change management",
-                "Ongoing support and system updates",
+                 section3.line8,
+                 section3.line9,
+                 section3.line10,
               ].map((text, i) => (
                 <div className="flex items-center space-x-3" key={i} data-aos="fade-left" data-aos-delay={i * 120}>
                   <CircleCheckBig className="w-5 h-5 text-gray-900 flex-shrink-0" />
@@ -270,7 +272,7 @@ const Office = () => {
               onClick={() => navigate("/contact")}
               className="mt-6 inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
             >
-              Schedule Consultation
+             {section3.button}
             </button>
           </div>
 

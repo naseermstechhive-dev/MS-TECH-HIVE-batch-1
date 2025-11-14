@@ -13,6 +13,7 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GlobalContext } from "../../context/Context";
 
 const ITCompany = () => {
@@ -38,6 +39,11 @@ const ITCompany = () => {
   const rightBoxBg = mode
     ? "bg-gradient-to-br from-yellow-300 to-yellow-400 text-gray-900"
     : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900";
+
+  const {t} = useTranslation()
+  const {section1} = t("it")
+  const {section2} = t("it")
+  const {section3} = t("it")
 
   useEffect(() => {
     AOS.init({
@@ -68,15 +74,13 @@ const ITCompany = () => {
             <div className="flex items-center space-x-4 mb-6 max-[600px]:space-x-2 max-[350px]:space-x-1">
               <div className="text-5xl max-[600px]:text-4xl max-[350px]:text-3xl">💻</div>
               <div>
-                <h1 className={`text-5xl ${heroTitle} max-[600px]:text-4xl max-[350px]:text-3xl`}>IT Company</h1>
-                <p className={`text-xl ${heroSub} max-[600px]:text-lg max-[350px]:text-base`}>Tech Project Solutions</p>
+                <h1 className={`text-5xl ${heroTitle} max-[600px]:text-4xl max-[350px]:text-3xl`}>{section1.title}</h1>
+                <p className={`text-xl ${heroSub} max-[600px]:text-lg max-[350px]:text-base`}> {section1.line1}</p>
               </div>
             </div>
 
             <p className={`text-xl leading-relaxed mb-0 ${heroDesc} max-[600px]:text-lg max-[350px]:text-base max-[350px]:leading-relaxed`}>
-              Enhance your IT operations with comprehensive project dashboards,
-              client communication portals, team collaboration tools, and
-              resource management systems.
+                         {section1.line2}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 max-[600px]:gap-3 max-[350px]:gap-2" data-aos="fade-up">
@@ -84,14 +88,14 @@ const ITCompany = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors max-[600px]:px-6 max-[600px]:py-3 max-[350px]:px-4 max-[350px]:py-2 max-[350px]:text-sm"
               >
-                Get Started Today
+                 {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors max-[600px]:px-6 max-[600px]:py-3 max-[350px]:px-4 max-[350px]:py-2 max-[350px]:text-sm"
               >
-                View All Services
+              {section1.button2}
               </button>
             </div>
           </div>
@@ -122,9 +126,9 @@ const ITCompany = () => {
       <section className={`py-20 px-4 sm:px-6 lg:px-8 ${sectionBg} max-[350px]:py-12 max-[350px]:px-2 max-[600px]:py-16 max-[600px]:px-3`} data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 max-[600px]:mb-12 max-[350px]:mb-8" data-aos="fade-up">
-            <h2 className={`text-4xl font-bold mb-4 ${heroTitle} max-[600px]:text-3xl max-[350px]:text-2xl`}>Complete IT Project Management Platform</h2>
+            <h2 className={`text-4xl font-bold mb-4 ${heroTitle} max-[600px]:text-3xl max-[350px]:text-2xl`}> {section2.title}</h2>
             <p className={`${heroDesc} text-xl max-w-3xl mx-auto max-[600px]:text-lg max-[350px]:text-base`}>
-              Streamline development workflows, enhance client relationships, and optimize team productivity
+             {section2.line}
             </p>
           </div>
 
@@ -138,9 +142,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 max-[600px]:mb-3 max-[350px]:mb-2">
                 <Monitor className="w-8 h-8 text-yellow-400 max-[600px]:w-7 max-[600px]:h-7 max-[350px]:w-6 max-[350px]:h-6" />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>Project Dashboards</h3>
+              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>{section2.cards.title1}</h3>
               <p className={`${cardDesc} max-[600px]:text-sm max-[350px]:text-xs`}>
-                Comprehensive project management dashboards with real-time progress tracking and team collaboration.
+                {section2.cards.line1}
               </p>
             </div>
 
@@ -153,9 +157,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 max-[600px]:mb-3 max-[350px]:mb-2">
                 <Users className="w-8 h-8 text-yellow-400 max-[600px]:w-7 max-[600px]:h-7 max-[350px]:w-6 max-[350px]:h-6" />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>Client Portals</h3>
+              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>{section2.cards.title2}</h3>
               <p className={`${cardDesc} max-[600px]:text-sm max-[350px]:text-xs`}>
-                Dedicated client communication portals with project updates, document sharing, and feedback systems.
+               {section2.cards.line2}
               </p>
             </div>
 
@@ -168,9 +172,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 max-[600px]:mb-3 max-[350px]:mb-2">
                 <BarChart3 className="w-8 h-8 text-yellow-400 max-[600px]:w-7 max-[600px]:h-7 max-[350px]:w-6 max-[350px]:h-6" />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>Resource Management</h3>
+              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>{section2.cards.title3}</h3>
               <p className={`${cardDesc} max-[600px]:text-sm max-[350px]:text-xs`}>
-                Team allocation, skill tracking, and resource optimization for maximum project efficiency.
+                      {section2.cards.line3}
               </p>
             </div>
 
@@ -183,9 +187,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 max-[600px]:mb-3 max-[350px]:mb-2">
                 <FileText className="w-8 h-8 text-yellow-400 max-[600px]:w-7 max-[600px]:h-7 max-[350px]:w-6 max-[350px]:h-6" />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>Documentation Systems</h3>
+              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>{section2.cards.title4}</h3>
               <p className={`${cardDesc} max-[600px]:text-sm max-[350px]:text-xs`}>
-                Automated documentation generation, version control, and knowledge base management.
+              {section2.cards.line4}
               </p>
             </div>
 
@@ -198,9 +202,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 max-[600px]:mb-3 max-[350px]:mb-2">
                 <Calendar className="w-8 h-8 text-yellow-400 max-[600px]:w-7 max-[600px]:h-7 max-[350px]:w-6 max-[350px]:h-6" />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>Sprint Planning</h3>
+              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>{section2.cards.title5}</h3>
               <p className={`${cardDesc} max-[600px]:text-sm max-[350px]:text-xs`}>
-                Agile project management with sprint planning, backlog management, and velocity tracking.
+               {section2.cards.line5}
               </p>
             </div>
 
@@ -213,9 +217,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300 max-[600px]:mb-3 max-[350px]:mb-2">
                 <Clock className="w-8 h-8 text-yellow-400 max-[600px]:w-7 max-[600px]:h-7 max-[350px]:w-6 max-[350px]:h-6" />
               </div>
-              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>Time Tracking</h3>
+              <h3 className={`text-xl font-semibold mb-3 ${cardTitle} max-[600px]:text-lg max-[350px]:text-base`}>{section2.cards.title6}</h3>
               <p className={`${cardDesc} max-[600px]:text-sm max-[350px]:text-xs`}>
-                Automated time tracking, billing integration, and productivity analytics for teams.
+              {section2.cards.line6}
               </p>
             </div>
           </div>
@@ -230,16 +234,16 @@ const ITCompany = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-[600px]:gap-8 max-[350px]:gap-6">
           {/* Left list */}
           <div data-aos="fade-right">
-            <h2 className={`text-4xl font-bold mb-8 ${heroTitle} max-[600px]:text-3xl max-[350px]:text-2xl`}>Code Better, Deliver Faster</h2>
+            <h2 className={`text-4xl font-bold mb-8 ${heroTitle} max-[600px]:text-3xl max-[350px]:text-2xl`}>{section3.title1}</h2>
 
             <div className="space-y-4 max-[600px]:space-y-3 max-[350px]:space-y-2">
               {[
-                "Improve project delivery times by 40%",
-                "Enhance client communication and satisfaction",
-                "Automate time tracking and billing processes",
-                "Optimize team resource allocation",
-                "Streamline development workflows",
-                "Increase team productivity by 35%",
+                section3.line1,
+           section3.line2,
+           section3.line3,
+           section3.line4,
+           section3.line5,
+           section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -261,7 +265,7 @@ const ITCompany = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Ready to Scale Your IT Operations?
+                  {section3.title2}
             </h3>
 
             <p
@@ -269,15 +273,14 @@ const ITCompany = () => {
               data-aos="fade-up"
               data-aos-delay="150"
             >
-              Join successful IT companies that have improved project delivery and
-              client satisfaction with our management solutions.
+               {section3.line7}
             </p>
 
             <div className="space-y-4 max-[600px]:space-y-3 max-[350px]:space-y-2">
               {[
-                "Custom setup for your development methodology",
-                "Team training and integration support",
-                "API integrations with existing tools",
+                  section3.line8,
+          section3.line9,
+          section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -297,7 +300,7 @@ const ITCompany = () => {
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              Schedule Consultation
+                {section3.button}
             </button>
           </div>
         </div>

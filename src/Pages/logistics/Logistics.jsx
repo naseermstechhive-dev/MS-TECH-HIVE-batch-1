@@ -13,6 +13,7 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 import { GlobalContext } from "../../context/Context";
 
@@ -41,6 +42,11 @@ const Logistics = () => {
   const rightBoxBg = mode
     ? "bg-gradient-to-br from-yellow-300 to-yellow-400 text-gray-900"
     : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900";
+
+  const {t} = useTranslation()
+  const {section1} = t("log")
+  const {section2} = t("log")
+  const {section3} = t("log")
 
   useEffect(() => {
     AOS.init({
@@ -72,15 +78,13 @@ const Logistics = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl">🚚</div>
               <div>
-                <h1 className={`text-5xl max-[500px]:text-4xl font-bold ${heroTitle}`}>Logistics</h1>
-                <p className={`text-xl ${heroSub}`}>Transportation Solutions</p>
+                <h1 className={`text-5xl max-[500px]:text-4xl font-bold ${heroTitle}`}>{section1.title}</h1>
+                <p className={`text-xl ${heroSub}`}>{section1.line1}</p>
               </div>
             </div>
 
             <p className={`text-xl leading-relaxed ${heroDesc}`}>
-              Optimize your logistics operations with comprehensive fleet
-              management, route optimization, delivery tracking, and warehouse
-              management systems.
+             {section1.line2}
             </p>
 
             <div 
@@ -91,14 +95,14 @@ const Logistics = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                 {section1.button2}
               </button>
             </div>
           </div>
@@ -131,47 +135,46 @@ const Logistics = () => {
       <section className={`py-20 px-4 sm:px-6 lg:px-8 ${featureSectionBg}`} data-aos="fade-up">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className={`text-4xl font-bold mb-4 ${heroTitle}`}>
-            Complete Logistics Management Suite
+            {section2.title}
           </h2>
           <p className={`text-xl max-w-3xl mx-auto ${heroDesc}`}>
-            From fleet management to last-mile delivery, optimize every aspect
-            of your logistics operations.
+  {section2.line}
           </p>
         </div>
 
         {/* GRID (6 CARDS) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {[
-            {
-              icon: <Truck className="w-8 h-8 text-yellow-400" />,
-              title: "Fleet Management",
-              desc: "Vehicle tracking, maintenance scheduling, and driver management.",
-            },
-            {
-              icon: <MapPin className="w-8 h-8 text-yellow-400" />,
-              title: "Route Optimization",
-              desc: "AI-powered route planning for fast & fuel-efficient delivery.",
-            },
-            {
-              icon: <Package className="w-8 h-8 text-yellow-400" />,
-              title: "Shipment Tracking",
-              desc: "Real-time tracking with customer notifications.",
-            },
-            {
-              icon: <BarChart3 className="w-8 h-8 text-yellow-400" />,
-              title: "Analytics Dashboard",
-              desc: "KPIs, delivery analytics & efficiency insights.",
-            },
-            {
-              icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Driver Management",
-              desc: "Driver schedules, performance & communication.",
-            },
-            {
-              icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Delivery Automation",
-              desc: "Automated dispatch & delivery scheduling.",
-            },
+             {
+                icon: <Truck className="w-8 h-8 text-yellow-400" />,
+                title: section2.cards.title1,
+                desc: section2.cards.line1,
+              },
+              {
+                icon: <MapPin className="w-8 h-8 text-yellow-400" />,
+                title: section2.cards.title2,
+                desc: section2.cards.line2,
+              },
+              {
+                icon: <Package className="w-8 h-8 text-yellow-400" />,
+                title: section2.cards.title3,
+                desc:section2.cards.line3,
+              },
+              {
+                icon: <BarChart3 className="w-8 h-8 text-yellow-400" />,
+                title: section2.cards.title4,
+                desc: section2.cards.line4,
+              },
+              {
+                icon: <Users className="w-8 h-8 text-yellow-400" />,
+                title:section2.cards.title5,
+                desc: section2.cards.line5,
+              },
+              {
+                icon: <Clock className="w-8 h-8 text-yellow-400" />,
+                title:section2.cards.title6,
+                desc: section2.cards.line6,
+              },
           ].map((item, i) => (
             <div
               key={i}
@@ -199,17 +202,17 @@ const Logistics = () => {
           {/* LEFT */}
           <div data-aos="fade-right">
             <h2 className={`text-4xl font-bold mb-8 ${heroTitle}`}>
-              Deliver Excellence Every Mile
+             {section3.title1}
             </h2>
 
             <div className="space-y-5">
               {[
-                "Reduce delivery times by 40%",
-                "Optimize fuel consumption & routes",
-                "Improve customer satisfaction",
-                "Automate dispatch & scheduling",
-                "Real-time package & fleet tracking",
-                "Cut operational costs by 25%",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((txt, i) => (
                 <div
                   key={i}
@@ -226,18 +229,17 @@ const Logistics = () => {
 
           {/* RIGHT CTA BOX */}
           <div className={`${rightBoxBg} p-8 rounded-2xl shadow-xl`} data-aos="fade-left">
-            <h3 className="text-2xl font-bold mb-4">Ready to Optimize Your Fleet?</h3>
+            <h3 className="text-2xl font-bold mb-4">{section3.title2}</h3>
 
             <p className="text-lg mb-6">
-              Join top logistics companies using automation to improve delivery speed
-              and reduce operational costs.
+               {section3.line7}
             </p>
 
             <div className="space-y-4 mb-6">
               {[
-                "Custom solution for your fleet size",
-                "Driver training + mobile app support",
-                "24/7 monitoring & assistance",
+                section3.line8,
+                 section3.line9,
+                 section3.line10,
               ].map((txt, i) => (
                 <div key={i} data-aos="fade-left" data-aos-delay={i * 120} className="flex items-center space-x-3">
                   <CircleCheckBig className="w-5 h-5 text-gray-900" />
@@ -250,7 +252,7 @@ const Logistics = () => {
               onClick={() => navigate("/contact")}
               className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
             >
-              Schedule Demo
+              {section3.button}
             </button>
           </div>
 

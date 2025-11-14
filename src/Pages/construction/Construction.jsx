@@ -11,11 +11,18 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GlobalContext } from "../../context/Context";
 
 const Construction = () => {
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
+
+  const {t} = useTranslation()
+  const {section1} = t("cnt")
+  const {section2} = t("cnt")
+  const {section3} = t("cnt")
+
 
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
   const heroBg = mode
@@ -71,14 +78,14 @@ const Construction = () => {
                   className={`text-5xl max-[500px]:text-4xl font-bold ${heroTitle}`}
                   data-aos="fade-up"
                 >
-                  Construction
+                 {section1.title}
                 </h1>
                 <p
                   className={`text-xl ${heroSub}`}
                   data-aos="fade-up"
                   data-aos-delay="150"
                 >
-                  Project Management Solutions
+                {section1.line1}
                 </p>
               </div>
             </div>
@@ -88,9 +95,7 @@ const Construction = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Revolutionize your construction projects with comprehensive
-              tracking systems, worker management, progress monitoring, and
-              resource planning automation.
+               {section1.line2}
             </p>
 
             <div 
@@ -101,14 +106,14 @@ const Construction = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                   {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                   {section1.button2}
               </button>
             </div>
           </div>
@@ -148,15 +153,15 @@ const Construction = () => {
             className={`text-4xl font-bold mb-4 ${heroTitle}`}
             data-aos="fade-up"
           >
-            Construction Management Platform
+          {section2.title}
           </h2>
           <p
             className={`text-xl max-w-3xl mx-auto ${heroDesc}`}
             data-aos="fade-up"
             data-aos-delay="120"
           >
-            Build better projects with intelligent tracking, resource
-            management, and real-time progress monitoring.
+           {section2.line}
+
           </p>
         </div>
 
@@ -165,33 +170,35 @@ const Construction = () => {
           {[
             {
               icon: <HardHat className="w-8 h-8 text-yellow-400" />,
-              title: "Project Tracking",
-              desc: "Milestone tracking, progress monitoring, and deadline management.",
+              title: section2.cards.title1,
+                desc: section2.cards.line1,
             },
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Worker Management",
-              desc: "Digital worker logs, attendance tracking, and skill-based assignments.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-400" />,
-              title: "Resource Planning",
-              desc: "Equipment scheduling, material tracking, and allocation optimization.",
+              title: section2.cards.title3,
+              desc:section2.cards.line3,
             },
             {
-              icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />,
-              title: "Progress Monitoring",
-              desc: "Dashboards with real-time visuals and performance analytics.",
+              icon: (
+                <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />
+              ),
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-400" />,
-              title: "Documentation",
-              desc: "Permits, blueprints, reports, and compliance documentation.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Time & Cost Tracking",
-              desc: "Track labor, budget, and expenses automatically.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -220,17 +227,17 @@ const Construction = () => {
           {/* Left */}
           <div data-aos="fade-right">
             <h2 className={`text-4xl font-bold mb-8 ${heroTitle}`}>
-              Build Smarter, Not Harder
+              {section3.title1}
             </h2>
 
             <div className="space-y-4">
               {[
-                "Reduce project delays by 35%",
-                "Improve worker productivity tracking",
-                "Automate safety & compliance reporting",
-                "Streamline equipment and material management",
-                "Real-time project visibility",
-                "Optimize resource allocation & costs",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -252,18 +259,18 @@ const Construction = () => {
             data-aos-delay="150"
           >
             <h3 className="text-2xl font-bold mb-6">
-              Ready to Modernize Your Projects?
+            {section3.title2}
             </h3>
 
             <p className="text-lg mb-6">
-              Join construction companies boosting project efficiency with automation.
+               {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Custom solution for your project types",
-                "Team training & onboarding",
-                "Mobile access & field support",
+                 section3.line8,
+                 section3.line9,
+                 section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -281,7 +288,7 @@ const Construction = () => {
               onClick={() => navigate("/contact")}
               className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
             >
-              Schedule Consultation
+              {section3.button}
             </button>
           </div>
         </div>

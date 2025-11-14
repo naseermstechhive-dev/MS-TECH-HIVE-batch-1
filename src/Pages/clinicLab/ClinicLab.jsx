@@ -11,6 +11,7 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GlobalContext } from "../../context/Context";
 
 
@@ -39,6 +40,11 @@ const ClinicLab = () => {
   const ctaBg = mode
     ? "bg-gradient-to-br from-yellow-300 to-yellow-400 text-gray-900"
     : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900";
+
+  const {t} = useTranslation()
+  const {section1} = t("cli")
+  const {section2} = t("cli")
+  const {section3} = t("cli")
 
   useEffect(() => {
     AOS.init({
@@ -73,12 +79,12 @@ const ClinicLab = () => {
                 <h1
                   className={`text-5xl font-bold max-[600px]:text-4xl max-[350px]:text-3xl ${heroTitle}`}
                 >
-                  Clinic / Lab
+                {section1.title}
                 </h1>
                 <p
                   className={`text-xl max-[600px]:text-lg max-[350px]:text-base ${heroSub}`}
                 >
-                  Laboratory Management Solutions
+                {section1.line1}
                 </p>
               </div>
             </div>
@@ -86,9 +92,7 @@ const ClinicLab = () => {
             <p
               className={`text-xl max-[600px]:text-lg max-[350px]:text-base leading-relaxed ${heroDesc}`}
             >
-              Modernize your clinic and laboratory operations with comprehensive
-              sample tracking, automated lab reports, patient record management,
-              and result processing systems.
+               {section1.line2}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-8" data-aos="fade-up">
@@ -96,14 +100,14 @@ const ClinicLab = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors max-[600px]:px-6 max-[600px]:py-3 max-[350px]:px-4 max-[350px]:py-2"
               >
-                Get Started Today
+                 {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors max-[600px]:px-6 max-[600px]:py-3 max-[350px]:px-4 max-[350px]:py-2"
               >
-                View All Services
+                 {section1.button2}
               </button>
             </div>
           </div>
@@ -145,14 +149,13 @@ const ClinicLab = () => {
           <h2
             className={`text-4xl font-bold max-[600px]:text-3xl max-[350px]:text-2xl mb-4 ${heroTitle}`}
           >
-            Advanced Laboratory Information System
+            {section2.title}
           </h2>
 
           <p
             className={`text-xl max-[600px]:text-lg max-[350px]:text-base ${heroDesc} max-w-3xl mx-auto`}
           >
-            Streamline laboratory operations with intelligent sample tracking,
-            automated reporting, and comprehensive quality management
+             {section2.line}
           </p>
         </div>
 
@@ -161,33 +164,33 @@ const ClinicLab = () => {
           {[
             {
               icon: <Activity className="w-8 h-8 text-yellow-400" />,
-              title: "Sample Tracking",
-              desc: "Comprehensive specimen tracking from collection to analysis with barcode integration.",
+              title: section2.cards.title1,
+              desc: section2.cards.line1,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-400" />,
-              title: "Lab Reports",
-              desc: "Automated report generation, digital delivery, and result verification systems.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Patient Records",
-              desc: "Secure patient data management with medical history and test result integration.",
+              title: section2.cards.title3,
+              desc: section2.cards.line3,
             },
             {
               icon: <BarChart3 className="w-8 h-8 text-yellow-400" />,
-              title: "Result Management",
-              desc: "Digital result processing, quality control, and automated notifications to physicians.",
+              title: section2.cards.title4,
+                desc: section2.cards.line4,
             },
             {
               icon: <Shield className="w-8 h-8 text-yellow-400" />,
-              title: "Compliance Management",
-              desc: "Regulatory compliance tracking, audit trails, and quality assurance protocols.",
+              title: section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Workflow Automation",
-              desc: "Streamlined lab workflows, appointment scheduling, and equipment management.",
+              title: section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -222,17 +225,17 @@ const ClinicLab = () => {
             <h2
               className={`text-4xl font-bold max-[600px]:text-3xl max-[350px]:text-2xl mb-8 ${heroTitle}`}
             >
-              Precision in Every Process
+             {section3.title1}
             </h2>
 
             <div className="space-y-6">
               {[
-                "Reduce sample processing time by 50%",
-                "Eliminate manual report generation",
-                "Improve result accuracy and reliability",
-                "Streamline patient communication",
-                "Ensure regulatory compliance",
-                "Optimize lab equipment utilization",
+                 section3.line1,
+                 section3.line2,
+                 section3.line3,
+                 section3.line4,
+                 section3.line5,
+                 section3.line6,
               ].map((t, i) => (
                 <div
                   key={i}
@@ -257,19 +260,19 @@ const ClinicLab = () => {
             data-aos="zoom-in"
           >
             <h3 className="text-2xl font-bold max-[600px]:text-xl max-[350px]:text-lg mb-6">
-              Ready to Modernize Your Lab?
+              {section3.title2}
             </h3>
 
             <p className="text-lg max-[600px]:text-base max-[350px]:text-sm mb-6">
-              Join leading clinics and laboratories that have improved efficiency
-              and accuracy with our comprehensive management solutions.
+             {section3.line7}
+
             </p>
 
             <div className="space-y-4 max-[600px]:space-y-3 max-[350px]:space-y-2">
               {[
-                "Custom integration with existing equipment",
-                "Staff training and system certification",
-                "Compliance support and validation",
+                section3.line8,
+                section3.line9,
+                section3.line10,
               ].map((t, i) => (
                 <div
                   key={i}
@@ -289,7 +292,7 @@ const ClinicLab = () => {
               onClick={() => navigate("/contact")}
               className="mt-8 inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors max-[600px]:px-6 max-[600px]:py-2.5 max-[350px]:px-4 max-[350px]:py-2"
             >
-              Schedule Consultation
+              {section3.button}
             </button>
           </div>
         </div>

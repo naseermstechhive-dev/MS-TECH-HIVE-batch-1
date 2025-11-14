@@ -11,11 +11,17 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GlobalContext } from "../../context/Context";
 
 const RetailShop = () => {
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
+
+  const {t} = useTranslation()
+  const {section1} = t("retl")
+  const {section2} = t("retl")
+  const {section3} = t("retl")
 
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
   const heroBg = mode
@@ -72,14 +78,14 @@ const RetailShop = () => {
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
-                  Retail Shop
+                  {section1.title}
                 </h1>
                 <p
                   className={`text-xl ${heroSub}`}
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
-                  Retail Management Solutions
+                  {section1.line1}
                 </p>
               </div>
             </div>
@@ -89,8 +95,7 @@ const RetailShop = () => {
               data-aos="fade-up"
               data-aos-delay="250"
             >
-              Modernize your retail operations with comprehensive inventory
-              management, POS systems, CRM tools, and sales analytics.
+            {section1.line2}
             </p>
 
             <div 
@@ -101,14 +106,14 @@ const RetailShop = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                  {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                   {section1.button2}
               </button>
             </div>
           </div>
@@ -148,14 +153,14 @@ const RetailShop = () => {
             className={`text-4xl font-bold mb-4 ${heroTitle}`}
             data-aos="fade-up"
           >
-            Complete Retail Management System
+            {section2.title}
           </h2>
           <p
             className={`text-xl max-w-3xl mx-auto ${heroDesc}`}
             data-aos="fade-up"
             data-aos-delay="120"
           >
-            From inventory to customer relationships — manage everything with ease.
+            {section2.line}
           </p>
         </div>
 
@@ -164,33 +169,33 @@ const RetailShop = () => {
           {[
             {
               icon: <Package className="w-8 h-8 text-yellow-400" />,
-              title: "Inventory Management",
-              desc: "Real-time stock tracking & automated reordering.",
+              title: section2.cards.title1,
+              desc: section2.cards.line1,
             },
             {
               icon: <CreditCard className="w-8 h-8 text-yellow-400" />,
-              title: "Point of Sale Systems",
-              desc: "Modern POS setups with secure payments.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Customer Management",
-              desc: "CRM with profiles, history & loyalty programs.",
+              title: section2.cards.title3,
+              desc:section2.cards.line3,
             },
             {
               icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />,
-              title: "Sales Analytics",
-              desc: "Track trends & KPIs with smart dashboards.",
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: <ShoppingCart className="w-8 h-8 text-yellow-400" />,
-              title: "E-commerce Integration",
-              desc: "Unified inventory for online + offline sales.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Staff Management",
-              desc: "Scheduling, performance & commission tracking.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -222,17 +227,17 @@ const RetailShop = () => {
               className={`text-4xl font-bold mb-8 ${heroTitle}`}
               data-aos="fade-up"
             >
-              Retail Excellence Made Simple
+              {section3.title1}
             </h2>
 
             <div className="space-y-4">
               {[
-                "Reduce inventory management time by 50%",
-                "Automate purchase orders & stock alerts",
-                "Improve customer retention with CRM",
-                "Streamline checkout & payment flow",
-                "Generate detailed sales & profit reports",
-                "Optimize staff scheduling & performance",
+                section3.line1,
+           section3.line2,
+           section3.line3,
+           section3.line4,
+           section3.line5,
+           section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -253,17 +258,17 @@ const RetailShop = () => {
             data-aos="zoom-in"
             data-aos-delay="150"
           >
-            <h3 className="text-2xl font-bold mb-6">Boost Your Retail Success</h3>
+            <h3 className="text-2xl font-bold mb-6">{section3.title2}</h3>
 
             <p className="text-lg mb-6">
-              Join retailers who increased efficiency and customer satisfaction with automation.
+              {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Tailored setup for your store type",
-                "Staff training + onboarding",
-                "24/7 support & maintenance",
+                section3.line8,
+           section3.line9,
+           section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -281,7 +286,7 @@ const RetailShop = () => {
               onClick={() => navigate("/contact")}
               className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
             >
-              Schedule Demo
+              {section3.button}
             </button>
           </div>
 

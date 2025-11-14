@@ -12,9 +12,16 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Restaurant = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("rest")
+  const {section2} = t("rest")
+  const {section3} = t("rest")
+
   const { mode } = useContext(GlobalContext);
 
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
@@ -62,10 +69,10 @@ const Restaurant = () => {
               <div className="text-5xl" data-aos="zoom-in">🍽️</div>
               <div>
                 <h1 className={`text-5xl font-bold max-[500px]:text-4xl ${heroTitle}`} data-aos="fade-up">
-                  Restaurant
+                 {section1.title}
                 </h1>
                 <p className={`text-xl ${heroSub}`} data-aos="fade-up" data-aos-delay="100">
-                  Food Service Automation
+                   {section1.line1}
                 </p>
               </div>
             </div>
@@ -75,8 +82,7 @@ const Restaurant = () => {
               data-aos="fade-up"
               data-aos-delay="150"
             >
-              Optimize your restaurant operations with comprehensive order
-              management, billing systems, table tracking, and kitchen automation.
+                      {section1.line2}
             </p>
 
             <div
@@ -88,14 +94,14 @@ const Restaurant = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                   {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                   {section1.button2}
               </button>
             </div>
           </div>
@@ -127,14 +133,14 @@ const Restaurant = () => {
       <section className={`py-20 px-4 sm:px-6 lg:px-8 ${sectionBg}`} data-aos="fade-up">
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className={`text-4xl font-bold mb-4 ${heroTitle}`} data-aos="fade-up">
-            Complete Restaurant Management Suite
+            {section2.title}
           </h2>
           <p
             className={`text-xl max-w-3xl mx-auto ${heroDesc}`}
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Automate order taking, billing, seating, kitchen operations & more.
+            {section2.line}
           </p>
         </div>
 
@@ -143,33 +149,35 @@ const Restaurant = () => {
           {[
             {
               icon: <ShoppingCart className="w-8 h-8 text-yellow-400" />,
-              title: "Order Management System",
-              desc: "Streamlined dine-in, takeaway & delivery order handling.",
+               title: section2.cards.title1,
+              desc: section2.cards.line1,
             },
             {
               icon: <Utensils className="w-8 h-8 text-yellow-400" />,
-              title: "Kitchen Automation",
-              desc: "Digital kitchen displays & automated prep-time tracking.",
+              title: section2.cards.title2,
+                desc: section2.cards.line2,
             },
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Table Management",
-              desc: "Reservation tools, waitlist automation & seating optimization.",
+              title: section2.cards.title3,
+                desc:section2.cards.line3,
             },
             {
-              icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />,
-              title: "POS & Billing",
-              desc: "Integrated POS, inventory tracking & instant billing.",
+              icon: (
+                <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />
+              ),
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-400" />,
-              title: "Staff Scheduling",
-              desc: "Automated shift planning, attendance & task assignment.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Delivery Tracking",
-              desc: "Real-time delivery tracking & customer status updates.",
+              title:section2.cards.title6,
+                desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -193,17 +201,17 @@ const Restaurant = () => {
           {/* Left */}
           <div data-aos="fade-right">
             <h2 className={`text-4xl font-bold mb-8 ${heroTitle}`} data-aos="fade-up">
-              Serve Success, Not Just Food
+              {section3.title1}
             </h2>
 
             <div className="space-y-4">
               {[
-                "Reduce order processing time by 45%",
-                "Minimize food waste with smart inventory",
-                "Optimize table turnover and seating",
-                "Automate takeaway & delivery workflows",
-                "Track staff productivity with analytics",
-                "Increase customer satisfaction ratings",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -225,18 +233,18 @@ const Restaurant = () => {
             data-aos-delay="200"
           >
             <h3 className="text-2xl font-bold mb-6" data-aos="fade-up">
-              Ready to Transform Your Restaurant?
+             {section3.title2}
             </h3>
 
             <p className="text-lg mb-6" data-aos="fade-up" data-aos-delay="100">
-              Join restaurants that have boosted efficiency, reduced delays and improved customer satisfaction.
+               {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Custom setup based on your restaurant type",
-                "Staff onboarding & training",
-                "24/7 dedicated technical support",
+                 section3.line8,
+                section3.line9,
+                section3.line10,
               ].map((text, i) => (
                 <div
                   className="flex items-center space-x-3"
@@ -256,7 +264,7 @@ const Restaurant = () => {
               data-aos="zoom-in"
               data-aos-delay="150"
             >
-              Schedule Demo
+             {section3.button}
             </button>
           </div>
         </div>

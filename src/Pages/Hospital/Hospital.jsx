@@ -12,6 +12,7 @@ import {
   BarChart3,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { GlobalContext } from "../../context/Context";
 
 const Hospital = () => {
@@ -39,6 +40,11 @@ const Hospital = () => {
     mode
       ? "bg-gradient-to-br from-yellow-400 to-yellow-300 text-gray-900"
       : "bg-gradient-to-br from-[#facc15] to-[#ca8a04] text-gray-900";
+
+  const {t} = useTranslation()
+  const {section1} = t("hos")
+  const {section2} = t("hos")
+  const {section3} = t("hos")
 
   useEffect(() => {
     AOS.init({
@@ -73,7 +79,7 @@ const Hospital = () => {
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
-                    Hospital
+                    {section1.title}
                   </h1>
 
                   <p
@@ -81,7 +87,7 @@ const Hospital = () => {
                     data-aos="fade-up"
                     data-aos-delay="150"
                   >
-                    Healthcare Automation Solutions
+                     {section1.line1}
                   </p>
                 </div>
               </div>
@@ -92,8 +98,7 @@ const Hospital = () => {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Transform your hospital operations with advanced automation:
-              patient management, appointments, EMR, and billing systems.
+              {section1.line2}
             </p>
 
             {/* Buttons */}
@@ -106,14 +111,14 @@ const Hospital = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-[#facc15] text-[#facc15] font-semibold rounded-lg hover:bg-[#facc15] hover:text-gray-900 transition-colors"
               >
-                View All Services
+                {section1.button2}
               </button>
             </div>
           </div>
@@ -150,7 +155,7 @@ const Hospital = () => {
               className={`text-4xl font-bold mb-4 ${heroTitle}`}
               data-aos="fade-up"
             >
-              Comprehensive Hospital Solutions
+              {section2.title}
             </h2>
 
             <p
@@ -158,7 +163,7 @@ const Hospital = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Our automation platform supports all healthcare workflows.
+              {section2.line}
             </p>
           </div>
 
@@ -166,33 +171,33 @@ const Hospital = () => {
             {[
               {
                 icon: <User className="w-8 h-8 text-yellow-500" />,
-                title: "Patient Management System",
-                desc: "Automate patient registration, medical history tracking, and more.",
+               title: section2.cards.title1,
+                desc: section2.cards.line1,
               },
               {
                 icon: <Calendar className="w-8 h-8 text-yellow-500" />,
-                title: "Appointment Scheduling",
-                desc: "Smart doctor appointments, reminders, and conflict-free scheduling.",
+                 title: section2.cards.title2,
+                desc: section2.cards.line2,
               },
               {
                 icon: <FileText className="w-8 h-8 text-yellow-500" />,
-                title: "Electronic Medical Records",
-                desc: "Secure, real-time, cloud-accessible EMR platform.",
+                 title: section2.cards.title3,
+                desc:section2.cards.line3,
               },
               {
                 icon: <CreditCard className="w-8 h-8 text-yellow-500" />,
-                title: "Billing & Insurance",
-                desc: "Automated billing, insurance claim verification, and payment tracking.",
+                 title: section2.cards.title4,
+                desc: section2.cards.line4,
               },
               {
                 icon: <Shield className="w-8 h-8 text-yellow-500" />,
-                title: "HIPAA Compliance",
-                desc: "Fully compliant & encrypted patient data protection.",
+                 title:section2.cards.title5,
+                desc: section2.cards.line5,
               },
               {
                 icon: <BarChart3 className="w-8 h-8 text-yellow-500" />,
-                title: "Analytics Dashboard",
-                desc: "Monitor patient flow, revenue, and KPIs in real time.",
+                title:section2.cards.title6,
+                desc: section2.cards.line6,
               },
             ].map((item, i) => (
               <div
@@ -220,17 +225,17 @@ const Hospital = () => {
               className={`text-4xl font-bold mb-8 ${heroTitle}`}
               data-aos="fade-up"
             >
-              Transform Your Hospital Operations
+               {section3.title1}
             </h2>
 
             <div className="space-y-4">
               {[
-                "Reduce patient wait times by 40%",
-                "Eliminate scheduling conflicts",
-                "Automate insurance verification",
-                "Streamline discharge processes",
-                "Improve patient satisfaction scores",
-                "Reduce administrative overhead by 30%",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -255,7 +260,7 @@ const Hospital = () => {
               className="text-2xl font-bold mb-4"
               data-aos="fade-up"
             >
-              Ready to Get Started?
+            {section3.title2}
             </h3>
 
             <p
@@ -263,14 +268,13 @@ const Hospital = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Join hundreds of healthcare facilities already using our automation suite.
+             {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Free consultation & analysis",
-                "Custom implementation plan",
-                "Training & dedicated support",
+                section3.line9,
+                section3.line10,
               ].map((text, i) => (
                 <div
                   className="flex items-center space-x-3"
@@ -290,7 +294,7 @@ const Hospital = () => {
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              Schedule Consultation
+              {section3.button}
             </button>
           </div>
         </div>
