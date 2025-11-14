@@ -1,7 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/Context";
 import {
   Users,
   Calendar,
@@ -9,285 +7,109 @@ import {
   FileText,
   ChartNoAxesColumnIncreasing,
   Shield,
-  CircleCheckBig,
   Clock,
 } from "lucide-react";
-import { GlobalContext } from "../../context/Context";
+import {
+  PageWrapper,
+  IndustryHero,
+  FeaturesGrid,
+  BenefitsCtaSection,
+} from "../../components/Reusable/IndustryPageComponents";
 
 const School = () => {
-  const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
-  const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
 
-  const heroBg = mode
-    ? "bg-gradient-to-br from-white to-gray-100"
-    : "bg-gradient-to-br from-gray-900 to-gray-800";
+  const theme = {
+    pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
+    heroBg: mode
+      ? "bg-gradient-to-br from-white to-gray-100"
+      : "bg-gradient-to-br from-gray-900 to-gray-800",
+    heroTitle: mode ? "text-gray-900 font-extrabold" : "text-white font-bold",
+    heroSub: mode
+      ? "text-yellow-600 font-semibold"
+      : "text-yellow-400 font-medium",
+    heroDesc: mode ? "text-gray-700" : "text-gray-300",
+    sectionBg: mode ? "bg-gray-200" : "bg-gray-800",
+    cardBg: mode ? "bg-gray-300" : "bg-gray-700",
+    cardHover: mode ? "hover:bg-gray-400" : "hover:bg-gray-600",
+    cardTitle: mode ? "text-gray-900 font-semibold" : "text-white font-semibold",
+    cardDesc: mode ? "text-gray-700" : "text-gray-300",
+    listText: mode ? "text-gray-700" : "text-gray-300",
+    ctaBg: mode
+      ? "bg-gradient-to-br from-yellow-300 to-yellow-400 text-gray-900"
+      : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900",
+  };
 
-  const heroTitle = mode ? "text-gray-900 font-extrabold" : "text-white font-bold";
-  const heroSub = mode ? "text-yellow-600 font-semibold" : "text-yellow-400 font-medium";
-  const heroDesc = mode ? "text-gray-700" : "text-gray-300";
+  const aosOptions = {
+    duration: 950,
+    mirror: false,
+  };
 
-  const sectionBgDark = mode ? "bg-gray-200" : "bg-gray-800";
-  const cardBg = mode ? "bg-gray-300" : "bg-gray-700";
-  const cardHover = mode ? "hover:bg-gray-400" : "hover:bg-gray-600";
-  const cardTitle = mode ? "text-gray-900 font-semibold" : "text-white font-semibold";
-  const cardDesc = mode ? "text-gray-700" : "text-gray-300";
+  const heroContent = {
+    emoji: "🎓",
+    title: "School",
+    subtitle: "Education Management Solutions",
+    description:
+      "Revolutionize your school operations with automated attendance, communication, analytics, and complete education management.",
+    imageUrl:
+      "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800",
+    imageAlt: "School",
+    imageClassName: "h-[500px]",
+  };
 
-  const listText = mode ? "text-gray-700" : "text-gray-300";
+  const heroBadge = {
+    Icon: Clock,
+    text1: "Real-time",
+    text2: "Updates",
+    containerClassName: "px-6 py-4 space-y-1 w-28 text-center",
+  };
 
-  const rightBoxBg = mode
-    ? "bg-gradient-to-br from-yellow-300 to-yellow-400 text-gray-900"
-    : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900";
+  const features = [
+    { Icon: Users, title: "Student Management", desc: "Profiles, enrollment tracking, academic progress monitoring." },
+    { Icon: Calendar, title: "Attendance Tracking", desc: "Automated attendance with real-time parent notifications." },
+    { Icon: MessageSquare, title: "Parent Communication", desc: "Instant communication between teachers and parents." },
+    { Icon: FileText, title: "Grade Management", desc: "Digital gradebooks, report cards, and academic tracking." },
+    { Icon: ChartNoAxesColumnIncreasing, title: "Academic Analytics", desc: "Track performance, attendance patterns, and school analytics." },
+    { Icon: Shield, title: "Safety & Security", desc: "Check-in/out systems with emergency communication tools." },
+  ];
 
-  useEffect(() => {
-    AOS.init({
-      duration: 950,
-      easing: "ease-in-out",
-      once: false,
-      mirror: false,
-    });
+  const benefitsList = [
+    "Reduce administrative tasks by 50%",
+    "Improve parent engagement by 75%",
+    "Automate attendance & grade reporting",
+    "Streamline teacher-parent communication",
+    "Real-time progress tracking",
+    "Better school safety protocols",
+  ];
 
-    const handleScroll = () => AOS.refresh();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [mode]);
+  const ctaContent = {
+    title: "Transform Your School Today",
+    description:
+      "Join modern schools using our automation solutions for education.",
+    list: [
+      "Personalized demo for your school",
+      "Full staff training included",
+      "Step-by-step implementation",
+    ],
+    buttonText: "Schedule Demo",
+  };
 
   return (
-    <div className={`min-h-screen transition-colors ${pageBg}`}>
-
-      {/* ---------------- Section 1: Hero ---------------- */}
-      <section className={`relative py-20 px-4 sm:px-6 lg:px-8 ${heroBg}`} data-aos="fade-up">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-
-          {/* Left */}
-          <div data-aos="fade-right">
-            <div className="flex items-center space-x-4 mb-6" data-aos="fade-up">
-              <div className="text-5xl" data-aos="zoom-in">🎓</div>
-
-              <div>
-                <h1
-                  className={`text-5xl max-[500px]:text-4xl ${heroTitle}`}
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  School
-                </h1>
-
-                <p
-                  className={`text-xl ${heroSub}`}
-                  data-aos="fade-up"
-                  data-aos-delay="150"
-                >
-                  Education Management Solutions
-                </p>
-              </div>
-            </div>
-
-            <p
-              className={`text-xl leading-relaxed mb-8 ${heroDesc}`}
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              Revolutionize your school operations with automated attendance,
-              communication, analytics, and complete education management.
-            </p>
-
-            <div 
-              className="flex flex-col sm:flex-row gap-4"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <button
-                onClick={() => navigate("/contact")}
-                className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
-              >
-                Get Started Today
-              </button>
-
-              <button
-                onClick={() => navigate("/services")}
-                className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
-              >
-                View All Services
-              </button>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative flex justify-center lg:justify-end" data-aos="fade-left">
-            <img
-              src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="School"
-              className="rounded-2xl shadow-2xl w-full max-w-2xl object-cover h-[500px]"
-              data-aos="zoom-in"
-              data-aos-delay="150"
-            />
-
-            {/* Badge */}
-            <div
-              className="absolute -bottom-8 -left-6 bg-yellow-500 text-gray-900 px-6 py-4 rounded-xl shadow-lg flex flex-col items-center space-y-1 w-28"
-              data-aos="zoom-in"
-              data-aos-delay="250"
-            >
-              <Clock className="w-8 h-8 text-gray-900" />
-              <div className="text-center">
-                <span className="block text-sm font-bold leading-tight">Real-time</span>
-                <span className="block text-sm font-semibold leading-tight">Updates</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* ---------------- Section 2: Features ---------------- */}
-      <section className={`py-20 px-4 sm:px-6 lg:px-8 ${sectionBgDark}`} data-aos="fade-up">
-        <div className="max-w-7xl mx-auto text-center mb-12">
-          <h2
-            className={`text-4xl font-bold mb-4 ${heroTitle}`}
-            data-aos="fade-up"
-          >
-            Complete School Management System
-          </h2>
-
-          <p
-            className={`text-xl mx-auto max-w-3xl ${heroDesc}`}
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            Manage every part of school operations with ease and automation.
-          </p>
-        </div>
-
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {[
-            {
-              icon: <Users className="w-8 h-8 text-yellow-500" />,
-              title: "Student Management",
-              desc: "Profiles, enrollment tracking, academic progress monitoring.",
-            },
-            {
-              icon: <Calendar className="w-8 h-8 text-yellow-500" />,
-              title: "Attendance Tracking",
-              desc: "Automated attendance with real-time parent notifications.",
-            },
-            {
-              icon: <MessageSquare className="w-8 h-8 text-yellow-500" />,
-              title: "Parent Communication",
-              desc: "Instant communication between teachers and parents.",
-            },
-            {
-              icon: <FileText className="w-8 h-8 text-yellow-500" />,
-              title: "Grade Management",
-              desc: "Digital gradebooks, report cards, and academic tracking.",
-            },
-            {
-              icon: <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-500" />,
-              title: "Academic Analytics",
-              desc: "Track performance, attendance patterns, and school analytics.",
-            },
-            {
-              icon: <Shield className="w-8 h-8 text-yellow-500" />,
-              title: "Safety & Security",
-              desc: "Check-in/out systems with emergency communication tools.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className={`${cardBg} p-8 rounded-xl ${cardHover} transition-all hover:scale-105`}
-              data-aos="fade-up"
-              data-aos-delay={i * 120}
-            >
-              <div className="mb-4">{item.icon}</div>
-              <h3 className={`text-xl mb-3 ${cardTitle}`}>{item.title}</h3>
-              <p className={`${cardDesc}`}>{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ---------------- Section 3: Benefits ---------------- */}
-      <section className={`py-20 px-4 sm:px-6 lg:px-8 ${pageBg}`} data-aos="fade-up">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-
-          {/* Left */}
-          <div data-aos="fade-right">
-            <h2
-              className={`text-4xl font-bold mb-8 ${heroTitle}`}
-              data-aos="fade-up"
-            >
-              Enhance Educational Excellence
-            </h2>
-
-            <div className="space-y-4">
-              {[
-                "Reduce administrative tasks by 50%",
-                "Improve parent engagement by 75%",
-                "Automate attendance & grade reporting",
-                "Streamline teacher-parent communication",
-                "Real-time progress tracking",
-                "Better school safety protocols",
-              ].map((text, i) => (
-                <div
-                  key={i}
-                  className="flex items-center space-x-3"
-                  data-aos="fade-up"
-                  data-aos-delay={i * 120}
-                >
-                  <CircleCheckBig className="w-6 h-6 text-yellow-500" />
-                  <span className={`text-lg ${listText}`}>{text}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Box */}
-          <div
-            className={`${rightBoxBg} p-8 rounded-2xl shadow-xl`}
-            data-aos="zoom-in"
-            data-aos-delay="250"
-          >
-            <h3 className="text-2xl font-bold mb-4" data-aos="fade-up">
-              Transform Your School Today
-            </h3>
-
-            <p className="text-lg mb-6" data-aos="fade-up" data-aos-delay="80">
-              Join modern schools using our automation solutions for education.
-            </p>
-
-            <div className="space-y-3 mb-6">
-              {[
-                "Personalized demo for your school",
-                "Full staff training included",
-                "Step-by-step implementation",
-              ].map((text, i) => (
-                <div
-                  className="flex items-center space-x-3"
-                  key={i}
-                  data-aos="fade-left"
-                  data-aos-delay={i * 120}
-                >
-                  <CircleCheckBig className="w-6 h-6 text-gray-900" />
-                  <span className="text-gray-900 font-medium">{text}</span>
-                </div>
-              ))}
-            </div>
-
-            <button
-              onClick={() => navigate("/contact")}
-              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-              data-aos="zoom-in"
-              data-aos-delay="200"
-            >
-              Schedule Demo
-            </button>
-          </div>
-
-        </div>
-      </section>
-
-    </div>
+    <PageWrapper pageBg={theme.pageBg} aosOptions={aosOptions}>
+      <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+      <FeaturesGrid
+        theme={theme}
+        title="Complete School Management System"
+        subtitle="Manage every part of school operations with ease and automation."
+        features={features}
+      />
+      <BenefitsCtaSection
+        theme={theme}
+        benefitsTitle="Enhance Educational Excellence"
+        benefitsList={benefitsList}
+        cta={ctaContent}
+      />
+    </PageWrapper>
   );
 };
 
