@@ -11,9 +11,16 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Construction = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("cnt")
+  const {section2} = t("cnt")
+  const {section3} = t("cnt")
+
 
   useEffect(() => {
     AOS.init({
@@ -38,17 +45,15 @@ const Construction = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl">🏗️</div>
               <div>
-                <h1 className="text-5xl font-bold text-white">Construction</h1>
+                <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
                 <p className="text-xl text-yellow-400">
-                  Project Management Solutions
+                {section1.line1}
                 </p>
               </div>
             </div>
 
             <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              Revolutionize your construction projects with comprehensive
-              tracking systems, worker management, progress monitoring, and
-              resource planning automation.
+            {section1.line2}
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -56,14 +61,14 @@ const Construction = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                   {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                   {section1.button2}
               </button>
             </div>
           </div>
@@ -97,11 +102,10 @@ const Construction = () => {
       >
         <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Construction Management Platform
+          {section2.title}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Build better projects with intelligent tracking, resource
-            management, and real-time progress monitoring
+          {section2.line}
           </p>
         </div>
 
@@ -109,35 +113,35 @@ const Construction = () => {
           {[
             {
               icon: <HardHat className="w-8 h-8 text-yellow-400" />,
-              title: "Project Tracking",
-              desc: "Comprehensive project management with milestone tracking, progress monitoring, and deadline management.",
+              title: section2.cards.title1,
+                desc: section2.cards.line1,
             },
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Worker Management",
-              desc: "Digital worker logs, attendance tracking, and skill-based task assignment systems.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-400" />,
-              title: "Resource Planning",
-              desc: "Equipment scheduling, material tracking, and resource allocation optimization.",
+              title: section2.cards.title3,
+              desc:section2.cards.line3,
             },
             {
               icon: (
                 <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />
               ),
-              title: "Progress Monitoring",
-              desc: "Real-time project dashboards with visual progress tracking and performance analytics.",
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-400" />,
-              title: "Documentation Management",
-              desc: "Digital blueprints, permits, inspection reports, and compliance documentation.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Clock className="w-8 h-8 text-yellow-400" />,
-              title: "Time & Cost Tracking",
-              desc: "Automated time tracking, cost management, and budget monitoring systems.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -167,16 +171,16 @@ const Construction = () => {
           {/* Left */}
           <div>
             <h2 className="text-4xl font-bold text-white mb-8">
-              Build Smarter, Not Harder
+            {section3.title1}
             </h2>
             <div className="space-y-4">
               {[
-                "Reduce project delays by 35%",
-                "Improve worker productivity tracking",
-                "Automate compliance and safety reporting",
-                "Streamline equipment and material management",
-                "Real-time project progress visibility",
-                "Optimize resource allocation and costs",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -197,18 +201,17 @@ const Construction = () => {
             data-aos="zoom-in"
           >
             <h3 className="text-2xl font-bold mb-6">
-              Ready to Modernize Your Projects?
+            {section3.title2}
             </h3>
             <p className="text-lg mb-6">
-              Join construction companies that have improved project efficiency
-              and reduced delays with our management solutions.
+            {section3.line7}
             </p>
 
             <div className="space-y-4 mb-6">
               {[
-                "Custom solution for your project types",
-                "Team training and system implementation",
-                "Field support and mobile access",
+                 section3.line8,
+                 section3.line9,
+                 section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -226,7 +229,7 @@ const Construction = () => {
               onClick={() => navigate("/contact")}
               className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
             >
-              Schedule Consultation
+              {section3.button}
             </button>
           </div>
         </div>

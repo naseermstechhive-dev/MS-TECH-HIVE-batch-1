@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"Clinic / Lab",
+    "line1":"Laboratory Management Solutions",
+    "line2":"Modernize your clinic and laboratory operations with comprehensive sample tracking, automated lab reports, patient record management, and result processing systems.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Advanced Laboratory Information System",
+    "line":"Streamline laboratory operations with intelligent sample tracking, automated reporting, and comprehensive quality management",
+    "cards":{
+      "title1":"Sample Tracking",
+      "title2":"Lab Reports",
+      "title3":"Patient Records",
+      "title4":"Result Management",
+      "title5":"Compliance Management",
+      "title6":"Workflow Automation",
+      "line1":"Comprehensive specimen tracking from collection to analysis with barcode integration.",
+      "line2":"Automated report generation, digital delivery, and result verification systems.",
+      "line3":"Secure patient data management with medical history and test result integration.",
+      "line4":"Digital result processing, quality control, and automated notifications to physicians.",
+      "line5":"Regulatory compliance tracking, audit trails, and quality assurance protocols.",
+      "line6":"Streamlined lab workflows, appointment scheduling, and equipment management."
+    }
+  },
+  "section3":{
+    "title1":"Precision in Every Process",
+    "title2":"Ready to Modernize Your Lab?",
+    "line1":"Reduce sample processing time by 50%",
+    "line2":"Eliminate manual report generation",
+    "line3":"Improve result accuracy and reliability",
+    "line4":"Streamline patient communication",
+    "line5":"Ensure regulatory compliance",
+    "line6":"Optimize lab equipment utilization",
+    "line7":"Join leading clinics and laboratories that have improved efficiency and accuracy with our comprehensive management solutions.",
+    "line8":"Custom integration with existing equipment",
+    "line9":"Staff training and system certification",
+    "line10":"Compliance support and validation",
+    "button":"Schedule Consultation"
+  }
+}

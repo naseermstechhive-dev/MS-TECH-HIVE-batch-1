@@ -12,9 +12,15 @@ import {
   CircleCheckBig,
   Users,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Ecommerce = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("ecom")
+  const {section2} = t("ecom")
+  const {section3} = t("ecom")
 
   useEffect(() => {
     AOS.init({
@@ -45,15 +51,13 @@ const Ecommerce = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl">🛒</div>
               <div>
-                <h1 className="text-5xl font-bold text-white">E-commerce</h1>
-                <p className="text-xl text-yellow-400">Online Business Solutions</p>
+                <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
+                <p className="text-xl text-yellow-400">{section1.line1}</p>
               </div>
             </div>
 
             <p className="text-xl text-gray-300 leading-relaxed">
-              Supercharge your e-commerce operations with integrated CRM systems,
-              AI-powered chatbots, comprehensive analytics, and automated order
-              management platforms.
+            {section1.line2}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up">
@@ -61,14 +65,14 @@ const Ecommerce = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                 {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                {section1.button2}
               </button>
             </div>
           </div>
@@ -108,10 +112,10 @@ const Ecommerce = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Complete E-commerce Automation Suite
+            {section2.title}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From customer acquisition to order fulfillment, optimize every aspect of your online business
+            {section2.line}
             </p>
           </div>
 
@@ -125,9 +129,9 @@ const Ecommerce = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Customer CRM</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title1}</h3>
               <p className="text-gray-300">
-                Comprehensive customer relationship management with purchase history, preferences, and segmentation.
+              {section2.cards.line1}
               </p>
             </div>
 
@@ -140,9 +144,9 @@ const Ecommerce = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MessageSquare className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">AI Chatbots</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title2}</h3>
               <p className="text-gray-300">
-                Intelligent chatbots for customer support, order tracking, and personalized product recommendations.
+              {section2.cards.line2}
               </p>
             </div>
 
@@ -155,9 +159,9 @@ const Ecommerce = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <BarChart3 className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Sales Analytics</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title3}</h3>
               <p className="text-gray-300">
-                Advanced analytics dashboard with sales metrics, conversion tracking, and customer insights.
+              {section2.cards.line3}
               </p>
             </div>
 
@@ -170,9 +174,9 @@ const Ecommerce = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <ShoppingCart className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Order Management</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title4}</h3>
               <p className="text-gray-300">
-                Automated order processing, inventory synchronization, and fulfillment tracking systems.
+              {section2.cards.line4}
               </p>
             </div>
 
@@ -185,9 +189,9 @@ const Ecommerce = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Package className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Inventory Integration</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title5}</h3>
               <p className="text-gray-300">
-                Real-time inventory management with automatic restocking alerts and supplier integration.
+              {section2.cards.line5}
               </p>
             </div>
 
@@ -200,9 +204,9 @@ const Ecommerce = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <CreditCard className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Payment Automation</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title6}</h3>
               <p className="text-gray-300">
-                Secure payment processing, subscription management, and automated billing systems.
+              {section2.cards.line6}
               </p>
             </div>
           </div>
@@ -217,16 +221,16 @@ const Ecommerce = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* left list with per-item AOS */}
           <div data-aos="fade-right">
-            <h2 className="text-4xl font-bold text-white mb-8">Sell Smarter, Grow Faster</h2>
+            <h2 className="text-4xl font-bold text-white mb-8">   {section3.title1}</h2>
 
             <div className="space-y-6">
               {[
-                "Increase conversion rates by 45%",
-                "Automate customer support with AI chatbots",
-                "Improve inventory management efficiency",
-                "Enhance customer retention and loyalty",
-                "Streamline order fulfillment processes",
-                "Generate detailed sales and customer insights",
+                 section3.line1,
+                 section3.line2,
+                 section3.line3,
+                 section3.line4,
+                 section3.line5,
+                 section3.line6,
               ].map((txt, i) => (
                 <div
                   key={i}
@@ -246,16 +250,16 @@ const Ecommerce = () => {
             className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-8 rounded-2xl text-gray-900 shadow-xl"
             data-aos="zoom-in"
           >
-            <h3 className="text-2xl font-bold mb-6">Ready to Scale Your Online Store?</h3>
+            <h3 className="text-2xl font-bold mb-6">{section3.title2}</h3>
             <p className="text-lg mb-6">
-              Join successful e-commerce businesses that have increased sales and improved customer satisfaction with our automation solutions.
+            {section3.line7}
             </p>
 
             <div className="space-y-4">
               {[
-                "Platform integration with your existing store",
-                "Custom chatbot training for your products",
-                "Analytics setup and team training",
+                section3.line8,
+                section3.line9,
+                section3.line10,
               ].map((txt, i) => (
                 <div
                   key={i}
@@ -273,7 +277,7 @@ const Ecommerce = () => {
               onClick={() => navigate("/contact")}
               className="mt-8 inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
             >
-              Schedule Demo
+              {section3.button}
             </button>
           </div>
         </div>

@@ -13,9 +13,15 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Logistics = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("log")
+  const {section2} = t("log")
+  const {section3} = t("log")
 
   useEffect(() => {
     AOS.init({
@@ -45,15 +51,13 @@ const Logistics = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl">🚚</div>
               <div>
-                <h1 className="text-5xl font-bold text-white">Logistics</h1>
-                <p className="text-xl text-yellow-400">Transportation Solutions</p>
+                <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
+                <p className="text-xl text-yellow-400">{section1.line1}</p>
               </div>
             </div>
 
             <p className="text-xl text-gray-300 leading-relaxed">
-              Optimize your logistics operations with comprehensive fleet
-              management, route optimization, delivery tracking, and warehouse
-              management systems.
+            {section1.line2}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -61,14 +65,14 @@ const Logistics = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                 {section1.button2}
               </button>
             </div>
           </div>
@@ -103,11 +107,10 @@ const Logistics = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Complete Logistics Management Suite
+            {section2.title}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From fleet management to last-mile delivery, optimize every aspect
-              of your logistics operations.
+            {section2.line}
             </p>
           </div>
 
@@ -116,39 +119,33 @@ const Logistics = () => {
             {[
               {
                 icon: <Truck className="w-8 h-8 text-yellow-400" />,
-                title: "Fleet Management",
-                desc:
-                  "Comprehensive vehicle tracking, maintenance scheduling, and driver management systems.",
+                title: section2.cards.title1,
+                desc: section2.cards.line1,
               },
               {
                 icon: <MapPin className="w-8 h-8 text-yellow-400" />,
-                title: "Route Optimization",
-                desc:
-                  "AI-powered route planning for maximum efficiency, reduced fuel costs, and faster deliveries.",
+                title: section2.cards.title2,
+                desc: section2.cards.line2,
               },
               {
                 icon: <Package className="w-8 h-8 text-yellow-400" />,
-                title: "Shipment Tracking",
-                desc:
-                  "Real-time package tracking with customer notifications and delivery confirmations.",
+                title: section2.cards.title3,
+                desc:section2.cards.line3,
               },
               {
                 icon: <BarChart3 className="w-8 h-8 text-yellow-400" />,
-                title: "Analytics Dashboard",
-                desc:
-                  "Performance metrics, delivery analytics, and operational efficiency reporting.",
+                title: section2.cards.title4,
+                desc: section2.cards.line4,
               },
               {
                 icon: <Users className="w-8 h-8 text-yellow-400" />,
-                title: "Driver Management",
-                desc:
-                  "Driver scheduling, performance tracking, and communication systems.",
+                title:section2.cards.title5,
+                desc: section2.cards.line5,
               },
               {
                 icon: <Clock className="w-8 h-8 text-yellow-400" />,
-                title: "Delivery Automation",
-                desc:
-                  "Automated delivery scheduling, dispatch management, and customer communication.",
+                title:section2.cards.title6,
+                desc: section2.cards.line6,
               },
             ].map((item, i) => (
               <div
@@ -179,17 +176,17 @@ const Logistics = () => {
           {/* LEFT LIST */}
           <div data-aos="fade-right">
             <h2 className="text-4xl font-bold text-white mb-8">
-              Deliver Excellence Every Mile
+            {section3.title1}
             </h2>
 
             <div className="space-y-6">
               {[
-                "Reduce delivery times by 40%",
-                "Optimize fuel consumption and routes",
-                "Improve customer satisfaction scores",
-                "Automate dispatch and scheduling",
-                "Real-time package and fleet tracking",
-                "Reduce operational costs by 25%",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((txt, i) => (
                 <div
                   key={i}
@@ -210,19 +207,18 @@ const Logistics = () => {
             data-aos="fade-left"
           >
             <h3 className="text-2xl font-bold mb-6">
-              Ready to Optimize Your Fleet?
+            {section3.title2}
             </h3>
 
             <p className="text-lg mb-6">
-              Join logistics companies that have reduced costs and improved
-              delivery times with our comprehensive solutions.
+            {section3.line7}
             </p>
 
             <div className="space-y-4">
               {[
-                "Custom solution for your fleet size",
-                "Driver training and mobile app support",
-                "24/7 monitoring and support",
+                 section3.line8,
+                 section3.line9,
+                 section3.line10,
               ].map((txt, i) => (
                 <div
                   key={i}
@@ -240,7 +236,7 @@ const Logistics = () => {
               onClick={() => navigate("/contact")}
               className="mt-6 inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
             >
-              Schedule Demo
+              {section3.button}
             </button>
           </div>
 

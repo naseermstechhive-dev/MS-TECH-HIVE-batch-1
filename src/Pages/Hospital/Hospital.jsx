@@ -12,9 +12,15 @@ import {
   BarChart3,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Hospital = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("hos")
+  const {section2} = t("hos")
+  const {section3} = t("hos")
 
   useEffect(() => {
     AOS.init({
@@ -49,9 +55,9 @@ const Hospital = () => {
               <div className="flex items-center space-x-4">
                 <div className="text-5xl">🏥</div>
                 <div>
-                  <h1 className="text-5xl font-bold text-white">Hospital</h1>
+                  <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
                   <p className="text-xl text-[#facc15] font-medium">
-                    Healthcare Automation Solutions
+                  {section1.line1}
                   </p>
                 </div>
               </div>
@@ -61,9 +67,7 @@ const Hospital = () => {
               className="text-xl text-gray-300 leading-relaxed mb-8"
               data-aos="fade-up"
             >
-              Transform your hospital operations with comprehensive automation
-              solutions for patient management, appointments, medical records,
-              and billing systems.
+              {section1.line2}
             </p>
 
             <div
@@ -75,14 +79,14 @@ const Hospital = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-[#facc15] text-[#facc15] font-semibold rounded-lg hover:bg-[#facc15] hover:text-gray-900 transition-colors"
               >
-                View All Services
+                {section1.button2}
               </button>
             </div>
           </div>
@@ -116,11 +120,10 @@ const Hospital = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Comprehensive Hospital Solutions
+            {section2.title}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our hospital automation platform covers every aspect of healthcare
-              operations.
+            {section2.line}
             </p>
           </div>
 
@@ -131,33 +134,33 @@ const Hospital = () => {
             {[
               {
                 icon: <User className="w-8 h-8 text-[#facc15]" />,
-                title: "Patient Management System",
-                desc: "Comprehensive patient registration, medical history tracking, and profile management with automated workflows.",
+                title: section2.cards.title1,
+                desc: section2.cards.line1,
               },
               {
                 icon: <Calendar className="w-8 h-8 text-[#facc15]" />,
-                title: "Appointment Scheduling",
-                desc: "Intelligent scheduling system with automated reminders, doctor availability, and conflict resolution.",
+                title: section2.cards.title2,
+                desc: section2.cards.line2,
               },
               {
                 icon: <FileText className="w-8 h-8 text-[#facc15]" />,
-                title: "Electronic Medical Records",
-                desc: "Secure, searchable EMR system with real-time updates and multi-device accessibility.",
+                title: section2.cards.title3,
+                desc:section2.cards.line3,
               },
               {
                 icon: <CreditCard className="w-8 h-8 text-[#facc15]" />,
-                title: "Billing & Insurance",
-                desc: "Automated billing processes, insurance claim management, and payment tracking systems.",
+                title: section2.cards.title4,
+                desc: section2.cards.line4,
               },
               {
                 icon: <Shield className="w-8 h-8 text-[#facc15]" />,
-                title: "HIPAA Compliance",
-                desc: "Full compliance with healthcare regulations and secure data handling protocols.",
+                title:section2.cards.title5,
+                desc: section2.cards.line5,
               },
               {
                 icon: <BarChart3 className="w-8 h-8 text-[#facc15]" />,
-                title: "Analytics Dashboard",
-                desc: "Real-time insights into patient flow, revenue metrics, and operational efficiency.",
+                title:section2.cards.title6,
+                desc: section2.cards.line6,
               },
             ].map((item, i) => (
               <div
@@ -188,16 +191,16 @@ const Hospital = () => {
           {/* Left Column */}
           <div data-aos="fade-right">
             <h2 className="text-4xl font-bold text-white mb-8">
-              Transform Your Hospital Operations
+              {section3.title1}
             </h2>
             <div className="space-y-4">
               {[
-                "Reduce patient wait times by 40%",
-                "Eliminate scheduling conflicts",
-                "Automate insurance verification",
-                "Streamline discharge processes",
-                "Improve patient satisfaction scores",
-                "Reduce administrative overhead by 30%",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -217,17 +220,16 @@ const Hospital = () => {
             className="bg-gradient-to-br from-[#facc15] to-[#ca8a04] p-8 rounded-2xl text-gray-900 shadow-xl"
             data-aos="zoom-in"
           >
-            <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+            <h3 className="text-2xl font-bold mb-4"> {section3.title2}</h3>
             <p className="text-lg mb-6">
-              Join hundreds of healthcare facilities that have transformed their
-              operations with our automation solutions.
+            {section3.line7}
             </p>
 
             <div className="space-y-3 mb-6">
               {[
-                "Free consultation and system analysis",
-                "Custom implementation plan",
-                "Training and ongoing support",
+                section3.line8,
+                section3.line9,
+                section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -245,7 +247,7 @@ const Hospital = () => {
               onClick={() => navigate("/contact")}
               className="inline-flex items-center justify-center px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
             >
-              Schedule Consultation
+              {section3.button}
             </button>
           </div>
         </div>

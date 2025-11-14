@@ -12,9 +12,15 @@ import {
   Clock,
   CircleCheckBig,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ITCompany = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("it")
+  const {section2} = t("it")
+  const {section3} = t("it")
 
   useEffect(() => {
     AOS.init({
@@ -45,17 +51,15 @@ const ITCompany = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl">💻</div>
               <div>
-                <h1 className="text-5xl font-bold text-white">IT Company</h1>
+                <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
                 <p className="text-xl text-yellow-400">
-                  Tech Project Solutions
+                {section1.line1}
                 </p>
               </div>
             </div>
 
             <p className="text-xl text-gray-300 leading-relaxed">
-              Enhance your IT operations with comprehensive project dashboards,
-              client communication portals, team collaboration tools, and
-              resource management systems.
+            {section1.line2}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up">
@@ -63,14 +67,14 @@ const ITCompany = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                 {section1.button1}
               </button>
 
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+              {section1.button2}
               </button>
             </div>
           </div>
@@ -102,10 +106,10 @@ const ITCompany = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl font-bold text-white mb-4">
-              Complete IT Project Management Platform
+            {section2.title}
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Streamline development workflows, enhance client relationships, and optimize team productivity
+            {section2.line}
             </p>
           </div>
 
@@ -119,9 +123,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Monitor className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Project Dashboards</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title1}</h3>
               <p className="text-gray-300">
-                Comprehensive project management dashboards with real-time progress tracking and team collaboration.
+               {section2.cards.line1}
               </p>
             </div>
 
@@ -134,9 +138,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Client Portals</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title2}</h3>
               <p className="text-gray-300">
-                Dedicated client communication portals with project updates, document sharing, and feedback systems.
+              {section2.cards.line2}
               </p>
             </div>
 
@@ -149,9 +153,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <BarChart3 className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Resource Management</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title3}</h3>
               <p className="text-gray-300">
-                Team allocation, skill tracking, and resource optimization for maximum project efficiency.
+              {section2.cards.line3}
               </p>
             </div>
 
@@ -164,9 +168,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <FileText className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Documentation Systems</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title4}</h3>
               <p className="text-gray-300">
-                Automated documentation generation, version control, and knowledge base management.
+              {section2.cards.line4}
               </p>
             </div>
 
@@ -179,9 +183,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Calendar className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Sprint Planning</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title5}</h3>
               <p className="text-gray-300">
-                Agile project management with sprint planning, backlog management, and velocity tracking.
+              {section2.cards.line5}
               </p>
             </div>
 
@@ -194,9 +198,9 @@ const ITCompany = () => {
               <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                 <Clock className="w-8 h-8 text-yellow-400" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Time Tracking</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">{section2.cards.title6}</h3>
               <p className="text-gray-300">
-                Automated time tracking, billing integration, and productivity analytics for teams.
+              {section2.cards.line6}
               </p>
             </div>
           </div>
@@ -213,17 +217,17 @@ const ITCompany = () => {
     {/* Left list */}
     <div data-aos="fade-right">
       <h2 className="text-4xl font-bold text-white mb-8">
-        Code Better, Deliver Faster
+      {section3.title1}
       </h2>
 
       <div className="space-y-4">
         {[
-          "Improve project delivery times by 40%",
-          "Enhance client communication and satisfaction",
-          "Automate time tracking and billing processes",
-          "Optimize team resource allocation",
-          "Streamline development workflows",
-          "Increase team productivity by 35%",
+           section3.line1,
+           section3.line2,
+           section3.line3,
+           section3.line4,
+           section3.line5,
+           section3.line6,
         ].map((text, i) => (
           <div
             key={i}
@@ -248,7 +252,7 @@ const ITCompany = () => {
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        Ready to Scale Your IT Operations?
+        {section3.title2}
       </h3>
 
       <p
@@ -256,15 +260,14 @@ const ITCompany = () => {
         data-aos="fade-up"
         data-aos-delay="150"
       >
-        Join successful IT companies that have improved project delivery and
-        client satisfaction with our management solutions.
+        {section3.line7}
       </p>
 
       <div className="space-y-4">
         {[
-          "Custom setup for your development methodology",
-          "Team training and integration support",
-          "API integrations with existing tools",
+          section3.line8,
+          section3.line9,
+          section3.line10,
         ].map((text, i) => (
           <div
             key={i}
@@ -284,7 +287,7 @@ const ITCompany = () => {
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        Schedule Consultation
+        {section3.button}
       </button>
     </div>
   </div>

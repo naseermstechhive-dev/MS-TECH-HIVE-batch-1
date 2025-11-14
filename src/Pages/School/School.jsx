@@ -12,9 +12,17 @@ import {
   CircleCheckBig,
   Clock,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const School = () => {
   const navigate = useNavigate();
+
+  const {t} = useTranslation()
+  const {section1} = t("sch")
+  const {section2} = t("sch")
+  const {section3} = t("sch")
+
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -47,17 +55,15 @@ const School = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl">🎓</div>
               <div>
-                <h1 className="text-5xl font-bold text-white">School</h1>
+                <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
                 <p className="text-xl text-yellow-400">
-                  Education Management Solutions
+                {section1.line1}
                 </p>
               </div>
             </div>
 
             <p className="text-xl text-gray-300 leading-relaxed mb-8">
-              Revolutionize your school's operations with automated attendance
-              tracking, parent communication portals, and comprehensive
-              administrative management systems.
+            {section1.line2}
             </p>
 
             <div className="flex flex-wrap gap-4" data-aos="fade-up">
@@ -65,13 +71,13 @@ const School = () => {
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
               >
-                Get Started Today
+                {section1.button1}
               </button>
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
               >
-                View All Services
+                {section1.button2}
               </button>
             </div>
           </div>
@@ -114,11 +120,10 @@ const School = () => {
           data-aos="fade-up"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            Complete School Management System
+          {section2.title}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Streamline every aspect of school administration with our
-            comprehensive automation platform.
+          {section2.line}
           </p>
         </div>
 
@@ -130,35 +135,35 @@ const School = () => {
           {[
             {
               icon: <Users className="w-8 h-8 text-yellow-400" />,
-              title: "Student Management",
-              desc: "Comprehensive student profiles, enrollment tracking, and academic progress monitoring.",
+              title: section2.cards.title1,
+              desc: section2.cards.line1,
             },
             {
               icon: <Calendar className="w-8 h-8 text-yellow-400" />,
-              title: "Attendance Tracking",
-              desc: "Automated attendance systems with real-time notifications to parents and administrators.",
+              title: section2.cards.title2,
+              desc: section2.cards.line2,
             },
             {
               icon: <MessageSquare className="w-8 h-8 text-yellow-400" />,
-              title: "Parent Communication Portal",
-              desc: "Direct communication channels between teachers, parents, and administrators.",
+              title: section2.cards.title3,
+                desc:section2.cards.line3,
             },
             {
               icon: <FileText className="w-8 h-8 text-yellow-400" />,
-              title: "Grade Management",
-              desc: "Digital gradebooks, report card generation, and academic performance tracking.",
+              title: section2.cards.title4,
+              desc: section2.cards.line4,
             },
             {
               icon: (
                 <ChartNoAxesColumnIncreasing className="w-8 h-8 text-yellow-400" />
               ),
-              title: "Academic Analytics",
-              desc: "Insights into student performance, attendance patterns, and school metrics.",
+              title:section2.cards.title5,
+              desc: section2.cards.line5,
             },
             {
               icon: <Shield className="w-8 h-8 text-yellow-400" />,
-              title: "Safety & Security",
-              desc: "Student check-in/out systems and emergency communication protocols.",
+              title:section2.cards.title6,
+              desc: section2.cards.line6,
             },
           ].map((item, i) => (
             <div
@@ -188,16 +193,16 @@ const School = () => {
           {/* Left Column */}
           <div data-aos="fade-right">
             <h2 className="text-4xl font-bold text-white mb-8">
-              Enhance Educational Excellence
+            {section3.title1}
             </h2>
             <div className="space-y-4">
               {[
-                "Reduce administrative tasks by 50%",
-                "Improve parent engagement by 75%",
-                "Automate attendance and grade reporting",
-                "Streamline teacher-parent communication",
-                "Real-time academic progress tracking",
-                "Enhanced school safety protocols",
+                section3.line1,
+                section3.line2,
+                section3.line3,
+                section3.line4,
+                section3.line5,
+                section3.line6,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -218,18 +223,17 @@ const School = () => {
             data-aos="zoom-in"
           >
             <h3 className="text-2xl font-bold mb-6">
-              Transform Your School Today
+            {section3.title2}
             </h3>
             <p className="text-lg mb-6">
-              Join progressive schools that have modernized their operations
-              with our education management solutions.
+            {section3.line7}
             </p>
 
             <div className="space-y-4">
               {[
-                "Personalized demo for your school",
-                "Staff training and support",
-                "Gradual implementation plan",
+                 section3.line8,
+                 section3.line9,
+                 section3.line10,
               ].map((text, i) => (
                 <div
                   key={i}
@@ -247,7 +251,7 @@ const School = () => {
               onClick={() => navigate("/contact")}
               className="mt-6 inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
             >
-              Schedule Demo
+              {section3.button}
             </button>
           </div>
         </div>
