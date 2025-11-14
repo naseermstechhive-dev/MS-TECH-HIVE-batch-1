@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"College",
+    "line1":"Higher Education Solutions",
+    "line2":"Modernize your college operations with comprehensive admission management, student dashboards, analytics, and automated administrative processes.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Comprehensive College Management Platform",
+    "line":"From admissions to graduation, manage every aspect of your institution with intelligent automation.",
+    "cards":{
+      "title1":"Admission Management",
+      "title2":"Student Dashboards",
+      "title3":"Analytics & Reporting",
+      "title4":"Course Management",
+      "title5":"Academic Records",
+      "title6":"Fee Management",
+      "line1":"Streamlined application processing, document verification, and enrollment workflows.",
+      "line2":"Comprehensive student portals for course registration, grades, and academic progress.",
+      "line3":"Advanced analytics for student performance, enrollment trends, and institutional metrics.",
+      "line4":"Automated scheduling, faculty assignment, and classroom resource management.",
+      "line5":"Digital transcripts, degree verification, and academic history management.",
+      "line6":"Automated fee collection, scholarship processing, and financial aid distribution."
+    }
+  },
+  "section3":{
+    "title1":"Elevate Higher Education Standards",
+    "title2":"Ready for Digital Transformation?",
+    "line1":"Reduce admission processing time by 60%",
+    "line2":"Automate course registration and scheduling",
+    "line3":"Improve student engagement with digital portals",
+    "line4":"Streamline fee collection and financial aid",
+    "line5":"Generate comprehensive academic reports",
+    "line6":"Enhance institutional decision-making with analytics",
+    "line7":"Join leading colleges that have revolutionized their operations with our comprehensive management solutions.",
+    "line8":"Tailored solution for your institution",
+    "line9":"Faculty and staff training programs",
+    "line10":"Phased implementation approach",
+    "button":"Schedule Consultation"
+  }
+}

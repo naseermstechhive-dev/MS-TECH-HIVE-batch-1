@@ -17,6 +17,11 @@ import {
 
 const Office = () => {
   const { mode } = useContext(GlobalContext);
+   const navigate = useNavigate();
+  const {t} = useTranslation()
+  const {section1} = t("ofc")
+  const {section2} = t("ofc")
+  const {section3} = t("ofc")
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",

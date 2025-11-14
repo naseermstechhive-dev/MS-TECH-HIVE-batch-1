@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"IT Company",
+    "line1":"Tech Project Solutions",
+    "line2":"Enhance your IT operations with comprehensive project dashboards, client communication portals, team collaboration tools, and resource management systems.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Complete IT Project Management Platform",
+    "line":"Streamline development workflows, enhance client relationships, and optimize team productivity",
+    "cards":{
+      "title1":"Project Dashboards",
+      "title2":"Client Portals",
+      "title3":"Resource Management",
+      "title4":"Documentation Systems",
+      "title5":"Sprint Planning",
+      "title6":"Time Tracking",
+      "line1":"Comprehensive project management dashboards with real-time progress tracking and team collaboration.",
+      "line2":"Dedicated client communication portals with project updates, document sharing, and feedback systems.",
+      "line3":"Team allocation, skill tracking, and resource optimization for maximum project efficiency.",
+      "line4":"Automated documentation generation, version control, and knowledge base management.",
+      "line5":"Agile project management with sprint planning, backlog management, and velocity tracking.",
+      "line6":"Automated time tracking, billing integration, and productivity analytics for teams."
+    }
+  },
+  "section3":{
+    "title1":"Code Better, Deliver Faster",
+    "title2":"Ready to Scale Your IT Operations?",
+    "line1":"Improve project delivery times by 40%",
+    "line2":"Enhance client communication and satisfaction",
+    "line3":"Automate time tracking and billing processes",
+    "line4":"Optimize team resource allocation",
+    "line5":"Streamline development workflows",
+    "line6":"Increase team productivity by 35%",
+    "line7":"Join successful IT companies that have improved project delivery and client satisfaction with our management solutions.",
+    "line8":"Custom setup for your development methodology",
+    "line9":"Team training and integration support",
+    "line10":"API integrations with existing tools",
+    "button":"Schedule Consultation"
+  }
+}

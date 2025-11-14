@@ -17,6 +17,11 @@ import {
 
 const College = () => {
   const { mode } = useContext(GlobalContext);
+  const navigate = useNavigate();
+  const {t} = useTranslation()
+  const {section1} = t("clg")
+  const {section2} = t("clg")
+  const {section3} = t("clg")
 
   // 1. Define Theme
   const theme = {

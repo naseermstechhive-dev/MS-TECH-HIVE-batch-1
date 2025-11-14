@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"Hospital",
+    "line1":"Healthcare Automation Solutions",
+    "line2":"Transform your hospital operations with comprehensive automation solutions for patient management, appointments, medical records, and billing systems.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Comprehensive Hospital Solutions",
+    "line":"Our hospital automation platform covers every aspect of healthcare operations.",
+    "cards":{
+      "title1":"Patient Management System",
+      "title2":"Appointment Scheduling",
+      "title3":"Electronic Medical Records",
+      "title4":"Billing & Insurance",
+      "title5":"HIPAA Compliance",
+      "title6":"Analytics Dashboard",
+      "line1":"Comprehensive patient registration, medical history tracking, and profile management with automated workflows.",
+      "line2":"Intelligent scheduling system with automated reminders, doctor availability, and conflict resolution.",
+      "line3":"Secure, searchable EMR system with real-time updates and multi-device accessibility.",
+      "line4":"Automated billing processes, insurance claim management, and payment tracking systems.",
+      "line5":"Full compliance with healthcare regulations and secure data handling protocols.",
+      "line6":"Real-time insights into patient flow, revenue metrics, and operational efficiency."
+    }
+  },
+  "section3":{
+    "title1":"Transform Your Hospital Operations",
+    "title2":"Ready to Get Started?",
+    "line1":"Reduce patient wait times by 40%",
+    "line2":"Eliminate scheduling conflicts",
+    "line3":"Automate insurance verification",
+    "line4":"Streamline discharge processes",
+    "line5":"Improve patient satisfaction scores",
+    "line6":"Reduce administrative overhead by 30%",
+    "line7":"Join hundreds of healthcare facilities that have transformed their operations with our automation solutions.",
+    "line8":"Free consultation and system analysis",
+    "line9":"Custom implementation plan",
+    "line10":"Training and ongoing support",
+    "button":"Schedule Consultation"
+  }
+}
