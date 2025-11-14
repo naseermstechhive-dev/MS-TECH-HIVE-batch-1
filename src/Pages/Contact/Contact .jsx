@@ -1,17 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { GlobalContext } from "../../context/Context";
 
 function Contact() {
+  const { mode } = useContext(GlobalContext);
+
   useEffect(() => {
     AOS.init({
       duration: 900,
       easing: "ease-out",
       once: false,
-      mirror: true, 
+      mirror: false,
     });
-  }, []);
+
+    AOS.refresh();
+  }, [mode]);
+
+  const pageBg = mode ? "bg-white text-gray-900" : "bg-slate-900 text-white";
+  const sectionBg = mode ? "bg-white" : "bg-slate-900";
+  const cardBg = mode ? "bg-gray-100" : "bg-slate-800";
+  const cardTitle = mode ? "text-gray-900 font-semibold" : "text-white font-semibold";
+  const cardText = mode ? "text-gray-700 font-medium" : "text-gray-300";
+  const labelText = mode ? "text-gray-900 font-medium" : "text-white font-medium";
+  const inputBg = mode ? "bg-gray-100 text-gray-900 border-gray-300" : "bg-slate-700 text-white border-slate-600";
+  const placeholderText = mode ? "placeholder-gray-500" : "placeholder-gray-500";
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -22,10 +36,7 @@ function Contact() {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
@@ -34,7 +45,6 @@ function Contact() {
       return;
     }
 
-    console.log("Form submitted:", formData);
     alert("Message sent successfully!");
 
     setFormData({
@@ -47,20 +57,26 @@ function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className={`min-h-screen transition-colors ${pageBg}`}>
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <div className="text-center py-16 px-6" data-aos="fade-up">
-        <h1 className="text-6xl font-bold text-white mb-6" data-aos="zoom-in">
+      <div
+        className={`text-center py-16 px-6 transition-colors ${sectionBg}`}
+        data-aos="fade-up"
+      >
+        <h1
+          className="text-4xl sm:text-6xl font-bold mb-6 max-[600px]:text-3xl"
+          data-aos="zoom-in"
+        >
           Get In Touch
         </h1>
 
         <p
-          className="text-xl text-gray-300 max-w-4xl mx-auto"
+          className={`text-lg sm:text-xl max-w-4xl mx-auto ${cardText}`}
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Ready to automate your work and accelerate your growth? Let's discuss how we can help transform your business.
+          Ready to automate your work and accelerate growth? Let's discuss how we can transform your business.
         </p>
       </div>
 
@@ -68,63 +84,68 @@ function Contact() {
       <div className="max-w-7xl mx-auto px-6 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-          {/* ---------------- LEFT: CONTACT INFO ---------------- */}
+          {/* ---------------- CONTACT INFO ---------------- */}
           <div className="space-y-8" data-aos="fade-right">
-            <div className="bg-slate-800 rounded-3xl p-10">
-              <h2 className="text-4xl font-bold text-white mb-10" data-aos="zoom-in">
+            <div className={`rounded-3xl p-10 transition-colors ${cardBg}`}>
+
+              <h2
+                className={`text-3xl sm:text-4xl font-bold mb-10 ${cardTitle}`}
+                data-aos="zoom-in"
+              >
                 Contact Information
               </h2>
 
               <div className="space-y-8">
 
-                {/* Email */}
+                {/* EMAIL */}
                 <div className="flex items-start space-x-5" data-aos="fade-up">
-                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
                     <Mail className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Email</div>
-                    <div className="text-gray-400 text-base">info@mstechhive.com</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>Email</div>
+                    <div className={`${cardText}`}>info@mstechhive.com</div>
                   </div>
                 </div>
 
-                {/* Phone */}
+                {/* PHONE */}
                 <div className="flex items-start space-x-5" data-aos="fade-up" data-aos-delay="150">
-                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
                     <Phone className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Phone</div>
-                    <div className="text-gray-400 text-base">+91 9032223352</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>Phone</div>
+                    <div className={`${cardText}`}>+91 9032223352</div>
                   </div>
                 </div>
 
-                {/* Address */}
+                {/* ADDRESS */}
                 <div className="flex items-start space-x-5" data-aos="fade-up" data-aos-delay="300">
-                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
                     <MapPin className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Address</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>Address</div>
+
                     <a
                       href="https://maps.app.goo.gl/xuJKp9urXsuoBeab9"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-yellow-500 transition-colors text-base"
+                      className={`${cardText} hover:text-yellow-500 transition-colors`}
                     >
                       View Our Location
                     </a>
                   </div>
                 </div>
 
-                {/* Hours */}
+                {/* HOURS */}
                 <div className="flex items-start space-x-5" data-aos="fade-up" data-aos-delay="450">
-                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 bg-yellow-500 rounded-full flex items-center justify-center">
                     <Clock className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className="text-white font-semibold text-lg mb-1">Business Hours</div>
-                    <div className="text-gray-400 text-base">Mon - Fri: 9:00 AM - 6:00 PM</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>Business Hours</div>
+                    <div className={`${cardText}`}>Mon - Fri: 9:00 AM - 6:00 PM</div>
                   </div>
                 </div>
 
@@ -132,115 +153,102 @@ function Contact() {
             </div>
           </div>
 
-          {/* ---------------- RIGHT: FORM ---------------- */}
+          {/* ---------------- FORM ---------------- */}
           <div
-            className="bg-slate-800 rounded-3xl p-10"
+            className={`rounded-3xl p-10 transition-colors ${cardBg}`}
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <h2 className="text-4xl font-bold text-white mb-10" data-aos="zoom-in">
+            <h2 className={`text-3xl sm:text-4xl font-bold mb-10 ${cardTitle}`} data-aos="zoom-in">
               Send Us a Message
             </h2>
 
             <div className="space-y-6">
 
-              {/* Full Name + Email */}
+              {/* NAME + EMAIL */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <div data-aos="fade-up">
-                  <label className="block text-white text-sm font-medium mb-3">
-                    Full Name *
-                  </label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>Full Name *</label>
                   <input
                     type="text"
                     name="fullName"
-                    required
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="Your full name"
-                    className="w-full px-5 py-4 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    className={`w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg} ${placeholderText}`}
                   />
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="150">
-                  <label className="block text-white text-sm font-medium mb-3">
-                    Email Address *
-                  </label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>Email Address *</label>
                   <input
                     type="email"
                     name="email"
-                    required
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className="w-full px-5 py-4 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    className={`w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg} ${placeholderText}`}
                   />
                 </div>
 
               </div>
 
-              {/* Company + Industry */}
+              {/* COMPANY + INDUSTRY */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <div data-aos="fade-up">
-                  <label className="block text-white text-sm font-medium mb-3">
-                    Company Name
-                  </label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>Company Name</label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
                     placeholder="Your company name"
-                    className="w-full px-5 py-4 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    className={`w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg} ${placeholderText}`}
                   />
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="150">
-                  <label className="block text-white text-sm font-medium mb-3">
-                    Industry
-                  </label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>Industry</label>
                   <select
                     name="industry"
                     value={formData.industry}
                     onChange={handleChange}
-                    className="w-full px-5 py-4 bg-slate-700 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 appearance-none"
+                    className={`w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg}`}
                   >
                     <option value="">Select your industry</option>
-                    <option value="Hospital">Hospital</option>
-                    <option value="School">School</option>
-                    <option value="College">College</option>
-                    <option value="Restaurant">Restaurant</option>
-                    <option value="Office">Office</option>
-                    <option value="Retail Shop">Retail Shop</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Logistics">Logistics</option>
-                    <option value="IT Company">IT Company</option>
-                    <option value="E-commerce">E-commerce</option>
-                    <option value="Clinic / Lab">Clinic / Lab</option>
-                    <option value="Other">Other</option>
+                    <option>Hospital</option>
+                    <option>School</option>
+                    <option>College</option>
+                    <option>Restaurant</option>
+                    <option>Office</option>
+                    <option>Retail Shop</option>
+                    <option>Construction</option>
+                    <option>Logistics</option>
+                    <option>IT Company</option>
+                    <option>E-commerce</option>
+                    <option>Clinic / Lab</option>
+                    <option>Other</option>
                   </select>
                 </div>
 
               </div>
 
-              {/* Message */}
+              {/* MESSAGE */}
               <div data-aos="fade-up" data-aos-delay="250">
-                <label className="block text-white text-sm font-medium mb-3">
-                  Message *
-                </label>
+                <label className={`block text-sm mb-3 ${labelText}`}>Message *</label>
                 <textarea
                   name="message"
-                  required
                   rows="6"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your project or automation needs..."
-                  className="w-full px-5 py-4 bg-slate-700 border border-slate-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
+                  placeholder="Tell us about your project..."
+                  className={`w-full px-5 py-4 rounded-xl border resize-none focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg} ${placeholderText}`}
                 />
               </div>
 
-              {/* Submit Button */}
+              {/* SUBMIT BUTTON */}
               <button
                 onClick={handleSubmit}
                 className="w-full flex items-center justify-center px-8 py-5 bg-yellow-500 text-slate-900 font-bold text-lg rounded-xl hover:bg-yellow-400 transition-colors group"
@@ -251,11 +259,18 @@ function Contact() {
               </button>
             </div>
           </div>
+
         </div>
 
         {/* ---------------- WHY CHOOSE US ---------------- */}
-        <div className="mt-16 bg-yellow-500 rounded-3xl p-12" data-aos="fade-up">
-          <h3 className="text-4xl font-bold text-slate-900 mb-8" data-aos="zoom-in">
+        <div
+          className="mt-16 bg-yellow-500 rounded-3xl p-12"
+          data-aos="fade-up"
+        >
+          <h3
+            className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8"
+            data-aos="zoom-in"
+          >
             Why Choose Us?
           </h3>
 
@@ -284,6 +299,7 @@ function Contact() {
                   <circle cx="12" cy="12" r="10" />
                   <path d="m9 12 2 2 4-4" />
                 </svg>
+
                 <span className="text-slate-900 text-lg font-medium">{text}</span>
               </div>
             ))}

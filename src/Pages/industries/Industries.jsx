@@ -1,9 +1,10 @@
 // src/pages/industries/Industries.jsx
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ArrowRight } from "lucide-react";
+import { GlobalContext } from "./../../context/Context";
 
 const industries = [
   {
@@ -14,12 +15,7 @@ const industries = [
     emoji: "🏥",
     desc:
       "Streamline patient management, appointments, and medical records with automated workflows.",
-    features: [
-      "Patient Registration",
-      "Appointment Scheduling",
-      "Medical Records",
-      "Billing Systems",
-    ],
+    features: ["Patient Registration", "Appointment Scheduling", "Medical Records", "Billing Systems"],
     link: "/hospital",
   },
   {
@@ -134,77 +130,88 @@ const industries = [
   },
 ];
 
-const Industries  = () => {
+const Industries = () => {
   const navigate = useNavigate();
+  const { mode } = useContext(GlobalContext);
 
+  /** ---------------- THEME VARIABLES ---------------- */
+  const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
+  const headingTitle = mode ? "text-gray-900 font-extrabold" : "text-white font-bold";
+  const headingSub = mode ? "text-gray-700 font-medium" : "text-gray-300";
+
+  const cardBg = mode ? "bg-gray-100" : "bg-gray-800";
+  const cardHover = mode ? "hover:bg-gray-200" : "hover:bg-gray-700";
+  const cardTitle = mode ? "text-gray-900 font-semibold" : "text-white font-semibold";
+  const cardDesc = mode ? "text-gray-700 font-medium" : "text-gray-300";
+
+  const featureText = mode ? "text-gray-700 font-medium" : "text-gray-400";
+
+  const ctaBg = "bg-gradient-to-r from-yellow-600 to-yellow-500";
+  const ctaTitle = "text-gray-900 font-bold";
+  const ctaSub = "text-gray-800";
+  const ctaBtn = mode ? "bg-gray-900 text-white" : "bg-gray-900 text-white";
+
+  /** ---------------- AOS INIT ---------------- */
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false, // continuous when scrolling back & forth
+      once: false,
       mirror: false,
     });
-    // refresh on component mount
     AOS.refresh();
-  }, []);
+  }, [mode]);
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
-      {/* Main content wrapper */}
+    <div className={`min-h-screen transition-colors ${pageBg}`}>
+      {/* Main content */}
       <div className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
+
           {/* Heading */}
-          <div
-            className="text-center mb-16"
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <h1 className={`text-5xl md:text-6xl mb-6 ${headingTitle}`}>
               Industries We Serve
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Specialized automation solutions tailored for your industry's unique challenges and requirements.
+            <p className={`text-xl max-w-3xl mx-auto ${headingSub}`}>
+              Specialized automation solutions tailored to your industry.
             </p>
           </div>
 
-          {/* Grid of industry cards */}
+          {/* Industry cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((item, idx) => {
-              const delay = 100 + idx * 100; // 100,200,300...
+              const delay = 100 + idx * 100;
               return (
                 <div
                   key={item.key}
-                  className="bg-gray-800 rounded-2xl overflow-hidden hover:bg-gray-700 transition-all duration-300 hover:scale-105 group"
+                  className={`rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 group ${cardBg} ${cardHover}`}
                   data-aos="fade-up"
                   data-aos-delay={delay}
-                  data-aos-duration="1000"
-                  data-aos-easing="ease-in-out"
-                  data-aos-once="false"
                 >
-                  {/* image area */}
+                  {/* Image */}
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                     <div className="absolute top-4 left-4 text-4xl">{item.emoji}</div>
                   </div>
 
-                  {/* content */}
+                  {/* Content */}
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors">
+                    <h3 className={`text-2xl mb-3 ${cardTitle}`}>
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 mb-4 leading-relaxed">{item.desc}</p>
+                    <p className={`mb-4 leading-relaxed ${cardDesc}`}>{item.desc}</p>
 
                     <div className="mb-6">
                       <h4 className="text-sm font-semibold text-yellow-400 mb-3">KEY FEATURES:</h4>
                       <div className="grid grid-cols-2 gap-2">
                         {item.features.map((f, i) => (
-                          <div key={i} className="text-sm text-gray-400">
+                          <div key={i} className={`text-sm ${featureText}`}>
                             • {f}
                           </div>
                         ))}
@@ -224,31 +231,31 @@ const Industries  = () => {
             })}
           </div>
 
-          {/* CTA block (Don't See Your Industry?) */}
+          {/* CTA */}
           <div
-            className="mt-20 text-center bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-2xl p-12"
+            className={`mt-20 text-center ${ctaBg} rounded-2xl p-12`}
             data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in-out"
-            data-aos-once="false"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Don't See Your Industry?</h2>
-            <p className="text-xl text-gray-800 mb-8 max-w-2xl mx-auto">
-              We work with businesses across many sectors. Contact us to discuss your specific automation needs.
+            <h2 className={`text-3xl md:text-4xl mb-4 ${ctaTitle}`}>
+              Don't See Your Industry?
+            </h2>
+            <p className={`text-xl mb-8 max-w-2xl mx-auto ${ctaSub}`}>
+              We work with businesses across many sectors. Let's discuss your needs!
             </p>
 
             <button
               onClick={() => navigate("/contact")}
-              className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+              className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors ${ctaBtn}`}
             >
               Get Custom Solution
               <ArrowRight className="ml-3 w-5 h-5" />
             </button>
           </div>
+
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Industries
+export default Industries;
