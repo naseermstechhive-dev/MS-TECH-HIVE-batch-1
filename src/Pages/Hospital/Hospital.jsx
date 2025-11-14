@@ -69,7 +69,7 @@ const Hospital = () => {
 
                 <div>
                   <h1
-                    className={`text-5xl ${heroTitle}`}
+                    className={`text-5xl max-[500px]:text-4xl ${heroTitle}`}
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >

@@ -45,7 +45,7 @@ function ServicesPage() {
           {/* Hero Section */}
           <div className="text-center mb-16" data-aos="fade-up">
             <h1
-              className={`text-5xl mb-6 ${heroTitle}`}
+              className={`text-5xl mb-6 max-[400px]:text-4xl ${heroTitle}`}
               data-aos="zoom-in"
             >
               Our Services

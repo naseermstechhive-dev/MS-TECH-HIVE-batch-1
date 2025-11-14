@@ -45,7 +45,7 @@ function AboutPage() {
       >
         <div className="max-w-7xl mx-auto">
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl mb-6 ${heroTitle}`}
+            className={`text-4xl sm:text-5xl md:text-6xl mb-6 max-[400px]:text-3xl ${heroTitle}`}
             data-aos="zoom-in"
           >
             About MS Tech Hive

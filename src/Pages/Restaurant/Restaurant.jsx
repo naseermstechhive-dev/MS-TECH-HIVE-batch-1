@@ -61,7 +61,7 @@ const Restaurant = () => {
             <div className="flex items-center space-x-4 mb-6">
               <div className="text-5xl" data-aos="zoom-in">🍽️</div>
               <div>
-                <h1 className={`text-5xl font-bold ${heroTitle}`} data-aos="fade-up">
+                <h1 className={`text-5xl font-bold max-[500px]:text-4xl ${heroTitle}`} data-aos="fade-up">
                   Restaurant
                 </h1>
                 <p className={`text-xl ${heroSub}`} data-aos="fade-up" data-aos-delay="100">
@@ -80,9 +80,9 @@ const Restaurant = () => {
             </p>
 
             <div
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row gap-4"
               data-aos="fade-up"
-              data-aos-delay="200"
+              data-aos-delay="300"
             >
               <button
                 onClick={() => navigate("/contact")}

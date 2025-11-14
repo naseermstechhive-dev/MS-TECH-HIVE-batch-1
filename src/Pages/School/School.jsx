@@ -66,7 +66,7 @@ const School = () => {
 
               <div>
                 <h1
-                  className={`text-5xl ${heroTitle}`}
+                  className={`text-5xl max-[500px]:text-4xl ${heroTitle}`}
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
@@ -92,7 +92,11 @@ const School = () => {
               communication, analytics, and complete education management.
             </p>
 
-            <div className="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="250">
+            <div 
+              className="flex flex-col sm:flex-row gap-4"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <button
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors"
