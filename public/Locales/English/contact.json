@@ -1,0 +1,30 @@
+{
+  "section1":{
+    "title":"Get In Touch",
+    "line":"Ready to automate your work and accelerate your growth? Let's discuss how we can help transform your business."
+  },
+  "section2":{
+    "title":"Contact Information",
+    "line1":"Email",
+    "line2":"Phone",
+    "line3":"Address",
+    "line4":"View Our Location",
+    "line5":"Business Hours"
+  },
+  "section3":{
+    "title":"Send Us a Message",
+    "line1":"Full Name",
+    "line2":"Email Address",
+    "line3":"Company Name",
+    "line4":"Industry",
+    "line5":"Message",
+    "button":"Send Message"
+  },
+  "section4":{
+    "title":"Why Choose Us?",
+    "line1":"Industry-specific expertise across 12+ sectors",
+    "line2":"Proven track record of successful implementations",
+    "line3":"24/7 support and maintenance",
+    "line4":"Custom solutions tailored to your needs"
+  }
+}

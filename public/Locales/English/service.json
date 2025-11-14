@@ -1,0 +1,72 @@
+{
+  "section1":{
+    "title":"Our Services",
+    "line":"Comprehensive technology solutions designed to automate your work and accelerate your growth across all business functions."
+  },
+  "section2":{
+    "title1":"Design & Branding",
+    "title2":"Marketing & Ads",
+    "title3":"Automation",
+    "title4":"Analytics",
+    "title5":"Dev & Hosting",
+    "title6":"Onboarding",
+
+    "card1":{
+      "title1":"Web Designing",
+      "title2":"Graphic Designing",
+      "title3":"Branding & Visual Identity",
+      "line1":"Modern, responsive websites that convert visitors into customers",
+      "line2":"Creative visual solutions for all your branding needs",
+      "line3":"Complete brand identity packages that make you stand out"
+    },
+
+    "card2":{
+      "title1":"SEO",
+      "title2":"Social Media Marketing",
+      "title3":"AI-Powered Ad Generator",
+      "title4":"No-Code Landing Page Builder",
+      "line1":"Boost your search rankings and organic traffic",
+      "line2":"Engage your audience across all social platforms",
+      "line3":"Create high-converting ads with artificial intelligence",
+      "line4":"Build professional landing pages without coding"
+    },
+
+    "card3":{
+      "title1":"WhatsApp CRM Automation",
+      "title2":"Lead Nurturing Workflow",
+      "title3":"Social Media Content Automation",
+      "line1":"Automate customer interactions through WhatsApp",
+      "line2":"Convert leads into customers with automated sequences",
+      "line3":"Schedule and automate your social media presence"
+    },
+
+    "card4":{
+      "title1":"Campaign Performance Dashboards",
+      "title2":"Client Portal & Billing Tools",
+      "line1":"Real-time insights into your marketing campaigns",
+      "line2":"Streamlined client management and billing solutions"
+    },
+
+    "card5":{
+      "title1":"Mobile App Development",
+      "title2":"Domain Hosting",
+      "title3":"Custom Integrations",
+      "line1":"Native and cross-platform mobile applications",
+      "line2":"Reliable hosting solutions for your websites",
+      "line3":"Connect your tools and automate workflows"
+    },
+
+    "card6":{
+      "title1":"Interactive Product Demos",
+      "line1":"Engaging demos that showcase your product's value"
+    }
+
+  },
+  "section3":{
+    "title":"Ready to Get Started?",
+    "line":"Let's discuss how our services can help automate your work and accelerate your business growth.",
+    "button1":"Contact Us",
+    "button2":"Learn More"
+  }
+  
+}

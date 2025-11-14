@@ -48,7 +48,7 @@ function AboutPage() {
             className={`text-4xl sm:text-5xl md:text-6xl mb-6 max-[400px]:text-3xl ${heroTitle}`}
             data-aos="zoom-in"
           >
-            About MS Tech Hive
+            {section1.title1}
           </h1>
 
           <p
@@ -56,7 +56,7 @@ function AboutPage() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Empowering businesses with intelligent automation solutions since 2020
+           {section1.line1}
           </p>
         </div>
       </div>
@@ -116,10 +116,10 @@ function AboutPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
               {[
-                { value: "500+", text: "Projects Completed" },
-                { value: "12", text: "Industries Served" },
-                { value: "50+", text: "Happy Clients" },
-                { value: "5", text: "Years Experience" },
+                { value: "500+", text: section2.line1 },
+                { value: "12", text: section2.line2 },
+                { value: "50+", text: section2.line3 },
+                { value: "5", text: section2.line4 },
               ].map((item, i) => (
                 <div key={i} data-aos="zoom-in" data-aos-delay={i * 150}>
                   <div className={`text-4xl sm:text-5xl md:text-6xl mb-2 ${statsNum}`}>
@@ -146,7 +146,7 @@ function AboutPage() {
               className={`text-3xl sm:text-4xl md:text-5xl mb-4 ${heroTitle}`}
               data-aos="zoom-in"
             >
-              Our Values
+              {section3.title}
             </h2>
 
             <p
@@ -154,7 +154,7 @@ function AboutPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              The principles that guide everything we do
+              {section3.line}
             </p>
           </div>
 
@@ -209,7 +209,7 @@ function AboutPage() {
             className={`text-3xl sm:text-4xl md:text-5xl mb-12 ${heroTitle}`}
             data-aos="zoom-in"
           >
-            Our Story
+            {section4.title}
           </h2>
 
           <div className={`space-y-6 sm:space-y-8 ${storyText} leading-relaxed text-base sm:text-lg`}>

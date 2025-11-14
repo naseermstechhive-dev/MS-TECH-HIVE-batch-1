@@ -133,7 +133,7 @@ function Contact() {
                       rel="noopener noreferrer"
                       className={`${cardText} hover:text-yellow-500 transition-colors`}
                     >
-                      View Our Location
+                      {section2.line4}
                     </a>
                   </div>
                 </div>
@@ -254,7 +254,7 @@ function Contact() {
                 className="w-full flex items-center justify-center px-8 py-5 bg-yellow-500 text-slate-900 font-bold text-lg rounded-xl hover:bg-yellow-400 transition-colors group"
                 data-aos="zoom-in"
               >
-                <span>Send Message</span>
+                <span>{section3.button}</span>
                 <Send className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -276,10 +276,10 @@ function Contact() {
 
           <div className="space-y-5">
             {[
-              "Industry-specific expertise across 12+ sectors",
-              "Proven track record of successful implementations",
-              "24/7 support and maintenance",
-              "Custom solutions tailored to your needs",
+              section4.line1,
+              section4.line2,
+              section4.line3,
+              section4.line4,
             ].map((text, i) => (
               <div
                 className="flex items-center space-x-4"

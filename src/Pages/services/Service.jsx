@@ -56,8 +56,7 @@ function ServicesPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Comprehensive technology solutions designed to automate your work and
-              accelerate your growth across all business functions.
+              {section1.line}
             </p>
           </div>
 
@@ -123,19 +122,19 @@ function ServicesPage() {
 
                     <h3 className={`text-xl mb-3 group-hover:text-yellow-400 transition-colors ${cardTitle}`}>
                       {
-                        num === 1 ? "SEO" :
-                        num === 2 ? "Social Media Marketing" :
-                        num === 3 ? "AI-Powered Ad Generator" :
-                        "No-Code Landing Page Builder"
+                        num === 1 ? section2.card3.title1:
+                        num === 2 ?section2.card3.title2 :
+                        num === 3 ? section2.card3.title3 :
+                        section2.card3.title4
                       }
                     </h3>
 
                     <p className={`${cardText} leading-relaxed`}>
                       {
-                        num === 1 ? "Boost your search rankings and organic traffic" :
-                        num === 2 ? "Engage your audience across all social platforms" :
-                        num === 3 ? "Create high-converting ads with artificial intelligence" :
-                        "Build professional landing pages without coding"
+                        num === 1 ? section2.card2.line1 :
+                        num === 2 ? section2.card2.line2 :
+                        num === 3 ? section2.card2.line3 :
+                        section2.card2.line4
                       }
                     </p>
                   </div>
@@ -151,9 +150,9 @@ function ServicesPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  "WhatsApp CRM Automation",
-                  "Lead Nurturing Workflow",
-                  "Social Media Content Automation"
+                  section2.card3.title1,
+                  section2.card3.title2,
+                  section2.card3.title3
                 ].map((text, i) => (
                   <div
                     key={i}
@@ -186,8 +185,8 @@ function ServicesPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  "Campaign Performance Dashboards",
-                  "Client Portal & Billing Tools"
+                  section2.card4.title1,
+                  section2.card4.title2
                 ].map((text, i) => (
                   <div
                     key={i}
@@ -205,8 +204,8 @@ function ServicesPage() {
 
                     <p className={`${cardText} leading-relaxed`}>
                       {i === 0
-                        ? "Real-time insights into your marketing campaigns"
-                        : "Streamlined client management and billing solutions"}
+                        ? section2.card4.line1
+                        : section2.card4.line2}
                     </p>
                   </div>
                 ))}
@@ -221,9 +220,9 @@ function ServicesPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  "Mobile App Development",
-                  "Domain Hosting",
-                  "Custom Integrations"
+                  section2.card5.title1,
+                  section2.card5.title2,
+                  section2.card5.title3
                 ].map((text, i) => (
                   <div
                     key={i}
@@ -241,10 +240,10 @@ function ServicesPage() {
 
                     <p className={`${cardText} leading-relaxed`}>
                       {i === 0
-                        ? "Native and cross-platform mobile applications"
+                        ? section2.card5.line1
                         : i === 1
-                        ? "Reliable hosting solutions for your websites"
-                        : "Connect your tools and automate workflows"}
+                        ? section2.card5.line2
+                        : section2.card5.line3}
                     </p>
                   </div>
                 ))}
@@ -303,14 +302,14 @@ function ServicesPage() {
                 href="/contact"
                 className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Contact Us
+                {section3.button1}
               </a>
 
               <a
                 href="/about"
                 className="inline-flex items-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
               >
-                Learn More
+                {section3.button2}
               </a>
             </div>
           </div>
