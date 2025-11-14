@@ -1,45 +1,58 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import { Target, Eye, Lightbulb, Heart, Award, Users } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { GlobalContext } from "../../context/Context";
 
 function AboutPage() {
 
-  const {t} = useTranslation()
-  const {section1} = t("abt")
-  const {section2} = t("abt")
-  const {section3} = t("abt")
-  const {section4}= t("abt")
-
+  const { mode } = useContext(GlobalContext);
   useEffect(() => {
     AOS.init({
       duration: 900,
-      once: false,     
-      mirror: true,   
+      once: false,
+      mirror: false,  
       easing: "ease-out",
     });
-  }, []);
+
+    AOS.refresh();
+  }, [mode]);
+
+  const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
+  const heroTitle = mode ? "text-gray-900 font-extrabold" : "text-white font-bold";
+  const heroSub = mode ? "text-gray-700 font-medium" : "text-gray-300";
+
+  const cardBg = mode ? "bg-gray-100" : "bg-gray-800";
+  const cardTitle = mode ? "text-gray-900 font-semibold" : "text-white font-semibold";
+  const cardText = mode ? "text-gray-700 font-medium" : "text-gray-300";
+
+  const sectionBg = mode ? "bg-white" : "bg-gray-900";
+
+  const statsNum = mode ? "text-gray-900 font-extrabold" : "text-white font-bold";
+  const statsLabel = mode ? "text-gray-900 font-semibold" : "text-gray-300 font-medium";
+
+  const storyBg = mode ? "bg-gray-200" : "bg-gray-800";
+  const storyText = mode ? "text-gray-700 font-medium" : "text-gray-300";
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className={`min-h-screen transition-colors ${pageBg}`}>
 
       {/* ---------------- HERO SECTION ---------------- */}
       <div
-        className="py-20 px-4 sm:px-6 lg:px-8 text-center bg-gray-900"
+        className={`py-20 px-4 sm:px-6 lg:px-8 text-center ${sectionBg}`}
         data-aos="fade-up"
       >
         <div className="max-w-7xl mx-auto">
           <h1
-            className="text-5xl md:text-6xl font-bold text-white mb-6"
+            className={`text-4xl sm:text-5xl md:text-6xl mb-6 max-[400px]:text-3xl ${heroTitle}`}
             data-aos="zoom-in"
           >
             {section1.title1}
           </h1>
 
           <p
-            className="text-xl text-gray-300 max-w-4xl mx-auto"
+            className={`text-lg sm:text-xl max-w-4xl mx-auto ${heroSub}`}
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -49,50 +62,55 @@ function AboutPage() {
       </div>
 
       {/* ---------------- MISSION + VISION ---------------- */}
-      <div className="px-4 sm:px-6 lg:px-8 py-12 bg-gray-900">
+      <div className={`px-4 sm:px-6 lg:px-8 py-12 transition-colors ${sectionBg}`}>
         <div
           className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8"
           data-aos="fade-up"
         >
+
           {/* Mission */}
           <div
-            className="bg-gray-800 rounded-3xl p-10"
+            className={`${cardBg} rounded-3xl p-8 sm:p-10 transition-colors`}
             data-aos="zoom-in"
             data-aos-delay="100"
           >
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-10 h-10 text-yellow-400" />
-              <h2 className="text-3xl font-bold text-white">{section1.title2}</h2>
+              <h2 className={`text-2xl sm:text-3xl ${cardTitle}`}>Our Mission</h2>
             </div>
 
-            <p className="text-gray-300 text-lg leading-relaxed">
-            {section1.line2}
+            <p className={`text-lg leading-relaxed ${cardText}`}>
+              To help businesses across industries automate workflows and accelerate
+              growth through innovative technology solutions.
             </p>
           </div>
 
           {/* Vision */}
           <div
-            className="bg-gray-800 rounded-3xl p-10"
+            className={`${cardBg} rounded-3xl p-8 sm:p-10 transition-colors`}
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             <div className="flex items-center gap-3 mb-6">
               <Eye className="w-10 h-10 text-yellow-400" />
-              <h2 className="text-3xl font-bold text-white">{section1.title3}</h2>
+              <h2 className={`text-2xl sm:text-3xl ${cardTitle}`}>Our Vision</h2>
             </div>
 
-            <p className="text-gray-300 text-lg leading-relaxed">
-            {section1.line3}
+            <p className={`text-lg leading-relaxed ${cardText}`}>
+              To become the leading provider of automation solutions globally,
+              transforming how businesses operate and achieve success.
             </p>
           </div>
+
         </div>
       </div>
 
       {/* ---------------- STATS SECTION ---------------- */}
       <div className="px-4 sm:px-6 lg:px-8 py-0">
         <div className="max-w-7xl mx-auto">
+
           <div
-            className="bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-3xl p-12 md:p-16"
+            className="bg-gradient-to-r from-yellow-600 to-yellow-500 rounded-3xl p-10 sm:p-14 md:p-16"
             data-aos="fade-up"
           >
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
@@ -104,10 +122,10 @@ function AboutPage() {
                 { value: "5", text: section2.line4 },
               ].map((item, i) => (
                 <div key={i} data-aos="zoom-in" data-aos-delay={i * 150}>
-                  <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">
+                  <div className={`text-4xl sm:text-5xl md:text-6xl mb-2 ${statsNum}`}>
                     {item.value}
                   </div>
-                  <div className="text-gray-900 font-semibold text-lg">
+                  <div className={`text-base sm:text-lg ${statsLabel}`}>
                     {item.text}
                   </div>
                 </div>
@@ -115,23 +133,24 @@ function AboutPage() {
 
             </div>
           </div>
+
         </div>
       </div>
 
       {/* ---------------- VALUES SECTION ---------------- */}
-      <div className="px-4 sm:px-6 lg:px-8 py-20" data-aos="fade-up">
+      <div className={`px-4 sm:px-6 lg:px-8 py-20 ${sectionBg}`} data-aos="fade-up">
         <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-16">
             <h2
-              className="text-4xl md:text-5xl font-bold text-white mb-4"
+              className={`text-3xl sm:text-4xl md:text-5xl mb-4 ${heroTitle}`}
               data-aos="zoom-in"
             >
               {section3.title}
             </h2>
 
             <p
-              className="text-xl text-gray-300"
+              className={`text-lg sm:text-xl ${heroSub}`}
               data-aos="fade-up"
               data-aos-delay="200"
             >
@@ -141,15 +160,15 @@ function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            {[
-              { Icon: Lightbulb, title: section3.cards.title1 },
-              { Icon: Heart, title: section3.cards.title2 },
-              { Icon: Award, title: section3.cards.title3 },
-              { Icon: Users, title: section3.cards.title4 },
+            {[  
+              { Icon: Lightbulb, title: "Innovation" },
+              { Icon: Heart, title: "Customer First" },
+              { Icon: Award, title: "Excellence" },
+              { Icon: Users, title: "Collaboration" },
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-gray-800 rounded-2xl p-8 text-center"
+                className={`${cardBg} rounded-2xl p-8 text-center transition-colors`}
                 data-aos="zoom-in"
                 data-aos-delay={i * 150}
               >
@@ -157,46 +176,47 @@ function AboutPage() {
                   <item.Icon className="w-10 h-10 text-yellow-400" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className={`text-xl sm:text-2xl mb-4 ${cardTitle}`}>
                   {item.title}
                 </h3>
 
-                <p className="text-gray-300 leading-relaxed">
-                  {item.title === section3.cards.title1  &&
-                    section3.cards.line1}
+                <p className={`leading-relaxed ${cardText}`}>
+                  {item.title === "Innovation" &&
+                    "We explore new technologies to deliver cutting-edge solutions."}
 
-                  {item.title === section3.cards.title2  &&
-                    section3.cards.line2}
+                  {item.title === "Customer First" &&
+                    "Your success is our priority — we build long-term relationships."}
 
-                  {item.title === section3.cards.title3  &&
-                    section3.cards.line3}
+                  {item.title === "Excellence" &&
+                    "We maintain the highest standards in everything we do."}
 
-                  {item.title === section3.cards.title4  &&
-                    section3.cards.line4}
+                  {item.title === "Collaboration" &&
+                    "We work closely with clients as trusted partners."}
                 </p>
               </div>
             ))}
 
           </div>
+
         </div>
       </div>
 
       {/* ---------------- OUR STORY SECTION ---------------- */}
-      <div className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-800">
+      <div className={`px-4 sm:px-6 lg:px-8 py-20 transition-colors ${storyBg}`}>
         <div className="max-w-5xl mx-auto text-center">
 
           <h2
-            className="text-4xl md:text-5xl font-bold text-white mb-12"
+            className={`text-3xl sm:text-4xl md:text-5xl mb-12 ${heroTitle}`}
             data-aos="zoom-in"
           >
             {section4.title}
           </h2>
 
-          <div className="space-y-8 text-lg text-gray-300 leading-relaxed">
+          <div className={`space-y-6 sm:space-y-8 ${storyText} leading-relaxed text-base sm:text-lg`}>
             {[
-              section4.line1,
-              section4.line2,
-              section4.line3
+              "MS Tech Hive was founded with a simple yet powerful vision: to make advanced automation accessible to every business.",
+              "We recognized that many companies were stuck with repetitive tasks and inefficient processes. Automation unlocks growth.",
+              "Today, we're proud to have transformed hundreds of businesses — and our journey has just begun.",
             ].map((text, i) => (
               <p
                 key={i}
@@ -210,6 +230,7 @@ function AboutPage() {
 
         </div>
       </div>
+
     </div>
   );
 }

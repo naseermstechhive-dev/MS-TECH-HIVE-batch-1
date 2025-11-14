@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "./../../context/Context";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
@@ -21,55 +22,73 @@ const Restaurant = () => {
   const {section2} = t("rest")
   const {section3} = t("rest")
 
+  const { mode } = useContext(GlobalContext);
+
+  const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
+  const heroBg = mode
+    ? "bg-gradient-to-br from-white to-gray-100"
+    : "bg-gradient-to-br from-gray-900 to-gray-800";
+
+  const heroTitle = mode ? "text-gray-900" : "text-white";
+  const heroSub = mode ? "text-yellow-600" : "text-yellow-400";
+  const heroDesc = mode ? "text-gray-700" : "text-gray-300";
+
+  const sectionBg = mode ? "bg-gray-200" : "bg-gray-800";
+  const cardBg = mode ? "bg-gray-300" : "bg-gray-700";
+  const cardHover = mode ? "hover:bg-gray-400" : "hover:bg-gray-600";
+  const cardText = mode ? "text-gray-900" : "text-white";
+  const cardDesc = mode ? "text-gray-700" : "text-gray-300";
+
+  const listText = mode ? "text-gray-700" : "text-gray-300";
+
+  const rightBoxBg = mode
+    ? "bg-gradient-to-br from-yellow-300 to-yellow-400 text-gray-900"
+    : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900";
+
+  /* ---------------- AOS INIT ---------------- */
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
       easing: "ease-in-out",
       once: false,
-      mirror: true,
+      mirror: false,
     });
-
-    const handleScroll = () => {
-      AOS.refresh();
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    AOS.refresh();
+  }, [mode]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className={`min-h-screen transition-colors duration-300 ${pageBg}`}>
+
       {/* ---------------- SECTION 1: HERO ---------------- */}
-      <section
-        className="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800"
-        data-aos="fade-up"
-      >
-        <div
-          className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-          data-aos="fade-up"
-        >
-          {/* Left Content */}
+      <section className={`relative py-20 px-4 sm:px-6 lg:px-8 ${heroBg}`} data-aos="fade-up">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* Left */}
           <div data-aos="fade-right">
             <div className="flex items-center space-x-4 mb-6">
-              <div className="text-5xl">🍽️</div>
+              <div className="text-5xl" data-aos="zoom-in">🍽️</div>
               <div>
-                <h1 className="text-5xl font-bold text-white">{section1.title}</h1>
-                <p className="text-xl text-yellow-400">
-                {section1.line1}
+                <h1 className={`text-5xl font-bold max-[500px]:text-4xl ${heroTitle}`} data-aos="fade-up">
+                 {section1.title}
+                </h1>
+                <p className={`text-xl ${heroSub}`} data-aos="fade-up" data-aos-delay="100">
+                   {section1.line1}
                 </p>
               </div>
             </div>
 
             <p
-              className="text-xl text-gray-300 leading-relaxed mb-8"
+              className={`text-xl leading-relaxed mb-8 ${heroDesc}`}
               data-aos="fade-up"
+              data-aos-delay="150"
             >
-        {section1.line2}
+                      {section1.line2}
             </p>
 
             <div
-              className="flex flex-wrap gap-4"
+              className="flex flex-col sm:flex-row gap-4"
               data-aos="fade-up"
-              data-aos-delay="100"
+              data-aos-delay="300"
             >
               <button
                 onClick={() => navigate("/contact")}
@@ -77,6 +96,7 @@ const Restaurant = () => {
               >
                    {section1.button1}
               </button>
+
               <button
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors"
@@ -86,50 +106,50 @@ const Restaurant = () => {
             </div>
           </div>
 
-          {/* Right Image with Smart Kitchen Badge */}
+          {/* Right Image */}
           <div className="relative flex justify-center lg:justify-end" data-aos="fade-left">
             <img
               src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800"
               alt="Restaurant"
               className="rounded-2xl shadow-2xl w-full max-w-2xl object-cover"
-            />
-            <div
-              className="absolute -bottom-6 -left-6 bg-yellow-500 text-gray-900 px-4 py-3 rounded-xl shadow-lg flex flex-col items-center justify-center w-20 h-30"
               data-aos="zoom-in"
+              data-aos-delay="200"
+            />
+
+            <div
+              className="absolute -bottom-6 -left-6 bg-yellow-500 text-gray-900 px-4 py-3 rounded-xl shadow-lg flex flex-col items-center justify-center w-20"
+              data-aos="zoom-in"
+              data-aos-delay="300"
             >
               <Utensils className="w-10 h-10 mb-1 text-gray-900" />
-              <span className="text-sm font-bold leading-tight">Smart</span>
-              <span className="text-sm font-semibold leading-tight">
-                Kitchen
-              </span>
+              <span className="text-sm font-bold">Smart</span>
+              <span className="text-sm font-semibold">Kitchen</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* ---------------- SECTION 2: FEATURES ---------------- */}
-      <section
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800"
-        data-aos="fade-up"
-      >
-        <div className="max-w-7xl mx-auto text-center mb-12" data-aos="fade-up">
-          <h2 className="text-4xl font-bold text-white mb-4">
-          {section2.title}
+      <section className={`py-20 px-4 sm:px-6 lg:px-8 ${sectionBg}`} data-aos="fade-up">
+        <div className="max-w-7xl mx-auto text-center mb-12">
+          <h2 className={`text-4xl font-bold mb-4 ${heroTitle}`} data-aos="fade-up">
+            {section2.title}
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-          {section2.line}
+          <p
+            className={`text-xl max-w-3xl mx-auto ${heroDesc}`}
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            {section2.line}
           </p>
         </div>
 
         {/* Feature Cards */}
-        <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-          data-aos="fade-up"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {[
             {
               icon: <ShoppingCart className="w-8 h-8 text-yellow-400" />,
-              title: section2.cards.title1,
+               title: section2.cards.title1,
               desc: section2.cards.line1,
             },
             {
@@ -162,33 +182,28 @@ const Restaurant = () => {
           ].map((item, i) => (
             <div
               key={i}
-              className="bg-gray-700 p-8 rounded-xl hover:bg-gray-600 transition-colors group"
+              className={`${cardBg} p-8 rounded-xl ${cardHover} transition-colors group`}
               data-aos="fade-up"
-              data-aos-delay={i * 100}
+              data-aos-delay={100 + i * 100}
             >
-              <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
-                {item.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {item.title}
-              </h3>
-              <p className="text-gray-300">{item.desc}</p>
+              <div className="mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
+              <h3 className={`text-xl font-semibold mb-3 ${cardText}`}>{item.title}</h3>
+              <p className={`${cardDesc}`}>{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ---------------- SECTION 3: TRANSFORMATION ---------------- */}
-      <section
-        className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900"
-        data-aos="fade-up"
-      >
+      <section className={`py-20 px-4 sm:px-6 lg:px-8 ${pageBg}`} data-aos="fade-up">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
+
+          {/* Left */}
           <div data-aos="fade-right">
-            <h2 className="text-4xl font-bold text-white mb-8">
-            {section3.title1}
+            <h2 className={`text-4xl font-bold mb-8 ${heroTitle}`} data-aos="fade-up">
+              {section3.title1}
             </h2>
+
             <div className="space-y-4">
               {[
                 section3.line1,
@@ -204,52 +219,57 @@ const Restaurant = () => {
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
                 >
-                  <CircleCheckBig className="w-6 h-6 text-yellow-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">{text}</span>
+                  <CircleCheckBig className="w-6 h-6 text-yellow-400" />
+                  <span className={`text-lg ${listText}`}>{text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column */}
+          {/* Right */}
           <div
-            className="bg-gradient-to-br from-yellow-500 to-yellow-600 p-8 rounded-2xl text-gray-900"
+            className={`${rightBoxBg} p-8 rounded-2xl shadow-xl`}
             data-aos="zoom-in"
+            data-aos-delay="200"
           >
-            <h3 className="text-2xl font-bold mb-6">
-            {section3.title2}
+            <h3 className="text-2xl font-bold mb-6" data-aos="fade-up">
+             {section3.title2}
             </h3>
-            <p className="text-lg mb-6">
-            {section3.line7}
+
+            <p className="text-lg mb-6" data-aos="fade-up" data-aos-delay="100">
+               {section3.line7}
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-3 mb-6">
               {[
-                section3.line8,
+                 section3.line8,
                 section3.line9,
                 section3.line10,
               ].map((text, i) => (
                 <div
-                  key={i}
                   className="flex items-center space-x-3"
+                  key={i}
                   data-aos="fade-left"
                   data-aos-delay={i * 100}
                 >
-                  <CircleCheckBig className="w-5 h-5 text-gray-900 flex-shrink-0" />
-                  <span className="text-gray-900">{text}</span>
+                  <CircleCheckBig className="w-6 h-6 text-gray-900" />
+                  <span className="text-gray-900 font-medium">{text}</span>
                 </div>
               ))}
             </div>
 
             <button
               onClick={() => navigate("/contact")}
-              className="mt-6 inline-block bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+              data-aos="zoom-in"
+              data-aos-delay="150"
             >
              {section3.button}
             </button>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
