@@ -29,7 +29,13 @@ import abt_ta from '../public/Locales/தமிழ்/about.json'
 import abt_tl from '../public/Locales/తెలుగు/about.json'
 import abt_ka from '../public/Locales/ಕನ್ನಡ/about.json'
 import abt_ml from '../public/Locales/മലയാളം/about.json'
-
+//service
+import serv_en from '../public/Locales/English/service.json'
+import serv_hi from '../public/Locales/हिन्दी/service.json'
+import serv_ta from '../public/Locales/தமிழ்/service.json'
+import serv_tl from '../public/Locales/తెలుగు/service.json'
+import serv_ka from '../public/Locales/ಕನ್ನಡ/service.json'
+import serv_ml from '../public/Locales/മലയാളം/service.json'
 
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
@@ -51,6 +57,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
         //About Page
         abt:abt_en,
 
+        //service PAge
+        serv:serv_en,
+
       },
     },
     हिन्दी:{
@@ -66,6 +75,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //About Page
         abt:abt_hi,
+
+        //service PAge
+        serv:serv_hi,
       },
     },
     తెలుగు:{
@@ -81,6 +93,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //About Page
         abt:abt_tl,
+
+        //service PAge
+        serv:serv_tl,
         }
       },
     ಕನ್ನಡ:{
@@ -96,6 +111,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //About Page
         abt:abt_ka,
+
+        //service PAge
+        serv:serv_ka,
       },
     },
     മലയാളം:{
@@ -111,6 +129,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //About Page
         abt:abt_ml,
+
+        //service PAge
+        serv:serv_ml,
       },
     },
     தமிழ்:{
@@ -126,6 +147,9 @@ i18n.use(LanguageDetector).use(initReactI18next).init({
 
         //About Page
         abt:abt_ta,
+
+        //service PAge
+        serv:serv_ta,
       },
     },
     
