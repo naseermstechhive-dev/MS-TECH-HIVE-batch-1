@@ -193,9 +193,7 @@ function AboutPage() {
                 </p>
               </div>
             ))}
-
           </div>
-
         </div>
       </div>
 
@@ -228,7 +226,6 @@ function AboutPage() {
 
         </div>
       </div>
-
     </div>
   );
 }

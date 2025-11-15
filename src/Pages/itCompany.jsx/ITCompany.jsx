@@ -14,9 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const ITCompany = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -39,10 +41,9 @@ const ITCompany = () => {
 
   const heroContent = {
     emoji: "💻",
-    title: "IT Company",
-    subtitle: "Tech Project Solutions",
-    description:
-      "Enhance your IT operations with comprehensive project dashboards, client communication portals, team collaboration tools, and resource management systems.",
+    title: t("industries.itCompany"),
+    subtitle: t("itCompanyPage.subtitle"),
+    description: t("itCompanyPage.description"),
     imageUrl:
       "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "IT Company",
@@ -52,8 +53,8 @@ const ITCompany = () => {
 
   const heroBadge = {
     Icon: Monitor,
-    text1: "Smart",
-    text2: "Projects",
+    text1: t("itCompanyPage.badge.text1"),
+    text2: t("itCompanyPage.badge.text2"),
     containerClassName:
       "p-4 space-y-1 max-[600px]:w-20 max-[600px]:p-3 max-[350px]:w-16 max-[350px]:p-2",
     iconClassName:
@@ -61,47 +62,72 @@ const ITCompany = () => {
   };
 
   const features = [
-    { Icon: Monitor, title: "Project Dashboards", desc: "Comprehensive project management dashboards with real-time progress tracking and team collaboration." },
-    { Icon: Users, title: "Client Portals", desc: "Dedicated client communication portals with project updates, document sharing, and feedback systems." },
-    { Icon: BarChart3, title: "Resource Management", desc: "Team allocation, skill tracking, and resource optimization for maximum project efficiency." },
-    { Icon: FileText, title: "Documentation Systems", desc: "Automated documentation generation, version control, and knowledge base management." },
-    { Icon: Calendar, title: "Sprint Planning", desc: "Agile project management with sprint planning, backlog management, and velocity tracking." },
-    { Icon: Clock, title: "Time Tracking", desc: "Automated time tracking, billing integration, and productivity analytics for teams." },
+    {
+      Icon: Monitor,
+      title: t("itCompanyPage.features.0.title"),
+      desc: t("itCompanyPage.features.0.desc"),
+    },
+    {
+      Icon: Users,
+      title: t("itCompanyPage.features.1.title"),
+      desc: t("itCompanyPage.features.1.desc"),
+    },
+    {
+      Icon: BarChart3,
+      title: t("itCompanyPage.features.2.title"),
+      desc: t("itCompanyPage.features.2.desc"),
+    },
+    {
+      Icon: FileText,
+      title: t("itCompanyPage.features.3.title"),
+      desc: t("itCompanyPage.features.3.desc"),
+    },
+    {
+      Icon: Calendar,
+      title: t("itCompanyPage.features.4.title"),
+      desc: t("itCompanyPage.features.4.desc"),
+    },
+    {
+      Icon: Clock,
+      title: t("itCompanyPage.features.5.title"),
+      desc: t("itCompanyPage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Improve project delivery times by 40%",
-    "Enhance client communication and satisfaction",
-    "Automate time tracking and billing processes",
-    "Optimize team resource allocation",
-    "Streamline development workflows",
-    "Increase team productivity by 35%",
+    t("itCompanyPage.benefits.0"),
+    t("itCompanyPage.benefits.1"),
+    t("itCompanyPage.benefits.2"),
+    t("itCompanyPage.benefits.3"),
+    t("itCompanyPage.benefits.4"),
+    t("itCompanyPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Scale Your IT Operations?",
-    description:
-      "Join successful IT companies that have improved project delivery and client satisfaction with our management solutions.",
+    title: t("itCompanyPage.cta.title"),
+    description: t("itCompanyPage.cta.description"),
     list: [
-      "Custom setup for your development methodology",
-      "Team training and integration support",
-      "API integrations with existing tools",
+      t("itCompanyPage.cta.list.0"),
+      t("itCompanyPage.cta.list.1"),
+      t("itCompanyPage.cta.list.2"),
     ],
-    buttonText: "Schedule Consultation",
+    buttonText: t("itCompanyPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Complete IT Project Management Platform"
-        subtitle="Streamline development workflows, enhance client relationships, and optimize team productivity"
+        title={t("itCompanyPage.subtitle")}
+        subtitle={t("itCompanyPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Code Better, Deliver Faster"
+        benefitsTitle={t("itCompanyPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

@@ -14,16 +14,12 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const College = () => {
   const { mode } = useContext(GlobalContext);
-  const navigate = useNavigate();
-  const {t} = useTranslation()
-  const {section1} = t("clg")
-  const {section2} = t("clg")
-  const {section3} = t("clg")
+  const { t } = useTranslation();
 
-  // 1. Define Theme
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
     heroBg: mode
@@ -32,7 +28,7 @@ const College = () => {
     heroTitle: mode ? "text-gray-900 font-extrabold" : "text-white font-bold",
     heroSub: mode ? "text-yellow-600" : "text-yellow-400",
     heroDesc: mode ? "text-gray-700" : "text-gray-300",
-    sectionBg: mode ? "bg-gray-200" : "bg-gray-800", // Different from Clinic
+    sectionBg: mode ? "bg-gray-200" : "bg-gray-800",
     cardBg: mode ? "bg-gray-300" : "bg-gray-700",
     cardHover: mode ? "hover:bg-gray-400" : "hover:bg-gray-600",
     cardTitle: mode ? "text-gray-900" : "text-white",
@@ -43,73 +39,71 @@ const College = () => {
       : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900",
   };
 
-  // 2. Define AOS Options
   const aosOptions = {
     duration: 950,
     mirror: false,
   };
 
-  // 3. Define Content
   const heroContent = {
     emoji: "🏛️",
-    title: "College",
-    subtitle: "Higher Education Solutions",
-    description:
-      "Modernize college operations with smart admissions, analytics, dashboards, and automated administrative workflows.",
+    title: t("industries.college"),
+    subtitle: t("collegePage.subtitle"),
+    description: t("collegePage.description"),
     imageUrl:
       "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "College",
-    imageClassName: "object-cover", // No fixed height
+    imageClassName: "object-cover",
   };
 
   const heroBadge = {
     Icon: ChartNoAxesColumnIncreasing,
-    text1: "Smart",
-    text2: "Analytics",
+    text1: t("collegePage.badge.text1"),
+    text2: t("collegePage.badge.text2"),
   };
 
   const features = [
-    { Icon: Users, title: "Admission Management", desc: "Automated document verification, application processing, and workflows." },
-    { Icon: GraduationCap, title: "Student Dashboards", desc: "Student portals with course registration, grades, and academic progress." },
-    { Icon: ChartNoAxesColumnIncreasing, title: "Analytics & Reporting", desc: "Advanced student performance analytics and institutional insights." },
-    { Icon: Calendar, title: "Course Management", desc: "Automated faculty assignment, scheduling, and resources." },
-    { Icon: FileText, title: "Academic Records", desc: "Digital transcripts, degree verification, academic history tracking." },
-    { Icon: CreditCard, title: "Fee Management", desc: "Automated fee collection, scholarships, and financial aid processing." },
+    { Icon: Users, title: t("collegePage.features.0.title"), desc: t("collegePage.features.0.desc") },
+    { Icon: GraduationCap, title: t("collegePage.features.1.title"), desc: t("collegePage.features.1.desc") },
+    { Icon: ChartNoAxesColumnIncreasing, title: t("collegePage.features.2.title"), desc: t("collegePage.features.2.desc") },
+    { Icon: Calendar, title: t("collegePage.features.3.title"), desc: t("collegePage.features.3.desc") },
+    { Icon: FileText, title: t("collegePage.features.4.title"), desc: t("collegePage.features.4.desc") },
+    { Icon: CreditCard, title: t("collegePage.features.5.title"), desc: t("collegePage.features.5.desc") },
   ];
 
   const benefitsList = [
-    "Reduce admission processing time by 60%",
-    "Automate course registration & scheduling",
-    "Improve student engagement with dashboards",
-    "Streamline fee collection & financial aid",
-    "Generate academic performance reports",
-    "Enhance decision-making with analytics",
+    t("collegePage.benefits.0"),
+    t("collegePage.benefits.1"),
+    t("collegePage.benefits.2"),
+    t("collegePage.benefits.3"),
+    t("collegePage.benefits.4"),
+    t("collegePage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready for Digital Transformation?",
-    description:
-      "Join colleges that modernized admissions, academics, and operations.",
+    title: t("collegePage.cta.title"),
+    description: t("collegePage.cta.description"),
     list: [
-      "Tailored solution for your institution",
-      "Faculty & staff training included",
-      "Step-by-step implementation",
+      t("collegePage.cta.list.0"),
+      t("collegePage.cta.list.1"),
+      t("collegePage.cta.list.2"),
     ],
-    buttonText: "Schedule Consultation",
+    buttonText: t("collegePage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg} aosOptions={aosOptions}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Comprehensive College Management Platform"
-        subtitle="Manage admissions, courses, analytics, academic records and more."
+        title={t("collegePage.subtitle")}
+        subtitle={t("collegePage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Elevate Higher Education Standards"
+        benefitsTitle={t("collegePage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

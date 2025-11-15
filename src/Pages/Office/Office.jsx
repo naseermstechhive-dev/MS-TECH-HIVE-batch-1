@@ -14,14 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const Office = () => {
   const { mode } = useContext(GlobalContext);
-   const navigate = useNavigate();
-  const {t} = useTranslation()
-  const {section1} = t("ofc")
-  const {section2} = t("ofc")
-  const {section3} = t("ofc")
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -44,10 +41,9 @@ const Office = () => {
 
   const heroContent = {
     emoji: "🏢",
-    title: "Office",
-    subtitle: "Corporate Automation Solutions",
-    description:
-      "Transform your office operations with comprehensive HR systems, document management, task automation, and employee productivity tools.",
+    title: t("industries.office"),
+    subtitle: t("officePage.subtitle"),
+    description: t("officePage.description"),
     imageUrl:
       "https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "Office",
@@ -56,54 +52,79 @@ const Office = () => {
 
   const heroBadge = {
     Icon: ChartNoAxesColumnIncreasing,
-    text1: "Smart",
-    text2: "Workflows",
-    containerClassName: "w-28 h-28", // Specific size
+    text1: t("officePage.badge.text1"),
+    text2: t("officePage.badge.text2"),
+    containerClassName: "w-28 h-28",
     iconClassName: "w-8 h-10",
   };
 
   const features = [
-    { Icon: Users, title: "HR Management System", desc: "Comprehensive employee management, payroll processing, and performance tracking automation." },
-    { Icon: FileText, title: "Document Management", desc: "Digital document storage, automated workflows, and secure file sharing systems." },
-    { Icon: Calendar, title: "Task Automation", desc: "Streamlined project management, automated task assignment, and progress tracking." },
-    { Icon: ChartNoAxesColumnIncreasing, title: "Analytics Dashboard", desc: "Real-time insights into productivity metrics, employee performance, and operational efficiency." },
-    { Icon: Shield, title: "Employee Portals", desc: "Self-service portals for leave management, expense reporting, and benefits administration." },
-    { Icon: Clock, title: "Time Tracking", desc: "Automated time and attendance tracking with integrated payroll processing." },
+    {
+      Icon: Users,
+      title: t("officePage.features.0.title"),
+      desc: t("officePage.features.0.desc"),
+    },
+    {
+      Icon: FileText,
+      title: t("officePage.features.1.title"),
+      desc: t("officePage.features.1.desc"),
+    },
+    {
+      Icon: Calendar,
+      title: t("officePage.features.2.title"),
+      desc: t("officePage.features.2.desc"),
+    },
+    {
+      Icon: ChartNoAxesColumnIncreasing,
+      title: t("officePage.features.3.title"),
+      desc: t("officePage.features.3.desc"),
+    },
+    {
+      Icon: Shield,
+      title: t("officePage.features.4.title"),
+      desc: t("officePage.features.4.desc"),
+    },
+    {
+      Icon: Clock,
+      title: t("officePage.features.5.title"),
+      desc: t("officePage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Reduce administrative overhead by 60%",
-    "Automate repetitive office tasks",
-    "Improve employee productivity tracking",
-    "Streamline HR processes and payroll",
-    "Enhance document security and access",
-    "Create better workplace collaboration",
+    t("officePage.benefits.0"),
+    t("officePage.benefits.1"),
+    t("officePage.benefits.2"),
+    t("officePage.benefits.3"),
+    t("officePage.benefits.4"),
+    t("officePage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Go Digital?",
-    description:
-      "Join forward-thinking companies that have transformed their office operations with intelligent automation.",
+    title: t("officePage.cta.title"),
+    description: t("officePage.cta.description"),
     list: [
-      "Customized solution for your office size",
-      "Employee training and change management",
-      "Ongoing support and system updates",
+      t("officePage.cta.list.0"),
+      t("officePage.cta.list.1"),
+      t("officePage.cta.list.2"),
     ],
-    buttonText: "Schedule Consultation",
+    buttonText: t("officePage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Modern Office Management Platform"
-        subtitle="Digitize and automate your office operations for maximum efficiency and productivity."
+        title={t("officePage.subtitle")}
+        subtitle={t("officePage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Build a Smarter Workplace"
+        benefitsTitle={t("officePage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

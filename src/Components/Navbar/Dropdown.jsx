@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { GlobalContext } from "../../context/Context";
 import { useTranslation } from "react-i18next";
 import { industries } from "../../data/industries";
+import Construction from './../../pages/construction/Construction';
 
 const Dropdown = ({ setIsIndustryDropdownVisible }) => {
   const { t } = useTranslation();
