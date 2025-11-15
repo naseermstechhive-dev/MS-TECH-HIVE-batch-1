@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "home": "Home",
+    "industries": "Industries",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "aboutText": "We help businesses across industries automate their workflows and accelerate growth through cutting-edge technology solutions."
+  },
+  "industries": {
+    "hospital": "Hospital",
+    "school": "School",
+    "college": "College",
+    "restaurant": "Restaurant",
+    "office": "Office",
+    "retailShop": "Retail Shop",
+    "construction": "Construction",
+    "logistics": "Logistics",
+    "itCompany": "IT Company",
+    "ecommerce": "E-commerce",
+    "clinicLab": "Clinic / Lab"
+  },
+
+  "home": {
+  "heroTitle1": "Automate Work.",
+  "heroTitle2": "Accelerate Growth.",
+  "heroSubtitle": "Transform your business operations with intelligent automation solutions tailored for your industry.",
+  "exploreServices": "Explore Services",
+  "getStarted": "Get Started",
+
+  "whyChooseTitle": "Why Choose MS Tech Hive?",
+  "whyChooseSubtitle": "We combine cutting-edge technology with industry expertise to deliver solutions that drive real results.",
+
+  "why1Title": "Automation Excellence",
+  "why1Desc": "Streamline your workflows with cutting-edge automation solutions",
+
+  "why2Title": "Growth Acceleration",
+  "why2Desc": "Scale your business operations with intelligent technology",
+
+  "why3Title": "Industry Expertise",
+  "why3Desc": "Specialized solutions for 12+ different industries",
+
+  "why4Title": "Proven Results",
+  "why4Desc": "Delivering measurable outcomes for our clients",
+
+  "industriesTitle": "Industries We Serve",
+  "industriesSubtitle": "Specialized automation solutions across multiple industries",
+
+  "industryHealthcare": "Healthcare",
+  "industryEducation": "Education",
+  "industryRestaurant": "Restaurant",
+  "industryRetail": "Retail",
+  "industryConstruction": "Construction",
+  "industryIT": "IT Company",
+
+  "viewAllIndustries": "View All Industries",
+
+  "readyTitle": "Ready to Transform Your Business?",
+  "readySubtitle": "Join hundreds of businesses that have accelerated their growth with our automation solutions.",
+  "startJourney": "Start Your Journey"
+ },
+ 
+ "about": {
+  "heroTitle": "About MS Tech Hive",
+  "heroSubtitle": "Empowering businesses with intelligent automation solutions since 2020",
+
+  "missionTitle": "Our Mission",
+  "missionText": "To help businesses across industries automate workflows and accelerate growth through innovative technology solutions.",
+
+  "visionTitle": "Our Vision",
+  "visionText": "To become the leading provider of automation solutions globally, transforming how businesses operate and achieve success.",
+
+  "statsProjects": "Projects Completed",
+  "statsIndustries": "Industries Served",
+  "statsClients": "Happy Clients",
+  "statsYears": "Years Experience",
+
+  "valuesTitle": "Our Values",
+  "valuesSubtitle": "The principles that guide everything we do",
+
+  "valueInnovation": "Innovation",
+  "valueCustomerFirst": "Customer First",
+  "valueExcellence": "Excellence",
+  "valueCollaboration": "Collaboration",
+
+  "valueInnovationText": "We explore new technologies to deliver cutting-edge solutions.",
+  "valueCustomerFirstText": "Your success is our priority — we build long-term relationships.",
+  "valueExcellenceText": "We maintain the highest standards in everything we do.",
+  "valueCollaborationText": "We work closely with clients as trusted partners.",
+
+  "storyTitle": "Our Story",
+  "story1": "MS Tech Hive was founded with a simple yet powerful vision: to make advanced automation accessible to every business.",
+  "story2": "We recognized that many companies were stuck with repetitive tasks and inefficient processes. Automation unlocks growth.",
+  "story3": "Today, we're proud to have transformed hundreds of businesses — and our journey has just begun."
+},
+ "contact": {
+    "heroTitle": "Get In Touch",
+    "heroSubtitle": "Ready to automate your work and accelerate growth? Let's discuss how we can transform your business.",
+
+    "infoTitle": "Contact Information",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "addressLabel": "Address",
+    "locationLink": "View Our Location",
+    "businessHours": "Business Hours",
+    "businessTiming": "Mon - Fri: 9:00 AM - 6:00 PM",
+
+    "formTitle": "Send Us a Message",
+    "fullNameLabel": "Full Name *",
+    "emailLabelForm": "Email Address *",
+    "companyLabel": "Company Name",
+    "industryLabel": "Industry",
+    "industryPlaceholder": "Select your industry",
+    "messageLabel": "Message *",
+    "messagePlaceholder": "Tell us about your project...",
+    "sendButton": "Send Message",
+
+    "whyChooseTitle": "Why Choose Us?",
+    "why1": "Industry-specific expertise across 12+ sectors",
+    "why2": "Proven track record of successful implementations",
+    "why3": "24/7 support and maintenance",
+    "why4": "Custom solutions tailored to your needs"
+  },
+  "services": {
+    "heroTitle": "Our Services",
+    "heroSubtitle": "Comprehensive technology solutions designed to automate your work and accelerate your growth across all business functions.",
+
+    "designBrandingTitle": "Design & Branding",
+    "designWeb": "Web Designing",
+    "designWebDesc": "Modern, responsive websites that convert visitors into customers",
+    "designGraphic": "Graphic Designing",
+    "designGraphicDesc": "Creative visual solutions for all your branding needs",
+    "designBrandIdentity": "Branding & Visual Identity",
+    "designBrandIdentityDesc": "Complete brand identity packages that make you stand out",
+
+    "marketingTitle": "Marketing & Ads",
+    "marketingSeo": "SEO",
+    "marketingSeoDesc": "Boost your search rankings and organic traffic",
+    "marketingSocial": "Social Media Marketing",
+    "marketingSocialDesc": "Engage your audience across all social platforms",
+    "marketingAiAds": "AI-Powered Ad Generator",
+    "marketingAiAdsDesc": "Create high-converting ads with artificial intelligence",
+    "marketingLanding": "No-Code Landing Page Builder",
+    "marketingLandingDesc": "Build professional landing pages without coding",
+
+    "automationTitle": "Automation",
+    "autoWhatsapp": "WhatsApp CRM Automation",
+    "autoWhatsappDesc": "Automate customer interactions through WhatsApp",
+    "autoLead": "Lead Nurturing Workflow",
+    "autoLeadDesc": "Convert leads into customers with automated sequences",
+    "autoSocial": "Social Media Content Automation",
+    "autoSocialDesc": "Schedule and automate your social media presence",
+
+    "analyticsTitle": "Analytics",
+    "analyticsCampaign": "Campaign Performance Dashboards",
+    "analyticsCampaignDesc": "Real-time insights into your marketing campaigns",
+    "analyticsBilling": "Client Portal & Billing Tools",
+    "analyticsBillingDesc": "Streamlined client management and billing solutions",
+
+    "devHostingTitle": "Dev & Hosting",
+    "devMobile": "Mobile App Development",
+    "devMobileDesc": "Native and cross-platform mobile applications",
+    "devHosting": "Domain Hosting",
+    "devHostingDesc": "Reliable hosting solutions for your websites",
+    "devIntegrations": "Custom Integrations",
+    "devIntegrationsDesc": "Connect your tools and automate workflows",
+
+    "onboardingTitle": "Onboarding",
+    "onboardDemo": "Interactive Product Demos",
+    "onboardDemoDesc": "Engaging demos that showcase your product's value",
+
+    "ctaTitle": "Ready to Get Started?",
+    "ctaSubtitle": "Let's discuss how our services can help automate your work and accelerate your business growth.",
+    "ctaContact": "Contact Us",
+    "ctaLearnMore": "Learn More"
+  },
+   "industriesPage": {
+    "heroTitle": "Industries We Serve",
+    "heroSubtitle": "Specialized automation solutions tailored to your industry.",
+    "keyFeatures": "KEY FEATURES:",
+    "learnMore": "Learn More",
+    "ctaTitle": "Don't See Your Industry?",
+    "ctaSubtitle": "We work with businesses across many sectors. Let's discuss your needs!",
+    "ctaButton": "Get Custom Solution"
+  }
+
+}

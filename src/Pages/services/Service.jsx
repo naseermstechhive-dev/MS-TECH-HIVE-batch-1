@@ -4,8 +4,11 @@ import "aos/dist/aos.css";
 
 import { Palette, Code, Zap, TrendingUp, BarChart, Users } from "lucide-react";
 import { GlobalContext } from './../../context/Context';
+import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
 
 function ServicesPage() {
+  const {t} = useTranslation();
   const { mode } = useContext(GlobalContext);
   useEffect(() => {
     AOS.init({
@@ -48,7 +51,7 @@ function ServicesPage() {
               className={`text-5xl mb-6 max-[400px]:text-4xl ${heroTitle}`}
               data-aos="zoom-in"
             >
-              Our Services
+              {t("services.heroTitle")}
             </h1>
 
             <p
@@ -56,8 +59,7 @@ function ServicesPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              Comprehensive technology solutions designed to automate your work and
-              accelerate your growth across all business functions.
+              {t("services.heroSubtitle")}
             </p>
           </div>
 
@@ -71,7 +73,7 @@ function ServicesPage() {
                   className={`text-3xl mb-4 ${sectionHeading}`}
                   data-aos="fade-up"
                 >
-                  Design & Branding
+                  {t("services.designBrandingTitle")}
                 </h2>
               </div>
 
@@ -88,15 +90,15 @@ function ServicesPage() {
                     </div>
 
                     <h3 className={`text-xl mb-3 group-hover:text-yellow-400 transition-colors ${cardTitle}`}>
-                      {num === 1 ? "Web Designing" :
-                       num === 2 ? "Graphic Designing" :
-                       "Branding & Visual Identity"}
+                      {num === 1 ? t("services.designWeb") :
+                       num === 2 ? t("services.designGraphic") :
+                       t("services.designBrandIdentity") }
                     </h3>
 
                     <p className={`${cardText} leading-relaxed`}>
-                      {num === 1 && "Modern, responsive websites that convert visitors into customers"}
-                      {num === 2 && "Creative visual solutions for all your branding needs"}
-                      {num === 3 && "Complete brand identity packages that make you stand out"}
+                      {num === 1 && t("services.designWebDesc")}
+                      {num === 2 && t("services.designGraphicDesc")}
+                      {num === 3 && t("services.designBrandIdentityDesc")}
                     </p>
                   </div>
                 ))}
@@ -106,7 +108,7 @@ function ServicesPage() {
             {/* ---------------- Marketing & Ads ---------------- */}
             <div className="space-y-8" data-aos="fade-up">
               <div className="text-center">
-                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>Marketing & Ads</h2>
+                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>{t("services.marketingTitle")}</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -123,19 +125,19 @@ function ServicesPage() {
 
                     <h3 className={`text-xl mb-3 group-hover:text-yellow-400 transition-colors ${cardTitle}`}>
                       {
-                        num === 1 ? "SEO" :
-                        num === 2 ? "Social Media Marketing" :
-                        num === 3 ? "AI-Powered Ad Generator" :
-                        "No-Code Landing Page Builder"
+                        num === 1 ? t("services.marketingSeo") :
+                        num === 2 ? t("services.marketingSocial") :
+                        num === 3 ? t("services.marketingAiAds"):
+                        t("services.marketingLanding")
                       }
                     </h3>
 
                     <p className={`${cardText} leading-relaxed`}>
                       {
-                        num === 1 ? "Boost your search rankings and organic traffic" :
-                        num === 2 ? "Engage your audience across all social platforms" :
-                        num === 3 ? "Create high-converting ads with artificial intelligence" :
-                        "Build professional landing pages without coding"
+                        num === 1 ? t("services.marketingSeoDesc") :
+                        num === 2 ? t("services.marketingSocialDesc") :
+                        num === 3 ? t("services.marketingAiAdsDesc") :
+                        t("services.marketingLandingDesc")
                       }
                     </p>
                   </div>
@@ -146,14 +148,14 @@ function ServicesPage() {
             {/* ---------------- Automation Section ---------------- */}
             <div className="space-y-8" data-aos="fade-up">
               <div className="text-center">
-                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>Automation</h2>
+                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>{t("services.automationTitle")}</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  "WhatsApp CRM Automation",
-                  "Lead Nurturing Workflow",
-                  "Social Media Content Automation"
+                  t("services.autoWhatsapp"),
+                  t("services.autoLead"),
+                  t("services.autoSocial")
                 ].map((text, i) => (
                   <div
                     key={i}
@@ -169,9 +171,9 @@ function ServicesPage() {
                       {text}
                     </h3>
                     <p className={`${cardText} leading-relaxed`}>
-                      {i === 0 && "Automate customer interactions through WhatsApp"}
-                      {i === 1 && "Convert leads into customers with automated sequences"}
-                      {i === 2 && "Schedule and automate your social media presence"}
+                      {i === 0 && t("services.autoWhatsappDesc")}
+                      {i === 1 && t("services.autoLeadDesc")}
+                      {i === 2 && t("services.autoSocialDesc")}
                     </p>
                   </div>
                 ))}
@@ -181,13 +183,13 @@ function ServicesPage() {
             {/* ---------------- Analytics Section ---------------- */}
             <div className="space-y-8" data-aos="fade-up">
               <div className="text-center">
-                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>Analytics</h2>
+                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>{t("services.analyticsTitle")}</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  "Campaign Performance Dashboards",
-                  "Client Portal & Billing Tools"
+                  t("services.analyticsCampaign"),
+                  t("services.analyticsBilling")
                 ].map((text, i) => (
                   <div
                     key={i}
@@ -205,8 +207,8 @@ function ServicesPage() {
 
                     <p className={`${cardText} leading-relaxed`}>
                       {i === 0
-                        ? "Real-time insights into your marketing campaigns"
-                        : "Streamlined client management and billing solutions"}
+                        ? t("services.analyticsCampaignDesc")
+                        : t("services.analyticsBillingDesc")}
                     </p>
                   </div>
                 ))}
@@ -216,14 +218,14 @@ function ServicesPage() {
             {/* ---------------- Dev & Hosting ---------------- */}
             <div className="space-y-8" data-aos="fade-up">
               <div className="text-center">
-                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>Dev & Hosting</h2>
+                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>{t("services.devHostingTitle")}</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
-                  "Mobile App Development",
-                  "Domain Hosting",
-                  "Custom Integrations"
+                  t("services.devMobile"),
+                  t("services.devHosting"),
+                  t("services.evIntegrations")
                 ].map((text, i) => (
                   <div
                     key={i}
@@ -241,10 +243,10 @@ function ServicesPage() {
 
                     <p className={`${cardText} leading-relaxed`}>
                       {i === 0
-                        ? "Native and cross-platform mobile applications"
+                        ? t("services.devMobileDesc")
                         : i === 1
-                        ? "Reliable hosting solutions for your websites"
-                        : "Connect your tools and automate workflows"}
+                        ? t("services.devHostingDesc")
+                        : t("services.devIntegrationsDesc")}
                     </p>
                   </div>
                 ))}
@@ -254,7 +256,7 @@ function ServicesPage() {
             {/* ---------------- Onboarding ---------------- */}
             <div className="space-y-8" data-aos="fade-up">
               <div className="text-center">
-                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>Onboarding</h2>
+                <h2 className={`text-3xl mb-4 ${sectionHeading}`}>{t("services.onboardingTitle")}</h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -267,11 +269,11 @@ function ServicesPage() {
                   </div>
 
                   <h3 className={`text-xl mb-3 group-hover:text-yellow-400 transition-colors ${cardTitle}`}>
-                    Interactive Product Demos
+                    {t("services.onboardDemo")}
                   </h3>
 
                   <p className={`${cardText} leading-relaxed`}>
-                    Engaging demos that showcase your product's value
+                    {t("services.onboardDemoDesc")}
                   </p>
                 </div>
               </div>
@@ -291,27 +293,27 @@ function ServicesPage() {
             data-aos="zoom-in"
           >
             <h2 className={`text-3xl mb-4 ${ctaTextMain}`}>
-              Ready to Get Started?
+              {t("services.ctaTitle")}
             </h2>
 
             <p className={`text-xl mb-8 max-w-2xl mx-auto ${ctaTextSub}`}>
-              Let's discuss how our services can help automate your work and accelerate your business growth.
+              {t("services.ctaSubtitle")}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Contact Us
-              </a>
+                {t("services.ctaContact")}
+              </Link>
 
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="inline-flex items-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
               >
-                Learn More
-              </a>
+                {t("services.ctaLearnMore")}
+              </Link>
             </div>
           </div>
         </div>

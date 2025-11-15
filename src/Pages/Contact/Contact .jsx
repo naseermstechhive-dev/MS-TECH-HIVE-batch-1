@@ -3,9 +3,11 @@ import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GlobalContext } from "../../context/Context";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
   const { mode } = useContext(GlobalContext);
+  const {t} = useTranslation();
 
   useEffect(() => {
     AOS.init({
@@ -68,7 +70,7 @@ function Contact() {
           className="text-4xl sm:text-6xl font-bold mb-6 max-[600px]:text-3xl"
           data-aos="zoom-in"
         >
-          Get In Touch
+          {t("contact.heroTitle")}
         </h1>
 
         <p
@@ -76,7 +78,7 @@ function Contact() {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Ready to automate your work and accelerate growth? Let's discuss how we can transform your business.
+          {t("contact.heroSubtitle")}
         </p>
       </div>
 
@@ -92,7 +94,7 @@ function Contact() {
                 className={`text-3xl sm:text-4xl font-bold mb-10 ${cardTitle}`}
                 data-aos="zoom-in"
               >
-                Contact Information
+                {t("contact.infoTitle")}
               </h2>
 
               <div className="space-y-8">
@@ -103,7 +105,7 @@ function Contact() {
                     <Mail className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className={`text-lg mb-1 ${cardTitle}`}>Email</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>{t("contact.emailLabel")}</div>
                     <div className={`${cardText}`}>info@mstechhive.com</div>
                   </div>
                 </div>
@@ -114,7 +116,7 @@ function Contact() {
                     <Phone className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className={`text-lg mb-1 ${cardTitle}`}>Phone</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>{t("contact.phoneLabel")}</div>
                     <div className={`${cardText}`}>+91 9032223352</div>
                   </div>
                 </div>
@@ -125,7 +127,7 @@ function Contact() {
                     <MapPin className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className={`text-lg mb-1 ${cardTitle}`}>Address</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>{t("contact.addressLabel")}</div>
 
                     <a
                       href="https://maps.app.goo.gl/xuJKp9urXsuoBeab9"
@@ -133,7 +135,7 @@ function Contact() {
                       rel="noopener noreferrer"
                       className={`${cardText} hover:text-yellow-500 transition-colors`}
                     >
-                      View Our Location
+                      {t("contact.locationLink")}
                     </a>
                   </div>
                 </div>
@@ -144,8 +146,8 @@ function Contact() {
                     <Clock className="w-7 h-7 text-slate-900" />
                   </div>
                   <div>
-                    <div className={`text-lg mb-1 ${cardTitle}`}>Business Hours</div>
-                    <div className={`${cardText}`}>Mon - Fri: 9:00 AM - 6:00 PM</div>
+                    <div className={`text-lg mb-1 ${cardTitle}`}>{t("contact.businessHours")}</div>
+                    <div className={`${cardText}`}>{t("contact.businessTiming")}</div>
                   </div>
                 </div>
 
@@ -160,7 +162,7 @@ function Contact() {
             data-aos-delay="200"
           >
             <h2 className={`text-3xl sm:text-4xl font-bold mb-10 ${cardTitle}`} data-aos="zoom-in">
-              Send Us a Message
+              {t("contact.formTitle")}
             </h2>
 
             <div className="space-y-6">
@@ -169,7 +171,7 @@ function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <div data-aos="fade-up">
-                  <label className={`block text-sm mb-3 ${labelText}`}>Full Name *</label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>{t("contact.fullNameLabel")}</label>
                   <input
                     type="text"
                     name="fullName"
@@ -181,7 +183,7 @@ function Contact() {
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="150">
-                  <label className={`block text-sm mb-3 ${labelText}`}>Email Address *</label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>{t("contact.emailLabelForm")}</label>
                   <input
                     type="email"
                     name="email"
@@ -198,7 +200,7 @@ function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                 <div data-aos="fade-up">
-                  <label className={`block text-sm mb-3 ${labelText}`}>Company Name</label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>{t("contact.companyLabel")}</label>
                   <input
                     type="text"
                     name="company"
@@ -210,14 +212,14 @@ function Contact() {
                 </div>
 
                 <div data-aos="fade-up" data-aos-delay="150">
-                  <label className={`block text-sm mb-3 ${labelText}`}>Industry</label>
+                  <label className={`block text-sm mb-3 ${labelText}`}>{t("contact.industryLabel")}</label>
                   <select
                     name="industry"
                     value={formData.industry}
                     onChange={handleChange}
                     className={`w-full px-5 py-4 rounded-xl border focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg}`}
                   >
-                    <option value="">Select your industry</option>
+                    <option value="">{t("contact.industryPlaceholder")}</option>
                     <option>Hospital</option>
                     <option>School</option>
                     <option>College</option>
@@ -237,13 +239,13 @@ function Contact() {
 
               {/* MESSAGE */}
               <div data-aos="fade-up" data-aos-delay="250">
-                <label className={`block text-sm mb-3 ${labelText}`}>Message *</label>
+                <label className={`block text-sm mb-3 ${labelText}`}>{t("contact.messageLabel")}</label>
                 <textarea
                   name="message"
                   rows="6"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell us about your project..."
+                  placeholder= {t("contact.messagePlaceholder")}
                   className={`w-full px-5 py-4 rounded-xl border resize-none focus:ring-2 focus:ring-yellow-500 focus:outline-none ${inputBg} ${placeholderText}`}
                 />
               </div>
@@ -254,7 +256,7 @@ function Contact() {
                 className="w-full flex items-center justify-center px-8 py-5 bg-yellow-500 text-slate-900 font-bold text-lg rounded-xl hover:bg-yellow-400 transition-colors group"
                 data-aos="zoom-in"
               >
-                <span>Send Message</span>
+                <span>{t("contact.sendButton")}</span>
                 <Send className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -271,15 +273,15 @@ function Contact() {
             className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8"
             data-aos="zoom-in"
           >
-            Why Choose Us?
+           {t("contact.whyChooseTitle")}
           </h3>
 
           <div className="space-y-5">
             {[
-              "Industry-specific expertise across 12+ sectors",
-              "Proven track record of successful implementations",
-              "24/7 support and maintenance",
-              "Custom solutions tailored to your needs",
+              t("contact.why1"),
+              t("contact.why2"),
+              t("contact.why3"),
+              t("contact.why4"),
             ].map((text, i) => (
               <div
                 className="flex items-center space-x-4"

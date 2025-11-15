@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { ArrowRight } from "lucide-react";
 import { GlobalContext } from "./../../context/Context";
+import { useTranslation } from "react-i18next";
 
 const industries = [
   {
@@ -131,6 +132,7 @@ const industries = [
 ];
 
 const Industries = () => {
+  const {t} = useTranslation();
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
 
@@ -171,10 +173,10 @@ const Industries = () => {
           {/* Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
             <h1 className={`text-5xl md:text-6xl mb-6 ${headingTitle}`}>
-              Industries We Serve
+              {t("industriesPage.heroTitle")}
             </h1>
             <p className={`text-xl max-w-3xl mx-auto ${headingSub}`}>
-              Specialized automation solutions tailored to your industry.
+              {t("industriesPage.heroSubtitle")}
             </p>
           </div>
 
@@ -208,7 +210,7 @@ const Industries = () => {
                     <p className={`mb-4 leading-relaxed ${cardDesc}`}>{item.desc}</p>
 
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-yellow-400 mb-3">KEY FEATURES:</h4>
+                      <h4 className="text-sm font-semibold text-yellow-400 mb-3">{t("industriesPage.keyFeatures")}</h4>
                       <div className="grid grid-cols-2 gap-2">
                         {item.features.map((f, i) => (
                           <div key={i} className={`text-sm ${featureText}`}>
@@ -222,7 +224,7 @@ const Industries = () => {
                       onClick={() => navigate(item.link)}
                       className="inline-flex items-center text-yellow-400 font-semibold hover:text-yellow-300 transition-colors"
                     >
-                      Learn More
+                      {t("industriesPage.learnMore")}
                       <ArrowRight className="ml-2 w-4 h-4" />
                     </button>
                   </div>
@@ -237,17 +239,17 @@ const Industries = () => {
             data-aos="fade-up"
           >
             <h2 className={`text-3xl md:text-4xl mb-4 ${ctaTitle}`}>
-              Don't See Your Industry?
+              {t("industriesPage.ctaTitle")}
             </h2>
             <p className={`text-xl mb-8 max-w-2xl mx-auto ${ctaSub}`}>
-              We work with businesses across many sectors. Let's discuss your needs!
+              {t("industriesPage.ctaSubtitle")}
             </p>
 
             <button
               onClick={() => navigate("/contact")}
               className={`inline-flex items-center px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors ${ctaBtn}`}
             >
-              Get Custom Solution
+              {t("industriesPage.ctaButton")}
               <ArrowRight className="ml-3 w-5 h-5" />
             </button>
           </div>
