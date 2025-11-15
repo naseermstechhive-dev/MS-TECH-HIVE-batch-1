@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"Office",
+    "line1":"Corporate Automation Solutions",
+    "line2":"Transform your office operations with comprehensive HR systems, document management, task automation, and employee productivity tools.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Modern Office Management Platform",
+    "line":"Digitize and automate your office operations for maximum efficiency and productivity.",
+    "cards":{
+      "title1":"HR Management System",
+      "title2":"Document Management",
+      "title3":"Task Automation",
+      "title4":"Analytics Dashboard",
+      "title5":"Employee Portals",
+      "title6":"Time Tracking",
+      "line1":"Comprehensive employee management, payroll processing, and performance tracking automation.",
+      "line2":"Digital document storage, automated workflows, and secure file sharing systems.",
+      "line3":"Streamlined project management, automated task assignment, and progress tracking.",
+      "line4":"Real-time insights into productivity metrics, employee performance, and operational efficiency.",
+      "line5":"Self-service portals for leave management, expense reporting, and benefits administration.",
+      "line6":"Automated time and attendance tracking with integrated payroll processing."
+    }
+  },
+  "section3":{
+    "title1":"Build a Smarter Workplace",
+    "title2":"Ready to Go Digital?",
+    "line1":"Reduce administrative overhead by 60%",
+    "line2":"Automate repetitive office tasks",
+    "line3":"Improve employee productivity tracking",
+    "line4":"Streamline HR processes and payroll",
+    "line5":"Enhance document security and access",
+    "line6":"Create better workplace collaboration",
+    "line7":"Join forward-thinking companies that have transformed their office operations with intelligent automation.",
+    "line8":"Customized solution for your office size",
+    "line9":"Employee training and change management",
+    "line10":"Ongoing support and system updates",
+    "button":"Schedule Consultation"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"Logistics",
+    "line1":"Transportation Solutions",
+    "line2":"Optimize your logistics operations with comprehensive fleet management, route optimization, delivery tracking, and warehouse management systems.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Complete Logistics Management Suite",
+    "line":"From fleet management to last-mile delivery, optimize every aspect of your logistics operations.",
+    "cards":{
+      "title1":"Fleet Management",
+      "title2":"Route Optimization",
+      "title3":"Shipment Tracking",
+      "title4":"Analytics Dashboard",
+      "title5":"Driver Management",
+      "title6":"Delivery Automation",
+      "line1":"Comprehensive vehicle tracking, maintenance scheduling, and driver management systems.",
+      "line2":"AI-powered route planning for maximum efficiency, reduced fuel costs, and faster deliveries.",
+      "line3":"Real-time package tracking with customer notifications and delivery confirmations.",
+      "line4":"Performance metrics, delivery analytics, and operational efficiency reporting.",
+      "line5":"Driver scheduling, performance tracking, and communication systems.",
+      "line6":"Automated delivery scheduling, dispatch management, and customer communication."
+    }
+  },
+  "section3":{
+    "title1":"Deliver Excellence Every Mile",
+    "title2":"Ready to Optimize Your Fleet?",
+    "line1":"Reduce delivery times by 40%",
+    "line2":"Optimize fuel consumption and routes",
+    "line3":"Improve customer satisfaction scores",
+    "line4":"Automate dispatch and scheduling",
+    "line5":"Real-time package and fleet tracking",
+    "line6":"Reduce operational costs by 25%",
+    "line7":"Join logistics companies that have reduced costs and improved delivery times with our comprehensive solutions.",
+    "line8":"Custom solution for your fleet size",
+    "line9":"Driver training and mobile app support",
+    "line10":"24/7 monitoring and support",
+    "button":"Schedule Demo"
+  }
+}

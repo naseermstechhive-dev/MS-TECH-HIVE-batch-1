@@ -1,0 +1,63 @@
+{
+  "section1":{
+    "title1":"Automate Work.",
+    "title2":"Accelerate Growth.",
+    "line1":"Transform your business operations with intelligent automation solutions tailored for your industry.",
+    "button1":"Explore Services",
+    "button2":" Get Started "
+  },
+  "section2":{
+    "title":"Why Choose MS Tech Hive?",
+    "line":" We combine cutting-edge technology with industry expertise to deliver solutions that drive real results.",
+    "cards":{
+      "c1":{
+        "title":"Automation Excellence",
+        "line":"Streamline your workflows with cutting-edge automation solutions"
+      },
+      "c2":{
+        "title":"Growth Acceleration",
+        "line":"Scale your business operations with intelligent technology"
+      },
+      "c3":{
+        "title":"Industry Expertise",
+        "line":"Specialized solutions for 12+ different industries"
+      },
+      "c4":{
+        "title":"Proven Results",
+        "line":"Delivering measurable outcomes for our clients"
+      }
+    }
+  },
+  "section3":{
+    "title":"Industries We Serve",
+    "line":"Specialized automation solutions across multiple industries",
+    "card":{
+      "one":"Healthcare",
+      "two":"Education",
+      "three":"Restaurant",
+      "four":"Retail",
+      "five":"Construction",
+      "six":"IT Company"
+    },
+    "button":"View All Industries"
+  },
+  "section4":{
+    "title":"Ready to Transform Your Business?",
+    "line":"Join hundreds of businesses that have accelerated their growth with our automation solutions.",
+    "button":"Start Your Journey"
+  },
+  "section5":{
+    "title1":"Automate Work. Accelerate Growth.",
+    "title2":"Quick Links",
+    "title3":"Contact Info",
+    "line":"We help businesses across industries automate their workflows and accelerate growth through cutting-edge technology solutions.",
+    "link1":"Home",
+    "link2":"About",
+    "link3":"Services",
+    "link4":"Industries",
+    "link5":"Contact",
+    "loc":"View Location",
+    "copy":"Tech Hive. All rights reserved."
+  }
+
+}

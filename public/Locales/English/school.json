@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"School",
+    "line1":"Education Management Solutions",
+    "line2":"Revolutionize your school's operations with automated attendance tracking, parent communication portals, and comprehensive administrative management systems.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Complete School Management System",
+    "line":"Streamline every aspect of school administration with our comprehensive automation platform.",
+    "cards":{
+      "title1":"Student Management",
+      "title2":"Attendance Tracking",
+      "title3":"Parent Communication Portal",
+      "title4":"Grade Management",
+      "title5":"Academic Analytics",
+      "title6":"Safety & Security",
+      "line1":"Comprehensive student profiles, enrollment tracking, and academic progress monitoring.",
+      "line2":"Automated attendance systems with real-time notifications to parents and administrators.",
+      "line3":"Direct communication channels between teachers, parents, and administrators.",
+      "line4":"Digital gradebooks, report card generation, and academic performance tracking.",
+      "line5":"Insights into student performance, attendance patterns, and school metrics.",
+      "line6":"Student check-in/out systems and emergency communication protocols."
+    }
+  },
+  "section3":{
+    "title1":"Enhance Educational Excellence",
+    "title2":"Transform Your School Today",
+    "line1":"Reduce administrative tasks by 50%",
+    "line2":"Improve parent engagement by 75%",
+    "line3":"Automate attendance and grade reporting",
+    "line4":"Streamline teacher-parent communication",
+    "line5":"Real-time academic progress tracking",
+    "line6":"Enhanced school safety protocols",
+    "line7":"Join progressive schools that have modernized their operations with our education management solutions.",
+    "line8":"Personalized demo for your school",
+    "line9":"Staff training and support",
+    "line10":"Gradual implementation plan",
+    "button":"Schedule Demo"
+  }
+}
