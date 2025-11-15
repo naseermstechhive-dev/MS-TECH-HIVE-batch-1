@@ -1,6 +1,6 @@
 import React, { useState, useRef, useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import Dropdown from "./Dropdown";
+ import Dropdown from "./Dropdown";
 import { Menu, X, Globe } from "lucide-react";
 import { GlobalContext } from "../../context/Context";
 import { Moon, Sun } from "lucide-react";

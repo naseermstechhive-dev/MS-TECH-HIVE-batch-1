@@ -19,11 +19,20 @@ import {
   Construction,
   Laptop,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
   const { t } = useTranslation();
+
+  const {t} = useTranslation()
+  const {line1,line2} = t("description")
+  const {section1} = t("home")
+  const {section2} = t("home")
+  const {section3} = t("home")
+  const {section4}= t("home")
+  // console.log(section1.title1);
 
   useEffect(() => {
     AOS.init({

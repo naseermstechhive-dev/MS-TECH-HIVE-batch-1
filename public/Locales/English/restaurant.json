@@ -1,0 +1,42 @@
+{
+  "section1":{
+    "title":"Restaurant",
+    "line1":"Food Service Automation",
+    "line2":"Optimize your restaurant operations with comprehensive order management, billing systems, table tracking, and kitchen automation solutions.",
+    "button1":"Get Started Today",
+    "button2":"View All Services"
+  },
+  "section2":{
+    "title":"Complete Restaurant Management Suite",
+    "line":"From order taking to customer satisfaction, automate every aspect of your restaurant operations.",
+    "cards":{
+      "title1":"Order Management System",
+      "title2":"Kitchen Automation",
+      "title3":"Table Management",
+      "title4":"POS & Billing Systems",
+      "title5":"Staff Scheduling",
+      "title6":"Delivery Tracking",
+      "line1":"Streamlined order processing from dine-in, takeout, and delivery with real-time kitchen coordination.",
+      "line2":"Digital kitchen displays, prep time tracking, and automated order prioritization for optimal efficiency.",
+      "line3":"Smart table tracking, reservation management, and seating optimization with waitlist automation.",
+      "line4":"Integrated point-of-sale with inventory tracking, payment processing, and automated billing.",
+      "line5":"Automated staff scheduling, shift management, and performance tracking systems.",
+      "line6":"Real-time delivery management with driver tracking and customer notifications."
+    }
+  },
+  "section3":{
+    "title1":"Serve Success, Not Just Food",
+    "title2":"Ready to Transform Your Restaurant?",
+    "line1":"Reduce order processing time by 45%",
+    "line2":"Minimize food waste wryith smart invento",
+    "line3":"Optimize table turnover and seating",
+    "line4":"Automate delivery and pickup orders",
+    "line5":"Track staff performance and scheduling",
+    "line6":"Increase customer satisfaction scores",
+    "line7":"Join successful restaurants that have increased efficiency and customer satisfaction with our automation solutions.",
+    "line8":"Custom setup for your restaurant type",
+    "line9":"Staff training and onboarding",
+    "line10":"24/7 technical support",
+    "button":"Schedule Demo"
+  }
+}
