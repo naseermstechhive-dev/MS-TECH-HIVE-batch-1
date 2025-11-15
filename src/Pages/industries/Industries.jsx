@@ -135,7 +135,6 @@ const Industries = () => {
   },
 ];
 
-  /** ---------------- THEME VARIABLES ---------------- */
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
   const headingTitle = mode ? "text-gray-900 font-extrabold" : "text-white font-bold";
   const headingSub = mode ? "text-gray-700 font-medium" : "text-gray-300";

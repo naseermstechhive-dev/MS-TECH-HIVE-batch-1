@@ -20,7 +20,6 @@ const ClinicLab = () => {
   const { mode } = useContext(GlobalContext);
   const { t } = useTranslation();
 
-  // 1. Theme
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
     heroBg: mode
@@ -40,7 +39,6 @@ const ClinicLab = () => {
       : "bg-gradient-to-br from-yellow-500 to-yellow-600 text-gray-900",
   };
 
-  // 2. Hero Section
   const heroContent = {
     emoji: "🔬",
     title: t("industries.clinicLab"),
@@ -58,7 +56,6 @@ const ClinicLab = () => {
     text2: t("clinicLabPage.badge.text2"),
   };
 
-  // 3. Features (i18n mapped)
   const features = [
     {
       Icon: Activity,
@@ -92,7 +89,6 @@ const ClinicLab = () => {
     },
   ];
 
-  // 4. Benefits
   const benefitsList = [
     t("clinicLabPage.benefits.0"),
     t("clinicLabPage.benefits.1"),
@@ -102,7 +98,6 @@ const ClinicLab = () => {
     t("clinicLabPage.benefits.5"),
   ];
 
-  // 5. CTA
   const ctaContent = {
     title: t("clinicLabPage.cta.title"),
     description: t("clinicLabPage.cta.description"),
