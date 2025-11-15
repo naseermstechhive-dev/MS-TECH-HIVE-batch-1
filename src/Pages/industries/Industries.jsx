@@ -7,134 +7,133 @@ import { ArrowRight } from "lucide-react";
 import { GlobalContext } from "./../../context/Context";
 import { useTranslation } from "react-i18next";
 
-const industries = [
-  {
-    key: "hospital",
-    title: "Hospital",
-    image:
-      "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🏥",
-    desc:
-      "Streamline patient management, appointments, and medical records with automated workflows.",
-    features: ["Patient Registration", "Appointment Scheduling", "Medical Records", "Billing Systems"],
-    link: "/hospital",
-  },
-  {
-    key: "school",
-    title: "School",
-    image:
-      "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🎓",
-    desc:
-      "Automate attendance tracking, parent communication, and administrative tasks.",
-    features: ["Student Attendance", "Parent Portal", "Grade Management", "Communication Tools"],
-    link: "/school",
-  },
-  {
-    key: "college",
-    title: "College",
-    image:
-      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🏛️",
-    desc:
-      "Comprehensive admission management, analytics dashboards, and student portals.",
-    features: ["Admission Management", "Student Dashboards", "Analytics", "Course Management"],
-    link: "/college",
-  },
-  {
-    key: "restaurant",
-    title: "Restaurant",
-    image:
-      "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🍽️",
-    desc:
-      "Optimize order management, billing systems, and table tracking operations.",
-    features: ["Order Management", "POS Systems", "Table Tracking", "Kitchen Automation"],
-    link: "/restaurant",
-  },
-  {
-    key: "office",
-    title: "Office",
-    image:
-      "https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "💼",
-    desc:
-      "Transform HR processes and automate daily administrative workflows.",
-    features: ["HR Management", "Task Automation", "Document Management", "Employee Portals"],
-    link: "/office",
-  },
-  {
-    key: "retail",
-    title: "Retail Shop",
-    image:
-      "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🛍️",
-    desc:
-      "Manage inventory, point-of-sale systems, and customer relationships efficiently.",
-    features: ["Inventory Management", "POS Systems", "Customer CRM", "Sales Analytics"],
-    link: "/retail-shop",
-  },
-  {
-    key: "construction",
-    title: "Construction",
-    image:
-      "https://www.gannestonconstruction.com/wp-content/uploads/2022/09/5-types-of-building-construction-ganneston-construction.jpg",
-    emoji: "🏗️",
-    desc:
-      "Track projects, manage worker schedules, and monitor progress in real-time.",
-    features: ["Project Tracking", "Worker Management", "Progress Monitoring", "Resource Planning"],
-    link: "/construction",
-  },
-  {
-    key: "logistics",
-    title: "Logistics",
-    image:
-      "https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🚚",
-    desc:
-      "Optimize fleet management, route planning, and delivery tracking systems.",
-    features: ["Fleet Management", "Route Optimization", "Delivery Tracking", "Warehouse Management"],
-    link: "/logistics",
-  },
-  {
-    key: "it",
-    title: "IT Company",
-    image:
-      "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "💻",
-    desc:
-      "Enhance project management with dashboards and client communication portals.",
-    features: ["Project Dashboards", "Client Portals", "Team Collaboration", "Resource Management"],
-    link: "/it-company",
-  },
-  {
-    key: "ecommerce",
-    title: "E-commerce",
-    image:
-      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🛒",
-    desc:
-      "Integrate CRM systems, chatbots, and comprehensive analytics platforms.",
-    features: ["Customer CRM", "AI Chatbots", "Sales Analytics", "Order Management"],
-    link: "/e-commerce",
-  },
-  {
-    key: "clinic",
-    title: "Clinic / Lab",
-    image:
-      "https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    emoji: "🔬",
-    desc:
-      "Streamline sample tracking, lab reports, and patient communication.",
-    features: ["Sample Tracking", "Lab Reports", "Patient Records", "Result Management"],
-    link: "/clinic-lab",
-  },
-];
-
 const Industries = () => {
   const {t} = useTranslation();
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
+  const industries = [
+  {
+    key: "hospital",
+    title: t("industries.hospital"),
+    image:
+      "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🏥",
+    desc:
+      t("allIndustries.hospital.desc"),
+    features: t("allIndustries.hospital.features", { returnObjects: true }),
+    link: "/hospital",
+  },
+  {
+    key: "school",
+    title: t("industries.school"),
+    image:
+      "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🎓",
+    desc:
+      t("allIndustries.school.desc"),
+    features: t("allIndustries.school.features", { returnObjects: true }),
+    link: "/school",
+  },
+  {
+    key: "college",
+    title: t("industries.college"),
+    image:
+      "https://images.pexels.com/photos/1438081/pexels-photo-1438081.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🏛️",
+    desc:
+      t("allIndustries.college.desc"),
+    features: t("allIndustries.college.features", { returnObjects: true }),
+    link: "/college",
+  },
+  {
+    key: "restaurant",
+    title: t("industries.restaurant"),
+    image:
+      "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🍽️",
+    desc:
+      t("allIndustries.restaurant.desc"),
+    features: t("allIndustries.restaurant.features", { returnObjects: true }),
+    link: "/restaurant",
+  },
+  {
+    key: "office",
+    title: t("industries.office"),
+    image:
+      "https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "💼",
+    desc:
+      t("allIndustries.office.desc"),
+    features: t("allIndustries.office.features", { returnObjects: true }),
+    link: "/office",
+  },
+  {
+    key: "retail",
+    title: t("industries.retailShop"),
+    image:
+      "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🛍️",
+    desc:
+      t("allIndustries.retail.desc"),
+    features: t("allIndustries.retail.features", { returnObjects: true }),
+    link: "/retail-shop",
+  },
+  {
+    key: "construction",
+    title: t("industries.construction"),
+    image:
+      "https://www.gannestonconstruction.com/wp-content/uploads/2022/09/5-types-of-building-construction-ganneston-construction.jpg",
+    emoji: "🏗️",
+    desc:
+      t("allIndustries.construction.desc"),
+    features: t("allIndustries.construction.features", { returnObjects: true }),
+    link: "/construction",
+  },
+  {
+    key: "logistics",
+    title: t("industries.logistics"),
+    image:
+      "https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🚚",
+    desc:
+      t("allIndustries.logistics.desc"),
+    features: t("allIndustries.logistics.features", { returnObjects: true }),
+    link: "/logistics",
+  },
+  {
+    key: "it",
+    title: t("industries.itCompany"),
+    image:
+      "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "💻",
+    desc:
+      t("allIndustries.it.desc"),
+    features: t("allIndustries.it.features", { returnObjects: true }),
+    link: "/it-company",
+  },
+  {
+    key: "ecommerce",
+    title: t("industries.ecommerce"),
+    image:
+      "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🛒",
+    desc:
+      t("allIndustries.ecommerce.desc"),
+    features: t("allIndustries.ecommerce.features", { returnObjects: true }),
+    link: "/e-commerce",
+  },
+  {
+    key: "clinic",
+    title: t("industries.clinicLab"),
+    image:
+      "https://images.pexels.com/photos/3786157/pexels-photo-3786157.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    emoji: "🔬",
+    desc:
+      t("allIndustries.clinic.desc"),
+    features: t("allIndustries.clinic.features", { returnObjects: true }),
+    link: "/clinic-lab",
+  },
+];
 
   /** ---------------- THEME VARIABLES ---------------- */
   const pageBg = mode ? "bg-white text-gray-900" : "bg-gray-900 text-white";
@@ -153,7 +152,6 @@ const Industries = () => {
   const ctaSub = "text-gray-800";
   const ctaBtn = mode ? "bg-gray-900 text-white" : "bg-gray-900 text-white";
 
-  /** ---------------- AOS INIT ---------------- */
   useEffect(() => {
     AOS.init({
       duration: 1000,

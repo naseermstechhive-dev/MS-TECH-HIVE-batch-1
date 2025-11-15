@@ -14,9 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const Restaurant = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -39,10 +41,9 @@ const Restaurant = () => {
 
   const heroContent = {
     emoji: "🍽️",
-    title: "Restaurant",
-    subtitle: "Food Service Automation",
-    description:
-      "Optimize your restaurant operations with comprehensive order management, billing systems, table tracking, and kitchen automation.",
+    title: t("industries.restaurant"),
+    subtitle: t("restaurantPage.subtitle"),
+    description: t("restaurantPage.description"),
     imageUrl:
       "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "Restaurant",
@@ -51,54 +52,79 @@ const Restaurant = () => {
 
   const heroBadge = {
     Icon: Utensils,
-    text1: "Smart",
-    text2: "Kitchen",
-    containerClassName: "w-20 -bottom-6", // Specific class
+    text1: t("restaurantPage.badge.text1"),
+    text2: t("restaurantPage.badge.text2"),
+    containerClassName: "w-20 -bottom-6",
     iconClassName: "w-10 h-10",
   };
 
   const features = [
-    { Icon: ShoppingCart, title: "Order Management System", desc: "Streamlined dine-in, takeaway & delivery order handling." },
-    { Icon: Utensils, title: "Kitchen Automation", desc: "Digital kitchen displays & automated prep-time tracking." },
-    { Icon: Users, title: "Table Management", desc: "Reservation tools, waitlist automation & seating optimization." },
-    { Icon: ChartNoAxesColumnIncreasing, title: "POS & Billing", desc: "Integrated POS, inventory tracking & instant billing." },
-    { Icon: Calendar, title: "Staff Scheduling", desc: "Automated shift planning, attendance & task assignment." },
-    { Icon: Clock, title: "Delivery Tracking", desc: "Real-time delivery tracking & customer status updates." },
+    {
+      Icon: ShoppingCart,
+      title: t("restaurantPage.features.0.title"),
+      desc: t("restaurantPage.features.0.desc"),
+    },
+    {
+      Icon: Utensils,
+      title: t("restaurantPage.features.1.title"),
+      desc: t("restaurantPage.features.1.desc"),
+    },
+    {
+      Icon: Users,
+      title: t("restaurantPage.features.2.title"),
+      desc: t("restaurantPage.features.2.desc"),
+    },
+    {
+      Icon: ChartNoAxesColumnIncreasing,
+      title: t("restaurantPage.features.3.title"),
+      desc: t("restaurantPage.features.3.desc"),
+    },
+    {
+      Icon: Calendar,
+      title: t("restaurantPage.features.4.title"),
+      desc: t("restaurantPage.features.4.desc"),
+    },
+    {
+      Icon: Clock,
+      title: t("restaurantPage.features.5.title"),
+      desc: t("restaurantPage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Reduce order processing time by 45%",
-    "Minimize food waste with smart inventory",
-    "Optimize table turnover and seating",
-    "Automate takeaway & delivery workflows",
-    "Track staff productivity with analytics",
-    "Increase customer satisfaction ratings",
+    t("restaurantPage.benefits.0"),
+    t("restaurantPage.benefits.1"),
+    t("restaurantPage.benefits.2"),
+    t("restaurantPage.benefits.3"),
+    t("restaurantPage.benefits.4"),
+    t("restaurantPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Transform Your Restaurant?",
-    description:
-      "Join restaurants that have boosted efficiency, reduced delays and improved customer satisfaction.",
+    title: t("restaurantPage.cta.title"),
+    description: t("restaurantPage.cta.description"),
     list: [
-      "Custom setup based on your restaurant type",
-      "Staff onboarding & training",
-      "24/7 dedicated technical support",
+      t("restaurantPage.cta.list.0"),
+      t("restaurantPage.cta.list.1"),
+      t("restaurantPage.cta.list.2"),
     ],
-    buttonText: "Schedule Demo",
+    buttonText: t("restaurantPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Complete Restaurant Management Suite"
-        subtitle="Automate order taking, billing, seating, kitchen operations & more."
+        title={t("restaurantPage.subtitle")}
+        subtitle={t("restaurantPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Serve Success, Not Just Food"
+        benefitsTitle={t("restaurantPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

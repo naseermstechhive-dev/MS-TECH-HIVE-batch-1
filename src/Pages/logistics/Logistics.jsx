@@ -14,9 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const Logistics = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -41,10 +43,9 @@ const Logistics = () => {
 
   const heroContent = {
     emoji: "🚚",
-    title: "Logistics",
-    subtitle: "Transportation Solutions",
-    description:
-      "Optimize your logistics operations with comprehensive fleet management, route optimization, delivery tracking, and warehouse management systems.",
+    title: t("industries.logistics"),
+    subtitle: t("logisticsPage.subtitle"),
+    description: t("logisticsPage.description"),
     imageUrl:
       "https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "Logistics",
@@ -53,54 +54,79 @@ const Logistics = () => {
 
   const heroBadge = {
     Icon: MapPin,
-    text1: "Smart",
-    text2: "Routes",
+    text1: t("logisticsPage.badge.text1"),
+    text2: t("logisticsPage.badge.text2"),
     containerClassName: "px-6 py-4 space-y-1 text-center",
     iconClassName: "w-6 h-6 mx-auto",
   };
 
   const features = [
-    { Icon: Truck, title: "Fleet Management", desc: "Vehicle tracking, maintenance scheduling, and driver management." },
-    { Icon: MapPin, title: "Route Optimization", desc: "AI-powered route planning for fast & fuel-efficient delivery." },
-    { Icon: Package, title: "Shipment Tracking", desc: "Real-time tracking with customer notifications." },
-    { Icon: BarChart3, title: "Analytics Dashboard", desc: "KPIs, delivery analytics & efficiency insights." },
-    { Icon: Users, title: "Driver Management", desc: "Driver schedules, performance & communication." },
-    { Icon: Clock, title: "Delivery Automation", desc: "Automated dispatch & delivery scheduling." },
+    {
+      Icon: Truck,
+      title: t("logisticsPage.features.0.title"),
+      desc: t("logisticsPage.features.0.desc"),
+    },
+    {
+      Icon: MapPin,
+      title: t("logisticsPage.features.1.title"),
+      desc: t("logisticsPage.features.1.desc"),
+    },
+    {
+      Icon: Package,
+      title: t("logisticsPage.features.2.title"),
+      desc: t("logisticsPage.features.2.desc"),
+    },
+    {
+      Icon: BarChart3,
+      title: t("logisticsPage.features.3.title"),
+      desc: t("logisticsPage.features.3.desc"),
+    },
+    {
+      Icon: Users,
+      title: t("logisticsPage.features.4.title"),
+      desc: t("logisticsPage.features.4.desc"),
+    },
+    {
+      Icon: Clock,
+      title: t("logisticsPage.features.5.title"),
+      desc: t("logisticsPage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Reduce delivery times by 40%",
-    "Optimize fuel consumption & routes",
-    "Improve customer satisfaction",
-    "Automate dispatch & scheduling",
-    "Real-time package & fleet tracking",
-    "Cut operational costs by 25%",
+    t("logisticsPage.benefits.0"),
+    t("logisticsPage.benefits.1"),
+    t("logisticsPage.benefits.2"),
+    t("logisticsPage.benefits.3"),
+    t("logisticsPage.benefits.4"),
+    t("logisticsPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Optimize Your Fleet?",
-    description:
-      "Join top logistics companies using automation to improve delivery speed and reduce operational costs.",
+    title: t("logisticsPage.cta.title"),
+    description: t("logisticsPage.cta.description"),
     list: [
-      "Custom solution for your fleet size",
-      "Driver training + mobile app support",
-      "24/7 monitoring & assistance",
+      t("logisticsPage.cta.list.0"),
+      t("logisticsPage.cta.list.1"),
+      t("logisticsPage.cta.list.2"),
     ],
-    buttonText: "Schedule Demo",
+    buttonText: t("logisticsPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg} aosOptions={aosOptions}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Complete Logistics Management Suite"
-        subtitle="From fleet management to last-mile delivery, optimize every aspect of your logistics operations."
+        title={t("logisticsPage.subtitle")}
+        subtitle={t("logisticsPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Deliver Excellence Every Mile"
+        benefitsTitle={t("logisticsPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

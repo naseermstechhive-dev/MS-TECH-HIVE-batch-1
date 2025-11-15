@@ -14,9 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const Ecommerce = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -39,21 +41,20 @@ const Ecommerce = () => {
 
   const heroContent = {
     emoji: "🛒",
-    title: "E-commerce",
-    subtitle: "Online Business Solutions",
-    description:
-      "Supercharge your e-commerce operations with integrated CRM systems, AI-powered chatbots, comprehensive analytics, and automated order management platforms.",
+    title: t("industries.ecommerce"),
+    subtitle: t("ecommercePage.subtitle"),
+    description: t("ecommercePage.description"),
     imageUrl:
       "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "E-commerce",
-    imageStyle: { maxHeight: 420 }, // Specific style
-    imageClassName: "max-[600px]:max-w-md max-[400px]:max-w-[95%]", // Specific class
+    imageStyle: { maxHeight: 420 },
+    imageClassName: "max-[600px]:max-w-md max-[400px]:max-w-[95%]",
   };
 
   const heroBadge = {
     Icon: ShoppingCart,
-    text1: "Smart",
-    text2: "Commerce",
+    text1: t("ecommercePage.badge.text1"),
+    text2: t("ecommercePage.badge.text2"),
     containerClassName:
       "px-6 py-4 -bottom-6 space-y-1 max-[600px]:w-20 max-[600px]:px-3 max-[600px]:py-2 max-[350px]:w-16 max-[350px]:px-2 max-[350px]:py-1.5",
     iconClassName:
@@ -61,47 +62,72 @@ const Ecommerce = () => {
   };
 
   const features = [
-    { Icon: Users, title: "Customer CRM", desc: "Comprehensive customer relationship management with purchase history, preferences, and segmentation." },
-    { Icon: MessageSquare, title: "AI Chatbots", desc: "Intelligent chatbots for customer support, order tracking, and personalized product recommendations." },
-    { Icon: BarChart3, title: "Sales Analytics", desc: "Advanced analytics dashboard with sales metrics, conversion tracking, and customer insights." },
-    { Icon: ShoppingCart, title: "Order Management", desc: "Automated order processing, inventory synchronization, and fulfillment tracking systems." },
-    { Icon: Package, title: "Inventory Integration", desc: "Real-time inventory management with automatic restocking alerts and supplier integration." },
-    { Icon: CreditCard, title: "Payment Automation", desc: "Secure payment processing, subscription management, and automated billing systems." },
+    {
+      Icon: Users,
+      title: t("ecommercePage.features.0.title"),
+      desc: t("ecommercePage.features.0.desc"),
+    },
+    {
+      Icon: MessageSquare,
+      title: t("ecommercePage.features.1.title"),
+      desc: t("ecommercePage.features.1.desc"),
+    },
+    {
+      Icon: BarChart3,
+      title: t("ecommercePage.features.2.title"),
+      desc: t("ecommercePage.features.2.desc"),
+    },
+    {
+      Icon: ShoppingCart,
+      title: t("ecommercePage.features.3.title"),
+      desc: t("ecommercePage.features.3.desc"),
+    },
+    {
+      Icon: Package,
+      title: t("ecommercePage.features.4.title"),
+      desc: t("ecommercePage.features.4.desc"),
+    },
+    {
+      Icon: CreditCard,
+      title: t("ecommercePage.features.5.title"),
+      desc: t("ecommercePage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Increase conversion rates by 45%",
-    "Automate customer support with AI chatbots",
-    "Improve inventory management efficiency",
-    "Enhance customer retention and loyalty",
-    "Streamline order fulfillment processes",
-    "Generate detailed sales and customer insights",
+    t("ecommercePage.benefits.0"),
+    t("ecommercePage.benefits.1"),
+    t("ecommercePage.benefits.2"),
+    t("ecommercePage.benefits.3"),
+    t("ecommercePage.benefits.4"),
+    t("ecommercePage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Scale Your Online Store?",
-    description:
-      "Join successful e-commerce businesses that have increased sales and improved customer satisfaction with our automation solutions.",
+    title: t("ecommercePage.cta.title"),
+    description: t("ecommercePage.cta.description"),
     list: [
-      "Platform integration with your existing store",
-      "Custom chatbot training for your products",
-      "Analytics setup and team training",
+      t("ecommercePage.cta.list.0"),
+      t("ecommercePage.cta.list.1"),
+      t("ecommercePage.cta.list.2"),
     ],
-    buttonText: "Schedule Demo",
+    buttonText: t("ecommercePage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Complete E-commerce Automation Suite"
-        subtitle="From customer acquisition to order fulfillment, optimize every aspect of your online business"
+        title={t("ecommercePage.subtitle")}
+        subtitle={t("ecommercePage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Sell Smarter, Grow Faster"
+        benefitsTitle={t("ecommercePage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

@@ -187,6 +187,705 @@
     "ctaTitle": "Don't See Your Industry?",
     "ctaSubtitle": "We work with businesses across many sectors. Let's discuss your needs!",
     "ctaButton": "Get Custom Solution"
-  }
+  },
+  
+  "allIndustries": {
+    "hospital": {
+      "desc": "Streamline patient management, appointments, and medical records with automated workflows.",
+      "features": [
+        "Patient Registration",
+        "Appointment Scheduling",
+        "Medical Records",
+        "Billing Systems"
+      ]
+    },
 
+    "school": {
+      "desc": "Automate attendance tracking, parent communication, and administrative tasks.",
+      "features": [
+        "Student Attendance",
+        "Parent Portal",
+        "Grade Management",
+        "Communication Tools"
+      ]
+    },
+
+    "college": {
+      "desc": "Comprehensive admission management, analytics dashboards, and student portals.",
+      "features": [
+        "Admission Management",
+        "Student Dashboards",
+        "Analytics",
+        "Course Management"
+      ]
+    },
+
+    "restaurant": {
+      "desc": "Optimize order management, billing systems, and table tracking operations.",
+      "features": [
+        "Order Management",
+        "POS Systems",
+        "Table Tracking",
+        "Kitchen Automation"
+      ]
+    },
+
+    "office": {
+      "desc": "Transform HR processes and automate daily administrative workflows.",
+      "features": [
+        "HR Management",
+        "Task Automation",
+        "Document Management",
+        "Employee Portals"
+      ]
+    },
+
+    "retail": {
+      "desc": "Manage inventory, point-of-sale systems, and customer relationships efficiently.",
+      "features": [
+        "Inventory Management",
+        "POS Systems",
+        "Customer CRM",
+        "Sales Analytics"
+      ]
+    },
+
+    "construction": {
+      "desc": "Track projects, manage worker schedules, and monitor progress in real-time.",
+      "features": [
+        "Project Tracking",
+        "Worker Management",
+        "Progress Monitoring",
+        "Resource Planning"
+      ]
+    },
+
+    "logistics": {
+      "desc": "Optimize fleet management, route planning, and delivery tracking systems.",
+      "features": [
+        "Fleet Management",
+        "Route Optimization",
+        "Delivery Tracking",
+        "Warehouse Management"
+      ]
+    },
+
+    "it": {
+      "desc": "Enhance project management with dashboards and client communication portals.",
+      "features": [
+        "Project Dashboards",
+        "Client Portals",
+        "Team Collaboration",
+        "Resource Management"
+      ]
+    },
+
+    "ecommerce": {
+      "desc": "Integrate CRM systems, chatbots, and comprehensive analytics platforms.",
+      "features": [
+        "Customer CRM",
+        "AI Chatbots",
+        "Sales Analytics",
+        "Order Management"
+      ]
+    },
+
+    "clinic": {
+      "desc": "Streamline sample tracking, lab reports, and patient communication.",
+      "features": [
+        "Sample Tracking",
+        "Lab Reports",
+        "Patient Records",
+        "Result Management"
+      ]
+    }
+  },
+  
+  "schoolPage": {
+    "subtitle": "Education Management Solutions",
+    "description": "Revolutionize your school operations with automated attendance, communication, analytics, and complete education management.",
+    "badge": {
+      "text1": "Real-time",
+      "text2": "Updates"
+    },
+    "features": [
+      {
+        "title": "Student Management",
+        "desc": "Profiles, enrollment tracking, academic progress monitoring."
+      },
+      {
+        "title": "Attendance Tracking",
+        "desc": "Automated attendance with real-time parent notifications."
+      },
+      {
+        "title": "Parent Communication",
+        "desc": "Instant communication between teachers and parents."
+      },
+      {
+        "title": "Grade Management",
+        "desc": "Digital gradebooks, report cards, and academic tracking."
+      },
+      {
+        "title": "Academic Analytics",
+        "desc": "Track performance, attendance patterns, and school analytics."
+      },
+      {
+        "title": "Safety & Security",
+        "desc": "Check-in/out systems with emergency communication tools."
+      }
+    ],
+    "benefits": [
+      "Reduce administrative tasks by 50%",
+      "Improve parent engagement by 75%",
+      "Automate attendance & grade reporting",
+      "Streamline teacher-parent communication",
+      "Real-time progress tracking",
+      "Better school safety protocols"
+    ],
+    "cta": {
+      "title": "Transform Your School Today",
+      "description": "Join modern schools using our automation solutions for education.",
+      "list": [
+        "Personalized demo for your school",
+        "Full staff training included",
+        "Step-by-step implementation"
+      ],
+      "button": "Schedule Demo"
+    }
+  },
+
+  "collegePage": {
+    "subtitle": "Higher Education Solutions",
+    "description": "Modernize college operations with smart admissions, analytics, dashboards, and automated administrative workflows.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Analytics"
+    },
+    "features": [
+      {
+        "title": "Admission Management",
+        "desc": "Automated document verification, application processing, and workflows."
+      },
+      {
+        "title": "Student Dashboards",
+        "desc": "Student portals with course registration, grades, and academic progress."
+      },
+      {
+        "title": "Analytics & Reporting",
+        "desc": "Advanced student performance analytics and institutional insights."
+      },
+      {
+        "title": "Course Management",
+        "desc": "Automated faculty assignment, scheduling, and resources."
+      },
+      {
+        "title": "Academic Records",
+        "desc": "Digital transcripts, degree verification, academic history tracking."
+      },
+      {
+        "title": "Fee Management",
+        "desc": "Automated fee collection, scholarships, and financial aid processing."
+      }
+    ],
+    "benefits": [
+      "Reduce admission processing time by 60%",
+      "Automate course registration & scheduling",
+      "Improve student engagement with dashboards",
+      "Streamline fee collection & financial aid",
+      "Generate academic performance reports",
+      "Enhance decision-making with analytics"
+    ],
+    "cta": {
+      "title": "Ready for Digital Transformation?",
+      "description": "Join colleges that modernized admissions, academics, and operations.",
+      "list": [
+        "Tailored solution for your institution",
+        "Faculty & staff training included",
+        "Step-by-step implementation"
+      ],
+      "button": "Schedule Consultation"
+    }
+  },
+
+  "hospitalPage": {
+    "subtitle": "Healthcare Automation Solutions",
+    "description": "Transform your hospital operations with advanced automation: patient management, appointments, EMR, and billing systems.",
+    "badge": {
+      "text1": "24/7",
+      "text2": "Support"
+    },
+    "features": [
+      {
+        "title": "Patient Management System",
+        "desc": "Automate patient registration, medical history tracking, and more."
+      },
+      {
+        "title": "Appointment Scheduling",
+        "desc": "Smart doctor appointments, reminders, and conflict-free scheduling."
+      },
+      {
+        "title": "Electronic Medical Records",
+        "desc": "Secure, real-time, cloud-accessible EMR platform."
+      },
+      {
+        "title": "Billing & Insurance",
+        "desc": "Automated billing, insurance claim verification, and payment tracking."
+      },
+      {
+        "title": "HIPAA Compliance",
+        "desc": "Fully compliant & encrypted patient data protection."
+      },
+      {
+        "title": "Analytics Dashboard",
+        "desc": "Monitor patient flow, revenue, and KPIs in real time."
+      }
+    ],
+    "benefits": [
+      "Reduce patient wait times by 40%",
+      "Eliminate scheduling conflicts",
+      "Automate insurance verification",
+      "Streamline discharge processes",
+      "Improve patient satisfaction scores",
+      "Reduce administrative overhead by 30%"
+    ],
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Join hundreds of healthcare facilities already using our automation suite.",
+      "list": [
+        "Free consultation & analysis",
+        "Custom implementation plan",
+        "Training & dedicated support"
+      ],
+      "button": "Schedule Consultation"
+    }
+  },
+
+  "restaurantPage": {
+    "subtitle": "Food Service Automation",
+    "description": "Optimize your restaurant operations with comprehensive order management, billing systems, table tracking, and kitchen automation.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Kitchen"
+    },
+    "features": [
+      {
+        "title": "Order Management System",
+        "desc": "Streamlined dine-in, takeaway & delivery order handling."
+      },
+      {
+        "title": "Kitchen Automation",
+        "desc": "Digital kitchen displays & automated prep-time tracking."
+      },
+      {
+        "title": "Table Management",
+        "desc": "Reservation tools, waitlist automation & seating optimization."
+      },
+      {
+        "title": "POS & Billing",
+        "desc": "Integrated POS, inventory tracking & instant billing."
+      },
+      {
+        "title": "Staff Scheduling",
+        "desc": "Automated shift planning, attendance & task assignment."
+      },
+      {
+        "title": "Delivery Tracking",
+        "desc": "Real-time delivery tracking & customer status updates."
+      }
+    ],
+    "benefits": [
+      "Reduce order processing time by 45%",
+      "Minimize food waste with smart inventory",
+      "Optimize table turnover and seating",
+      "Automate takeaway & delivery workflows",
+      "Track staff productivity with analytics",
+      "Increase customer satisfaction ratings"
+    ],
+    "cta": {
+      "title": "Ready to Transform Your Restaurant?",
+      "description": "Join restaurants that have boosted efficiency, reduced delays and improved customer satisfaction.",
+      "list": [
+        "Custom setup based on your restaurant type",
+        "Staff onboarding & training",
+        "24/7 dedicated technical support"
+      ],
+      "button": "Schedule Demo"
+    }
+  },
+
+  "retailShopPage": {
+    "subtitle": "Retail Management Solutions",
+    "description": "Modernize your retail operations with comprehensive inventory management, POS systems, CRM tools, and sales analytics.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Retail"
+    },
+    "features": [
+      {
+        "title": "Inventory Management",
+        "desc": "Real-time stock tracking & automated reordering."
+      },
+      {
+        "title": "Point of Sale Systems",
+        "desc": "Modern POS setups with secure payments."
+      },
+      {
+        "title": "Customer Management",
+        "desc": "CRM with profiles, history & loyalty programs."
+      },
+      {
+        "title": "Sales Analytics",
+        "desc": "Track trends & KPIs with smart dashboards."
+      },
+      {
+        "title": "E-commerce Integration",
+        "desc": "Unified inventory for online + offline sales."
+      },
+      {
+        "title": "Staff Management",
+        "desc": "Scheduling, performance & commission tracking."
+      }
+    ],
+    "benefits": [
+      "Reduce inventory management time by 50%",
+      "Automate purchase orders & stock alerts",
+      "Improve customer retention with CRM",
+      "Streamline checkout & payment flow",
+      "Generate detailed sales & profit reports",
+      "Optimize staff scheduling & performance"
+    ],
+    "cta": {
+      "title": "Boost Your Retail Success",
+      "description": "Join retailers who increased efficiency and customer satisfaction with automation.",
+      "list": [
+        "Tailored setup for your store type",
+        "Staff training + onboarding",
+        "24/7 support & maintenance"
+      ],
+      "button": "Schedule Demo"
+    }
+  },
+
+  "officePage": {
+    "subtitle": "Corporate Automation Solutions",
+    "description": "Transform your office operations with comprehensive HR systems, document management, task automation, and employee productivity tools.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Workflows"
+    },
+    "features": [
+      {
+        "title": "HR Management System",
+        "desc": "Comprehensive employee management, payroll processing, and performance tracking automation."
+      },
+      {
+        "title": "Document Management",
+        "desc": "Digital document storage, automated workflows, and secure file sharing systems."
+      },
+      {
+        "title": "Task Automation",
+        "desc": "Project management, task assignment, and progress tracking."
+      },
+      {
+        "title": "Analytics Dashboard",
+        "desc": "Real-time insights into productivity metrics and operational efficiency."
+      },
+      {
+        "title": "Employee Portals",
+        "desc": "Self-service portals for leave management, expenses & benefits."
+      },
+      {
+        "title": "Time Tracking",
+        "desc": "Automated time & attendance tracking with payroll integration."
+      }
+    ],
+    "benefits": [
+      "Reduce administrative overhead by 60%",
+      "Automate repetitive office tasks",
+      "Improve employee productivity tracking",
+      "Streamline HR processes and payroll",
+      "Enhance document security and access",
+      "Create better workplace collaboration"
+    ],
+    "cta": {
+      "title": "Ready to Go Digital?",
+      "description": "Join forward-thinking companies that have transformed their office operations with intelligent automation.",
+      "list": [
+        "Customized solution for your office size",
+        "Employee training and change management",
+        "Ongoing support and system updates"
+      ],
+      "button": "Schedule Consultation"
+    }
+  },
+
+  "logisticsPage": {
+    "subtitle": "Transportation Solutions",
+    "description": "Optimize your logistics operations with comprehensive fleet management, route optimization, delivery tracking, and warehouse management systems.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Routes"
+    },
+    "features": [
+      {
+        "title": "Fleet Management",
+        "desc": "Vehicle tracking, maintenance scheduling, and driver management."
+      },
+      {
+        "title": "Route Optimization",
+        "desc": "AI-powered route planning for fast & fuel-efficient delivery."
+      },
+      {
+        "title": "Shipment Tracking",
+        "desc": "Real-time tracking with customer notifications."
+      },
+      {
+        "title": "Analytics Dashboard",
+        "desc": "Delivery analytics, KPIs & efficiency insights."
+      },
+      {
+        "title": "Driver Management",
+        "desc": "Driver schedules, performance tracking & updates."
+      },
+      {
+        "title": "Delivery Automation",
+        "desc": "Automated dispatching and delivery workflows."
+      }
+    ],
+    "benefits": [
+      "Reduce delivery times by 40%",
+      "Optimize fuel consumption & routes",
+      "Improve customer satisfaction",
+      "Automate dispatch & scheduling",
+      "Real-time package & fleet tracking",
+      "Cut operational costs by 25%"
+    ],
+    "cta": {
+      "title": "Ready to Optimize Your Fleet?",
+      "description": "Join top logistics companies improving delivery speed and reducing costs with automation.",
+      "list": [
+        "Custom solution for your fleet size",
+        "Driver training + mobile app support",
+        "24/7 monitoring & assistance"
+      ],
+      "button": "Schedule Demo"
+    }
+  },
+
+  "constructionPage": {
+    "subtitle": "Project Management Solutions",
+    "description": "Revolutionize your construction projects with comprehensive tracking systems, worker management, progress monitoring, and resource planning automation.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Projects"
+    },
+    "features": [
+      {
+        "title": "Project Tracking",
+        "desc": "Milestone tracking, progress monitoring, and deadline management."
+      },
+      {
+        "title": "Worker Management",
+        "desc": "Digital worker logs, attendance tracking, and skill-based assignments."
+      },
+      {
+        "title": "Resource Planning",
+        "desc": "Equipment scheduling, material tracking & allocation optimization."
+      },
+      {
+        "title": "Progress Monitoring",
+        "desc": "Real-time dashboards and performance analytics."
+      },
+      {
+        "title": "Documentation",
+        "desc": "Permits, reports, blueprints and compliance documentation."
+      },
+      {
+        "title": "Time & Cost Tracking",
+        "desc": "Track labor, budget & expenses automatically."
+      }
+    ],
+    "benefits": [
+      "Reduce project delays by 35%",
+      "Improve worker productivity tracking",
+      "Automate safety & compliance reporting",
+      "Streamline equipment and material management",
+      "Real-time project visibility",
+      "Optimize resource allocation & costs"
+    ],
+    "cta": {
+      "title": "Ready to Modernize Your Projects?",
+      "description": "Join construction companies boosting project efficiency with automation.",
+      "list": [
+        "Custom solution for your project types",
+        "Team training & onboarding",
+        "Mobile access & field support"
+      ],
+      "button": "Schedule Consultation"
+    }
+  },
+
+  "itCompanyPage": {
+    "subtitle": "Tech Project Solutions",
+    "description": "Enhance your IT operations with comprehensive project dashboards, client communication portals, team collaboration tools, and resource management systems.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Projects"
+    },
+    "features": [
+      {
+        "title": "Project Dashboards",
+        "desc": "Real-time project insights and collaboration tools."
+      },
+      {
+        "title": "Client Portals",
+        "desc": "Centralized updates, file sharing & communication."
+      },
+      {
+        "title": "Resource Management",
+        "desc": "Team allocation, skill tracking, and workload monitoring."
+      },
+      {
+        "title": "Documentation Systems",
+        "desc": "Version control, automated documentation & knowledge bases."
+      },
+      {
+        "title": "Sprint Planning",
+        "desc": "Agile sprint cycles, backlog management & velocity tracking."
+      },
+      {
+        "title": "Time Tracking",
+        "desc": "Productivity analytics and integrated billing systems."
+      }
+    ],
+    "benefits": [
+      "Improve project delivery times by 40%",
+      "Enhance client communication and satisfaction",
+      "Automate time tracking & billing processes",
+      "Optimize resource allocation",
+      "Streamline development workflows",
+      "Increase team productivity by 35%"
+    ],
+    "cta": {
+      "title": "Ready to Scale Your IT Operations?",
+      "description": "Join top IT companies improving project delivery with automation.",
+      "list": [
+        "Custom setup for your workflow",
+        "Team training & integration support",
+        "API integrations with your tools"
+      ],
+      "button": "Schedule Consultation"
+    }
+  },
+
+  "ecommercePage": {
+    "subtitle": "Online Business Solutions",
+    "description": "Supercharge your e-commerce operations with integrated CRM systems, AI chatbots, analytics, and automated order management.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Commerce"
+    },
+    "features": [
+      {
+        "title": "Customer CRM",
+        "desc": "Customer profiles, purchase history & segmentation."
+      },
+      {
+        "title": "AI Chatbots",
+        "desc": "Smart support, order tracking & product recommendations."
+      },
+      {
+        "title": "Sales Analytics",
+        "desc": "Conversion tracking, revenue metrics & insights."
+      },
+      {
+        "title": "Order Management",
+        "desc": "Automated order processing & fulfillment tracking."
+      },
+      {
+        "title": "Inventory Integration",
+        "desc": "Real-time stock synchronization & supplier integration."
+      },
+      {
+        "title": "Payment Automation",
+        "desc": "Secure payment processing & subscription billing."
+      }
+    ],
+    "benefits": [
+      "Increase conversion rates by 45%",
+      "Automate customer support with AI",
+      "Improve inventory management efficiency",
+      "Enhance customer retention",
+      "Streamline order fulfillment",
+      "Gain powerful sales insights"
+    ],
+    "cta": {
+      "title": "Ready to Scale Your Online Store?",
+      "description": "Join e-commerce brands growing faster with automation.",
+      "list": [
+        "Full platform integration",
+        "Custom chatbot training",
+        "Analytics setup and training"
+      ],
+      "button": "Schedule Demo"
+    }
+  },
+
+  "clinicLabPage": {
+    "subtitle": "Laboratory Management Solutions",
+    "description": "Modernize your clinic and lab operations with sample tracking, reporting, patient records, and automated workflows.",
+    "badge": {
+      "text1": "Smart",
+      "text2": "Lab"
+    },
+    "features": [
+      {
+        "title": "Sample Tracking",
+        "desc": "End-to-end specimen tracking with barcode integration."
+      },
+      {
+        "title": "Lab Reports",
+        "desc": "Automated report generation and digital delivery."
+      },
+      {
+        "title": "Patient Records",
+        "desc": "Secure medical history & results storage."
+      },
+      {
+        "title": "Result Management",
+        "desc": "Quality-controlled digital processing."
+      },
+      {
+        "title": "Compliance Management",
+        "desc": "Audit trails, quality assurance & regulatory tracking."
+      },
+      {
+        "title": "Workflow Automation",
+        "desc": "Automated scheduling, task routing & equipment tracking."
+      }
+    ],
+    "benefits": [
+      "Reduce sample processing time by 50%",
+      "Eliminate manual report creation",
+      "Improve result accuracy & reliability",
+      "Enhance patient communication",
+      "Ensure regulatory compliance",
+      "Optimize equipment utilization"
+    ],
+    "cta": {
+      "title": "Ready to Modernize Your Lab?",
+      "description": "Join labs improving accuracy and efficiency with automation.",
+      "list": [
+        "Equipment integration support",
+        "Staff training & certification",
+        "Compliance and validation support"
+      ],
+      "button": "Schedule Consultation"
+    }
+  },
+  "industryBtn":{
+    "getStartedToday": "Get Started Today",
+    "viewAllServices": "View All Services"
+
+  }
 }

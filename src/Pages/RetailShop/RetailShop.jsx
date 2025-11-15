@@ -14,9 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const RetailShop = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -41,10 +43,9 @@ const RetailShop = () => {
 
   const heroContent = {
     emoji: "🛍️",
-    title: "Retail Shop",
-    subtitle: "Retail Management Solutions",
-    description:
-      "Modernize your retail operations with comprehensive inventory management, POS systems, CRM tools, and sales analytics.",
+    title: t("industries.retailShop"),
+    subtitle: t("retailShopPage.subtitle"),
+    description: t("retailShopPage.description"),
     imageUrl:
       "https://images.pexels.com/photos/298863/pexels-photo-298863.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "Retail",
@@ -53,53 +54,78 @@ const RetailShop = () => {
 
   const heroBadge = {
     Icon: ShoppingCart,
-    text1: "Smart",
-    text2: "Retail",
+    text1: t("retailShopPage.badge.text1"),
+    text2: t("retailShopPage.badge.text2"),
     containerClassName: "px-6 py-4 -bottom-6 space-y-1",
   };
 
   const features = [
-    { Icon: Package, title: "Inventory Management", desc: "Real-time stock tracking & automated reordering." },
-    { Icon: CreditCard, title: "Point of Sale Systems", desc: "Modern POS setups with secure payments." },
-    { Icon: Users, title: "Customer Management", desc: "CRM with profiles, history & loyalty programs." },
-    { Icon: ChartNoAxesColumnIncreasing, title: "Sales Analytics", desc: "Track trends & KPIs with smart dashboards." },
-    { Icon: ShoppingCart, title: "E-commerce Integration", desc: "Unified inventory for online + offline sales." },
-    { Icon: Clock, title: "Staff Management", desc: "Scheduling, performance & commission tracking." },
+    {
+      Icon: Package,
+      title: t("retailShopPage.features.0.title"),
+      desc: t("retailShopPage.features.0.desc"),
+    },
+    {
+      Icon: CreditCard,
+      title: t("retailShopPage.features.1.title"),
+      desc: t("retailShopPage.features.1.desc"),
+    },
+    {
+      Icon: Users,
+      title: t("retailShopPage.features.2.title"),
+      desc: t("retailShopPage.features.2.desc"),
+    },
+    {
+      Icon: ChartNoAxesColumnIncreasing,
+      title: t("retailShopPage.features.3.title"),
+      desc: t("retailShopPage.features.3.desc"),
+    },
+    {
+      Icon: ShoppingCart,
+      title: t("retailShopPage.features.4.title"),
+      desc: t("retailShopPage.features.4.desc"),
+    },
+    {
+      Icon: Clock,
+      title: t("retailShopPage.features.5.title"),
+      desc: t("retailShopPage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Reduce inventory management time by 50%",
-    "Automate purchase orders & stock alerts",
-    "Improve customer retention with CRM",
-    "Streamline checkout & payment flow",
-    "Generate detailed sales & profit reports",
-    "Optimize staff scheduling & performance",
+    t("retailShopPage.benefits.0"),
+    t("retailShopPage.benefits.1"),
+    t("retailShopPage.benefits.2"),
+    t("retailShopPage.benefits.3"),
+    t("retailShopPage.benefits.4"),
+    t("retailShopPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Boost Your Retail Success",
-    description:
-      "Join retailers who increased efficiency and customer satisfaction with automation.",
+    title: t("retailShopPage.cta.title"),
+    description: t("retailShopPage.cta.description"),
     list: [
-      "Tailored setup for your store type",
-      "Staff training + onboarding",
-      "24/7 support & maintenance",
+      t("retailShopPage.cta.list.0"),
+      t("retailShopPage.cta.list.1"),
+      t("retailShopPage.cta.list.2"),
     ],
-    buttonText: "Schedule Demo",
+    buttonText: t("retailShopPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg} aosOptions={aosOptions}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Complete Retail Management System"
-        subtitle="From inventory to customer relationships — manage everything with ease."
+        title={t("retailShopPage.subtitle")}
+        subtitle={t("retailShopPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Retail Excellence Made Simple"
+        benefitsTitle={t("retailShopPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

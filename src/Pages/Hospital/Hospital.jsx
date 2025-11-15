@@ -15,9 +15,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const Hospital = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -40,10 +42,9 @@ const Hospital = () => {
 
   const heroContent = {
     emoji: "🏥",
-    title: "Hospital",
-    subtitle: "Healthcare Automation Solutions",
-    description:
-      "Transform your hospital operations with advanced automation: patient management, appointments, EMR, and billing systems.",
+    title: t("industries.hospital"),
+    subtitle: t("hospitalPage.subtitle"),
+    description: t("hospitalPage.description"),
     imageUrl:
       "https://images.pexels.com/photos/263402/pexels-photo-263402.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "Hospital",
@@ -52,54 +53,55 @@ const Hospital = () => {
 
   const heroBadge = {
     Icon: Clock,
-    text1: "24/7",
-    text2: "Support",
+    text1: t("hospitalPage.badge.text1"),
+    text2: t("hospitalPage.badge.text2"),
     containerClassName: "p-4 -bottom-6 text-center",
     iconClassName: "mx-auto",
   };
 
   const features = [
-    { Icon: User, title: "Patient Management System", desc: "Automate patient registration, medical history tracking, and more." },
-    { Icon: Calendar, title: "Appointment Scheduling", desc: "Smart doctor appointments, reminders, and conflict-free scheduling." },
-    { Icon: FileText, title: "Electronic Medical Records", desc: "Secure, real-time, cloud-accessible EMR platform." },
-    { Icon: CreditCard, title: "Billing & Insurance", desc: "Automated billing, insurance claim verification, and payment tracking." },
-    { Icon: Shield, title: "HIPAA Compliance", desc: "Fully compliant & encrypted patient data protection." },
-    { Icon: BarChart3, title: "Analytics Dashboard", desc: "Monitor patient flow, revenue, and KPIs in real time." },
+    { Icon: User, title: t("hospitalPage.features.0.title"), desc: t("hospitalPage.features.0.desc") },
+    { Icon: Calendar, title: t("hospitalPage.features.1.title"), desc: t("hospitalPage.features.1.desc") },
+    { Icon: FileText, title: t("hospitalPage.features.2.title"), desc: t("hospitalPage.features.2.desc") },
+    { Icon: CreditCard, title: t("hospitalPage.features.3.title"), desc: t("hospitalPage.features.3.desc") },
+    { Icon: Shield, title: t("hospitalPage.features.4.title"), desc: t("hospitalPage.features.4.desc") },
+    { Icon: BarChart3, title: t("hospitalPage.features.5.title"), desc: t("hospitalPage.features.5.desc") },
   ];
 
   const benefitsList = [
-    "Reduce patient wait times by 40%",
-    "Eliminate scheduling conflicts",
-    "Automate insurance verification",
-    "Streamline discharge processes",
-    "Improve patient satisfaction scores",
-    "Reduce administrative overhead by 30%",
+    t("hospitalPage.benefits.0"),
+    t("hospitalPage.benefits.1"),
+    t("hospitalPage.benefits.2"),
+    t("hospitalPage.benefits.3"),
+    t("hospitalPage.benefits.4"),
+    t("hospitalPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Get Started?",
-    description:
-      "Join hundreds of healthcare facilities already using our automation suite.",
+    title: t("hospitalPage.cta.title"),
+    description: t("hospitalPage.cta.description"),
     list: [
-      "Free consultation & analysis",
-      "Custom implementation plan",
-      "Training & dedicated support",
+      t("hospitalPage.cta.list.0"),
+      t("hospitalPage.cta.list.1"),
+      t("hospitalPage.cta.list.2"),
     ],
-    buttonText: "Schedule Consultation",
+    buttonText: t("hospitalPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Comprehensive Hospital Solutions"
-        subtitle="Our automation platform supports all healthcare workflows."
+        title={t("hospitalPage.subtitle")}
+        subtitle={t("hospitalPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Transform Your Hospital Operations"
+        benefitsTitle={t("hospitalPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

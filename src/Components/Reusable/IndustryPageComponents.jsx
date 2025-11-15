@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { CircleCheckBig } from "lucide-react";
 import { GlobalContext } from './../../context/Context';
+import { useTranslation } from "react-i18next";
 
 export const PageWrapper = ({ pageBg, aosOptions, children }) => {
   const {mode} = useContext(GlobalContext);
@@ -34,6 +35,7 @@ export const PageWrapper = ({ pageBg, aosOptions, children }) => {
 export const IndustryHero = ({ theme, content, badge }) => {
   const navigate = useNavigate();
   const { Icon: BadgeIcon } = badge;
+  const {t} = useTranslation();
 
   return (
     <section
@@ -75,13 +77,13 @@ export const IndustryHero = ({ theme, content, badge }) => {
               onClick={() => navigate("/contact")}
               className="inline-flex items-center px-8 py-4 bg-yellow-500 text-gray-900 font-semibold rounded-lg hover:bg-yellow-400 transition-colors max-[600px]:px-6 max-[600px]:py-3 max-[350px]:px-4 max-[350px]:py-2"
             >
-              Get Started Today
+             {t("industryBtn.getStartedToday")}
             </button>
             <button
               onClick={() => navigate("/services")}
               className="inline-flex items-center px-8 py-4 border-2 border-yellow-400 text-yellow-400 font-semibold rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors max-[600px]:px-6 max-[600px]:py-3 max-[350px]:px-4 max-[350px]:py-2"
             >
-              View All Services
+             {t("industryBtn.viewAllServices")}
             </button>
           </div>
         </div>

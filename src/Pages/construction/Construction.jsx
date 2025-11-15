@@ -14,9 +14,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const Construction = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -41,10 +43,9 @@ const Construction = () => {
 
   const heroContent = {
     emoji: "🏗️",
-    title: "Construction",
-    subtitle: "Project Management Solutions",
-    description:
-      "Revolutionize your construction projects with comprehensive tracking systems, worker management, progress monitoring, and resource planning automation.",
+    title: t("industries.construction"),
+    subtitle: t("constructionPage.subtitle"),
+    description: t("constructionPage.description"),
     imageUrl:
       "https://www.gannestonconstruction.com/wp-content/uploads/2022/09/5-types-of-building-construction-ganneston-construction.jpg",
     imageAlt: "Construction",
@@ -53,54 +54,79 @@ const Construction = () => {
 
   const heroBadge = {
     Icon: HardHat,
-    text1: "Smart",
-    text2: "Projects",
-    containerClassName: "px-6 py-4 -bottom-6", // Custom class
+    text1: t("constructionPage.badge.text1"),
+    text2: t("constructionPage.badge.text2"),
+    containerClassName: "px-6 py-4 -bottom-6",
     iconClassName: "w-7 h-7",
   };
 
   const features = [
-    { Icon: HardHat, title: "Project Tracking", desc: "Milestone tracking, progress monitoring, and deadline management." },
-    { Icon: Users, title: "Worker Management", desc: "Digital worker logs, attendance tracking, and skill-based assignments." },
-    { Icon: Calendar, title: "Resource Planning", desc: "Equipment scheduling, material tracking, and allocation optimization." },
-    { Icon: ChartNoAxesColumnIncreasing, title: "Progress Monitoring", desc: "Dashboards with real-time visuals and performance analytics." },
-    { Icon: FileText, title: "Documentation", desc: "Permits, blueprints, reports, and compliance documentation." },
-    { Icon: Clock, title: "Time & Cost Tracking", desc: "Track labor, budget, and expenses automatically." },
+    {
+      Icon: HardHat,
+      title: t("constructionPage.features.0.title"),
+      desc: t("constructionPage.features.0.desc"),
+    },
+    {
+      Icon: Users,
+      title: t("constructionPage.features.1.title"),
+      desc: t("constructionPage.features.1.desc"),
+    },
+    {
+      Icon: Calendar,
+      title: t("constructionPage.features.2.title"),
+      desc: t("constructionPage.features.2.desc"),
+    },
+    {
+      Icon: ChartNoAxesColumnIncreasing,
+      title: t("constructionPage.features.3.title"),
+      desc: t("constructionPage.features.3.desc"),
+    },
+    {
+      Icon: FileText,
+      title: t("constructionPage.features.4.title"),
+      desc: t("constructionPage.features.4.desc"),
+    },
+    {
+      Icon: Clock,
+      title: t("constructionPage.features.5.title"),
+      desc: t("constructionPage.features.5.desc"),
+    },
   ];
 
   const benefitsList = [
-    "Reduce project delays by 35%",
-    "Improve worker productivity tracking",
-    "Automate safety & compliance reporting",
-    "Streamline equipment and material management",
-    "Real-time project visibility",
-    "Optimize resource allocation & costs",
+    t("constructionPage.benefits.0"),
+    t("constructionPage.benefits.1"),
+    t("constructionPage.benefits.2"),
+    t("constructionPage.benefits.3"),
+    t("constructionPage.benefits.4"),
+    t("constructionPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Ready to Modernize Your Projects?",
-    description:
-      "Join construction companies boosting project efficiency with automation.",
+    title: t("constructionPage.cta.title"),
+    description: t("constructionPage.cta.description"),
     list: [
-      "Custom solution for your project types",
-      "Team training & onboarding",
-      "Mobile access & field support",
+      t("constructionPage.cta.list.0"),
+      t("constructionPage.cta.list.1"),
+      t("constructionPage.cta.list.2"),
     ],
-    buttonText: "Schedule Consultation",
+    buttonText: t("constructionPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg} aosOptions={aosOptions}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Construction Management Platform"
-        subtitle="Build better projects with intelligent tracking, resource management, and real-time progress monitoring."
+        title={t("constructionPage.subtitle")}
+        subtitle={t("constructionPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Build Smarter, Not Harder"
+        benefitsTitle={t("constructionPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />

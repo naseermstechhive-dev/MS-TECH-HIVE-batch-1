@@ -15,9 +15,11 @@ import {
   FeaturesGrid,
   BenefitsCtaSection,
 } from "../../components/Reusable/IndustryPageComponents";
+import { useTranslation } from "react-i18next";
 
 const School = () => {
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const theme = {
     pageBg: mode ? "bg-white text-gray-900" : "bg-gray-900 text-white",
@@ -25,9 +27,7 @@ const School = () => {
       ? "bg-gradient-to-br from-white to-gray-100"
       : "bg-gradient-to-br from-gray-900 to-gray-800",
     heroTitle: mode ? "text-gray-900 font-extrabold" : "text-white font-bold",
-    heroSub: mode
-      ? "text-yellow-600 font-semibold"
-      : "text-yellow-400 font-medium",
+    heroSub: mode ? "text-yellow-600 font-semibold" : "text-yellow-400 font-medium",
     heroDesc: mode ? "text-gray-700" : "text-gray-300",
     sectionBg: mode ? "bg-gray-200" : "bg-gray-800",
     cardBg: mode ? "bg-gray-300" : "bg-gray-700",
@@ -47,10 +47,9 @@ const School = () => {
 
   const heroContent = {
     emoji: "🎓",
-    title: "School",
-    subtitle: "Education Management Solutions",
-    description:
-      "Revolutionize your school operations with automated attendance, communication, analytics, and complete education management.",
+    title: t("industries.school"),
+    subtitle: t("schoolPage.subtitle"),
+    description: t("schoolPage.description"),
     imageUrl:
       "https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: "School",
@@ -59,53 +58,54 @@ const School = () => {
 
   const heroBadge = {
     Icon: Clock,
-    text1: "Real-time",
-    text2: "Updates",
+    text1: t("schoolPage.badge.text1"),
+    text2: t("schoolPage.badge.text2"),
     containerClassName: "px-6 py-4 space-y-1 w-28 text-center",
   };
 
   const features = [
-    { Icon: Users, title: "Student Management", desc: "Profiles, enrollment tracking, academic progress monitoring." },
-    { Icon: Calendar, title: "Attendance Tracking", desc: "Automated attendance with real-time parent notifications." },
-    { Icon: MessageSquare, title: "Parent Communication", desc: "Instant communication between teachers and parents." },
-    { Icon: FileText, title: "Grade Management", desc: "Digital gradebooks, report cards, and academic tracking." },
-    { Icon: ChartNoAxesColumnIncreasing, title: "Academic Analytics", desc: "Track performance, attendance patterns, and school analytics." },
-    { Icon: Shield, title: "Safety & Security", desc: "Check-in/out systems with emergency communication tools." },
+    { Icon: Users, title: t("schoolPage.features.0.title"), desc: t("schoolPage.features.0.desc") },
+    { Icon: Calendar, title: t("schoolPage.features.1.title"), desc: t("schoolPage.features.1.desc") },
+    { Icon: MessageSquare, title: t("schoolPage.features.2.title"), desc: t("schoolPage.features.2.desc") },
+    { Icon: FileText, title: t("schoolPage.features.3.title"), desc: t("schoolPage.features.3.desc") },
+    { Icon: ChartNoAxesColumnIncreasing, title: t("schoolPage.features.4.title"), desc: t("schoolPage.features.4.desc") },
+    { Icon: Shield, title: t("schoolPage.features.5.title"), desc: t("schoolPage.features.5.desc") },
   ];
 
   const benefitsList = [
-    "Reduce administrative tasks by 50%",
-    "Improve parent engagement by 75%",
-    "Automate attendance & grade reporting",
-    "Streamline teacher-parent communication",
-    "Real-time progress tracking",
-    "Better school safety protocols",
+    t("schoolPage.benefits.0"),
+    t("schoolPage.benefits.1"),
+    t("schoolPage.benefits.2"),
+    t("schoolPage.benefits.3"),
+    t("schoolPage.benefits.4"),
+    t("schoolPage.benefits.5"),
   ];
 
   const ctaContent = {
-    title: "Transform Your School Today",
-    description:
-      "Join modern schools using our automation solutions for education.",
+    title: t("schoolPage.cta.title"),
+    description: t("schoolPage.cta.description"),
     list: [
-      "Personalized demo for your school",
-      "Full staff training included",
-      "Step-by-step implementation",
+      t("schoolPage.cta.list.0"),
+      t("schoolPage.cta.list.1"),
+      t("schoolPage.cta.list.2"),
     ],
-    buttonText: "Schedule Demo",
+    buttonText: t("schoolPage.cta.button"),
   };
 
   return (
     <PageWrapper pageBg={theme.pageBg} aosOptions={aosOptions}>
       <IndustryHero theme={theme} content={heroContent} badge={heroBadge} />
+
       <FeaturesGrid
         theme={theme}
-        title="Complete School Management System"
-        subtitle="Manage every part of school operations with ease and automation."
+        title={t("schoolPage.subtitle")}
+        subtitle={t("schoolPage.description")}
         features={features}
       />
+
       <BenefitsCtaSection
         theme={theme}
-        benefitsTitle="Enhance Educational Excellence"
+        benefitsTitle={t("schoolPage.cta.title")}
         benefitsList={benefitsList}
         cta={ctaContent}
       />
