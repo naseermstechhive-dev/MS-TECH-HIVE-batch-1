@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import { useTranslation } from "react-i18next";
 import { Target, Eye, Lightbulb, Heart, Award, Users } from "lucide-react";
 import { GlobalContext } from "../../context/Context";
 
 function AboutPage() {
-
+  const { t } = useTranslation();
   const { mode } = useContext(GlobalContext);
   useEffect(() => {
     AOS.init({
@@ -48,7 +48,7 @@ function AboutPage() {
             className={`text-4xl sm:text-5xl md:text-6xl mb-6 max-[400px]:text-3xl ${heroTitle}`}
             data-aos="zoom-in"
           >
-            {section1.title1}
+            {t("about.heroTitle")}
           </h1>
 
           <p
@@ -56,7 +56,7 @@ function AboutPage() {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-           {section1.line1}
+            {t("about.heroSubtitle")}
           </p>
         </div>
       </div>
@@ -76,12 +76,11 @@ function AboutPage() {
           >
             <div className="flex items-center gap-3 mb-6">
               <Target className="w-10 h-10 text-yellow-400" />
-              <h2 className={`text-2xl sm:text-3xl ${cardTitle}`}>Our Mission</h2>
+              <h2 className={`text-2xl sm:text-3xl ${cardTitle}`}>{t("about.missionTitle")}</h2>
             </div>
 
             <p className={`text-lg leading-relaxed ${cardText}`}>
-              To help businesses across industries automate workflows and accelerate
-              growth through innovative technology solutions.
+              {t("about.missionText")}
             </p>
           </div>
 
@@ -93,12 +92,11 @@ function AboutPage() {
           >
             <div className="flex items-center gap-3 mb-6">
               <Eye className="w-10 h-10 text-yellow-400" />
-              <h2 className={`text-2xl sm:text-3xl ${cardTitle}`}>Our Vision</h2>
+              <h2 className={`text-2xl sm:text-3xl ${cardTitle}`}>{t("about.visionTitle")}</h2>
             </div>
 
             <p className={`text-lg leading-relaxed ${cardText}`}>
-              To become the leading provider of automation solutions globally,
-              transforming how businesses operate and achieve success.
+              {t("about.visionText")}
             </p>
           </div>
 
@@ -116,10 +114,10 @@ function AboutPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
 
               {[
-                { value: "500+", text: section2.line1 },
-                { value: "12", text: section2.line2 },
-                { value: "50+", text: section2.line3 },
-                { value: "5", text: section2.line4 },
+                { value: "500+", text: t("about.statsProjects") },
+                { value: "12", text: t("about.statsIndustries") },
+                { value: "50+", text: t("about.statsClients") },
+                { value: "5", text: t("about.statsYears") },
               ].map((item, i) => (
                 <div key={i} data-aos="zoom-in" data-aos-delay={i * 150}>
                   <div className={`text-4xl sm:text-5xl md:text-6xl mb-2 ${statsNum}`}>
@@ -146,7 +144,7 @@ function AboutPage() {
               className={`text-3xl sm:text-4xl md:text-5xl mb-4 ${heroTitle}`}
               data-aos="zoom-in"
             >
-              {section3.title}
+              {t("about.valuesTitle")}
             </h2>
 
             <p
@@ -154,17 +152,17 @@ function AboutPage() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              {section3.line}
+              {t("about.valuesSubtitle")}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {[  
-              { Icon: Lightbulb, title: "Innovation" },
-              { Icon: Heart, title: "Customer First" },
-              { Icon: Award, title: "Excellence" },
-              { Icon: Users, title: "Collaboration" },
+              { Icon: Lightbulb, title: t("about.valueInnovation") },
+              { Icon: Heart, title: t("about.valueCustomerFirst") },
+              { Icon: Award, title: t("about.valueExcellence") },
+              { Icon: Users, title: t("about.valueCollaboration") },
             ].map((item, i) => (
               <div
                 key={i}
@@ -181,17 +179,17 @@ function AboutPage() {
                 </h3>
 
                 <p className={`leading-relaxed ${cardText}`}>
-                  {item.title === "Innovation" &&
-                    "We explore new technologies to deliver cutting-edge solutions."}
+                  {item.title === t("about.valueInnovation") &&
+                    t("about.valueInnovationText")}
 
-                  {item.title === "Customer First" &&
-                    "Your success is our priority — we build long-term relationships."}
+                  {item.title === t("about.valueCustomerFirst") &&
+                    t("about.valueCustomerFirstText")}
 
-                  {item.title === "Excellence" &&
-                    "We maintain the highest standards in everything we do."}
+                  {item.title === t("about.valueExcellence") &&
+                    t("about.valueExcellenceText")}
 
-                  {item.title === "Collaboration" &&
-                    "We work closely with clients as trusted partners."}
+                  {item.title === t("about.valueCollaboration") &&
+                    t("about.valueCollaborationText")}
                 </p>
               </div>
             ))}
@@ -209,14 +207,14 @@ function AboutPage() {
             className={`text-3xl sm:text-4xl md:text-5xl mb-12 ${heroTitle}`}
             data-aos="zoom-in"
           >
-            {section4.title}
+            {t("about.storyTitle")}
           </h2>
 
           <div className={`space-y-6 sm:space-y-8 ${storyText} leading-relaxed text-base sm:text-lg`}>
             {[
-              "MS Tech Hive was founded with a simple yet powerful vision: to make advanced automation accessible to every business.",
-              "We recognized that many companies were stuck with repetitive tasks and inefficient processes. Automation unlocks growth.",
-              "Today, we're proud to have transformed hundreds of businesses — and our journey has just begun.",
+              t("about.story1"),
+              t("about.story2"),
+              t("about.story3"),
             ].map((text, i) => (
               <p
                 key={i}

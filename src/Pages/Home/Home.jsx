@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { GlobalContext } from './../../context/Context';
+import { useTranslation } from "react-i18next";
+import { industries } from "../../data/industries";
 
 import { useNavigate } from "react-router-dom";
 import {
@@ -22,6 +24,7 @@ import { useTranslation } from "react-i18next";
 const Home = () => {
   const navigate = useNavigate();
   const { mode } = useContext(GlobalContext);
+  const { t } = useTranslation();
 
   const {t} = useTranslation()
   const {line1,line2} = t("description")
@@ -84,14 +87,14 @@ const Home = () => {
                 `}
                 data-aos="zoom-in"
               >
-                Automate Work.
+                {t("home.heroTitle1")}
                 <br />
                 <span
                   className="text-[#facc15]"
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
-                  Accelerate Growth.
+                 {t("home.heroTitle2")}
                 </span>
               </h1>
 
@@ -106,8 +109,7 @@ const Home = () => {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                Transform your business operations with intelligent automation
-                solutions tailored for your industry.
+               {t("home.heroSubtitle")}
               </p>
             </div>
 
@@ -121,14 +123,14 @@ const Home = () => {
                 onClick={() => navigate("/services")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
               >
-                {section1.button1} <ArrowRight className="w-5 h-5" />
+                {t("home.exploreServices")} <ArrowRight className="w-5 h-5" />
               </button>
 
               <button
                 onClick={() => navigate("/contact")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-[#facc15] text-[#facc15] font-semibold rounded-lg hover:bg-[#facc15] hover:text-gray-900 transition-colors"
               >
-                {section1.button2} <ArrowRight className="w-5 h-5" />
+                {t("home.getStarted")} <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </div>
@@ -166,11 +168,11 @@ const Home = () => {
           {/* Heading */}
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className={`text-[28px] sm:text-[32px] md:text-4xl font-bold mb-4 ${whyHeadingText}`}>
-              Why Choose MS Tech Hive?
+             {t("home.whyChooseTitle")}
             </h2>
 
             <p className={`text-lg sm:text-xl ${whySubText} max-w-3xl mx-auto`}>
-              We combine cutting-edge technology with industry expertise to deliver solutions that drive real results.
+              {t("home.whyChooseSubtitle")}
             </p>
           </div>
 
@@ -179,24 +181,23 @@ const Home = () => {
             {[
               {
                 icon: <Zap className="w-8 h-8 text-[#facc15] mb-3" />,
-                title:section2.cards.c1.title,
-                desc: section2.cards.c1.line,
-
+                title: t("home.why1Title"),
+                desc: t("home.why1Desc"),
               },
               {
                 icon: <TrendingUp className="w-8 h-8 text-[#facc15] mb-3" />,
-                title:section2.cards.c2.title,
-                desc: section2.cards.c2.line,
+                title: t("home.why2Title"),
+                desc: t("home.why2Desc"),
               },
               {
                 icon: <Briefcase className="w-8 h-8 text-[#facc15] mb-3" />,
-                title:section2.cards.c3.title,
-                desc: section2.cards.c3.line,
+                title: t("home.why3Title"),
+                desc: t("home.why3Desc"),
               },
               {
                 icon: <Award className="w-8 h-8 text-[#facc15] mb-3" />,
-                title:section2.cards.c4.title,
-                desc: section2.cards.c4.line,
+                title: t("home.why4Title"),
+                desc: t("home.why4Desc"),
               },
             ].map((item, i) => (
               <div
@@ -229,29 +230,22 @@ const Home = () => {
 
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className={`text-[28px] sm:text-[32px] md:text-4xl font-bold ${industriesHeadingText} mb-4`}>
-              Industries We Serve
+              {t("home.industriesTitle")}
             </h2>
 
             <p className={`text-lg sm:text-xl ${industriesSubText} max-w-3xl mx-auto`}>
-              Specialized automation solutions across multiple industries
+             {t("home.industriesSubtitle")}
             </p>
           </div>
 
           {/* Icons grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { icon: <Building2 className="w-8 sm:w-10 h-8 sm:h-10 mx-auto mb-3" />, label: "Healthcare" },
-              { icon: <GraduationCap className="w-8 sm:w-10 h-8 sm:h-10 mx-auto mb-3" />, label: "Education" },
-              { icon: <Utensils className="w-8 sm:w-10 h-8 sm:h-10 mx-auto mb-3" />, label: "Restaurant" },
-              { icon: <ShoppingBag className="w-8 sm:w-10 h-8 sm:h-10 mx-auto mb-3" />, label: "Retail" },
-              { icon: <Construction className="w-8 sm:w-10 h-8 sm:h-10 mx-auto mb-3" />, label: "Construction" },
-              { icon: <Laptop className="w-8 sm:w-10 h-8 sm:h-10 mx-auto mb-3" />, label: "IT Company" },
-            ].map((item, i) => (
+           {industries.slice(0, 6).map((item, i) => (
               <div
-                key={i}
+                key={item.key}
                 data-aos="fade-up"
                 data-aos-delay={i * 120}
-                onClick={() => navigate(`/${item.label.toLowerCase()}`)}
+                onClick={() => navigate(item.link)}
                 className={`
                   ${industriesCardBg}
                   p-6 rounded-xl text-center 
@@ -259,8 +253,31 @@ const Home = () => {
                   hover:scale-105 transition-all cursor-pointer
                 `}
               >
-                <div className="text-[#facc15]">{item.icon}</div>
-                <h3 className={`text-sm sm:text-base md:text-lg ${industriesLabelText}`}>{item.label}</h3>
+                <div className="text-[#facc15]">
+                  {
+                    item.key === "hospital" ? (
+                      <Building2 className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "school" ? (
+                      <GraduationCap className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "college" ? (
+                      <GraduationCap className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "restaurant" ? (
+                      <Utensils className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "office" ? (
+                      <Briefcase className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "retailShop" ? (
+                      <ShoppingBag className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "construction" ? (
+                      <Construction className="w-8 h-8 mx-auto mb-3" />
+                    ) : item.key === "itCompany" ? (
+                      <Laptop className="w-8 h-8 mx-auto mb-3" />
+                    ) : null
+                  }
+                </div>
+
+                <h3 className={`text-sm sm:text-base md:text-lg ${industriesLabelText}`}>
+                  {t(`industries.${item.key}`)}
+                </h3>
               </div>
             ))}
           </div>
@@ -270,7 +287,7 @@ const Home = () => {
               onClick={() => navigate("/industries")}
               className="inline-flex items-center px-6 py-3 bg-[#facc15] text-gray-900 font-semibold rounded-lg hover:bg-[#ca8a04] transition-colors"
             >
-              {section3.button}<ArrowRight className="ml-2 w-5 h-5" />
+              {t("home.viewAllIndustries")} <ArrowRight className="ml-2 w-5 h-5" />
             </button>
           </div>
         </div>
@@ -283,7 +300,7 @@ const Home = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-[28px] sm:text-[32px] md:text-4xl font-bold mb-4" data-aos="zoom-in">
-            Ready to Transform Your Business?
+            {t("home.readyTitle")}
           </h2>
 
           <p
@@ -291,8 +308,7 @@ const Home = () => {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            Join hundreds of businesses that have accelerated their growth with
-            our automation solutions.
+           {t("home.readySubtitle")}
           </p>
 
           <button
@@ -301,8 +317,7 @@ const Home = () => {
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            {section4.button}
-            <ArrowRight className="ml-2 w-5 h-5" />
+           {t("home.startJourney")} <ArrowRight className="ml-2 w-5 h-5" />
           </button>
         </div>
       </section>
